@@ -234,11 +234,14 @@
         
         .contact-method:hover {
             border-color: var(--accent-taupe);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
         }
         
         .contact-icon {
             font-size: 2rem;
             opacity: 0.85;
+            min-width: 48px;
         }
         
         .contact-details h3 {
@@ -262,12 +265,23 @@
             color: var(--accent-taupe);
         }
         
+        .contact-note {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: var(--space-12);
+        }
+        
         /* CONTACT FORM */
         .contact-form {
             background: var(--white);
             border: 1px solid var(--border);
             padding: var(--space-48);
             border-radius: var(--radius);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .contact-form h2 {
+            margin-bottom: var(--space-32);
         }
         
         .form-group {
@@ -292,6 +306,7 @@
             font-size: 0.9375rem;
             color: var(--text-primary);
             transition: all 0.3s ease;
+            background: var(--bg-primary);
         }
         
         .form-group input:focus,
@@ -299,6 +314,7 @@
             outline: none;
             border-color: var(--accent-taupe);
             box-shadow: 0 0 0 3px rgba(182, 163, 150, 0.1);
+            background: white;
         }
         
         .form-group textarea {
@@ -323,41 +339,7 @@
         .btn-submit:hover {
             background: #9F8D81;
             transform: translateY(-2px);
-        }
-        
-        /* QUICK INFO */
-        .quick-info {
-            padding: var(--space-64) 0;
-            background: var(--bg-secondary);
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-32);
-            text-align: center;
-        }
-        
-        .info-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: var(--space-32);
-            border-radius: var(--radius);
-        }
-        
-        .info-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-16);
-            opacity: 0.85;
-        }
-        
-        .info-card h3 {
-            margin-bottom: var(--space-12);
-        }
-        
-        .info-card p {
-            margin: 0;
-            font-size: 0.9375rem;
+            box-shadow: 0 4px 12px rgba(182, 163, 150, 0.3);
         }
         
         /* FOOTER */
@@ -425,10 +407,6 @@
                 gap: var(--space-48);
             }
             
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
             h1 {
                 font-size: 2.5rem;
             }
@@ -463,6 +441,11 @@
             .footer-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+            }
         }
         
         @media (max-width: 480px) {
@@ -485,7 +468,7 @@
     <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Michaela & Daniel Ferencz</a>
+            <a href="index.html" class="nav-brand">Tenant Profile</a>
             
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
@@ -512,7 +495,7 @@
         <div class="container">
             <p class="eyebrow">Get in Touch</p>
             <h1>Contact Us</h1>
-            <p class="page-subtitle">We'd love to hear about your property. Reach out via email, phone, or the form below.</p>
+            <p class="page-subtitle">We'd love to hear about your property. Reach out and we'll respond within 24 hours.</p>
         </div>
     </section>
 
@@ -523,7 +506,7 @@
                 <!-- CONTACT INFO -->
                 <div class="contact-info">
                     <p class="eyebrow">Reach Us</p>
-                    <h2>Contact Methods</h2>
+                    <h2>Contact</h2>
                     
                     <div class="contact-methods">
                         <div class="contact-method">
@@ -531,7 +514,7 @@
                             <div class="contact-details">
                                 <h3>Email</h3>
                                 <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                                <p style="font-size: 0.875rem; color: var(--text-muted);">Response within 24 hours</p>
+                                <p class="contact-note">Response within 24 hours</p>
                             </div>
                         </div>
                         
@@ -540,7 +523,7 @@
                             <div class="contact-details">
                                 <h3>Phone</h3>
                                 <p><a href="tel:+49XXXXXXXXX">+49 XXX XXXXXXX</a></p>
-                                <p style="font-size: 0.875rem; color: var(--text-muted);">Available weekdays 9am–6pm</p>
+                                <p class="contact-note">Available weekdays 9am–6pm</p>
                             </div>
                         </div>
                         
@@ -549,7 +532,7 @@
                             <div class="contact-details">
                                 <h3>WhatsApp</h3>
                                 <p><a href="https://wa.me/49XXXXXXXXX">+49 XXX XXXXXXX</a></p>
-                                <p style="font-size: 0.875rem; color: var(--text-muted);">Fast responses, anytime</p>
+                                <p class="contact-note">Fast responses, anytime</p>
                             </div>
                         </div>
                     </div>
@@ -557,58 +540,30 @@
                 
                 <!-- CONTACT FORM -->
                 <div class="contact-form">
-                    <h3 style="margin-bottom: var(--space-24);">Send a Message</h3>
+                    <h2>Send Message</h2>
                     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
                         </div>
                         
                         <div class="form-group">
                             <label for="phone">Phone Number (Optional)</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="phone" placeholder="+49 XXX XXXXXXX">
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" required placeholder="Tell us about your property..."></textarea>
+                            <textarea id="message" name="message" required placeholder="Tell us about your property or any questions you have..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn-submit">Send Message</button>
                     </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUICK INFO -->
-    <section class="quick-info">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: var(--space-48);">
-                <p class="eyebrow">Quick Reference</p>
-                <h2>What We're Looking For</h2>
-            </div>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">🏠</div>
-                    <h3>Property Type</h3>
-                    <p>60–80 m² apartment<br>2–3 rooms, well-maintained</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">📍</div>
-                    <h3>Location</h3>
-                    <p>Eimsbüttel, Altona,<br>Winterhude, Eppendorf</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">📅</div>
-                    <h3>Move-In Date</h3>
-                    <p>March 2026 or later<br>Flexible timing</p>
                 </div>
             </div>
         </div>
