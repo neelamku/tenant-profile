@@ -3,20 +3,502 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Tenant Profile</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Contact Us — Tenant Profile Hamburg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #F8F6F4;
+            --bg-secondary: #E8E6E4;
+            --accent-taupe: #B6A396;
+            --text-primary: #232323;
+            --text-muted: #6F6A66;
+            --border: rgba(35, 35, 35, 0.12);
+            --white: #FFFFFF;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+            --radius: 14px;
+            --radius-sm: 8px;
+            --max-width: 1120px;
+            --shadow-soft: 0 4px 16px rgba(35, 35, 35, 0.06);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        h1 {
+            font-size: 3.25rem;
+            line-height: 1.05;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-24);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            line-height: 1.15;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-24);
+        }
+        
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: var(--space-16);
+        }
+        
+        p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: var(--space-16);
+        }
+        
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent-taupe);
+            margin-bottom: var(--space-12);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-32);
+        }
+        
+        /* NAVIGATION */
+        .navbar {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border);
+            padding: var(--space-24) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-32);
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            gap: var(--space-32);
+        }
+        
+        .nav-brand {
+            font-family: var(--font-heading);
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-32);
+            justify-content: center;
+        }
+        
+        .nav-menu a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--accent-taupe);
+        }
+        
+        .nav-cta {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .btn-nav {
+            background: var(--accent-taupe);
+            color: white;
+            padding: 0.625rem 1.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-nav:hover {
+            background: #9F8D81;
+            transform: translateY(-1px);
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        /* PAGE HEADER */
+        .page-header {
+            padding: var(--space-64) 0 var(--space-48);
+            text-align: center;
+            background: var(--bg-primary);
+        }
+        
+        .page-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 60ch;
+            margin: 0 auto;
+        }
+        
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: var(--space-64) 0;
+            background: var(--bg-primary);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-64);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* CONTACT INFO */
+        .contact-info h2 {
+            margin-bottom: var(--space-32);
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-24);
+        }
+        
+        .contact-method {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: var(--space-24);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            gap: var(--space-24);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            border-color: var(--accent-taupe);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            opacity: 0.85;
+        }
+        
+        .contact-details h3 {
+            font-size: 1rem;
+            margin-bottom: var(--space-12);
+            color: var(--accent-taupe);
+        }
+        
+        .contact-details p {
+            margin: 0;
+            font-size: 0.9375rem;
+        }
+        
+        .contact-details a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-details a:hover {
+            color: var(--accent-taupe);
+        }
+        
+        /* CONTACT FORM */
+        .contact-form {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: var(--space-48);
+            border-radius: var(--radius);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-24);
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            margin-bottom: var(--space-12);
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-16);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-taupe);
+            box-shadow: 0 0 0 3px rgba(182, 163, 150, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+        
+        .btn-submit {
+            background: var(--accent-taupe);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            letter-spacing: 0.02em;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #9F8D81;
+            transform: translateY(-2px);
+        }
+        
+        /* QUICK INFO */
+        .quick-info {
+            padding: var(--space-64) 0;
+            background: var(--bg-secondary);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-32);
+            text-align: center;
+        }
+        
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: var(--space-32);
+            border-radius: var(--radius);
+        }
+        
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-16);
+            opacity: 0.85;
+        }
+        
+        .info-card h3 {
+            margin-bottom: var(--space-12);
+        }
+        
+        .info-card p {
+            margin: 0;
+            font-size: 0.9375rem;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--bg-secondary);
+            padding: var(--space-64) 0 var(--space-32);
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-48);
+            margin-bottom: var(--space-48);
+        }
+        
+        .footer-section h4 {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: var(--space-24);
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: var(--space-12);
+        }
+        
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-taupe);
+        }
+        
+        .footer-section p {
+            font-size: 0.9375rem;
+            margin-bottom: var(--space-12);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-32);
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-bottom p {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-48);
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                grid-template-columns: 1fr auto;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+            }
+            
+            .hamburger span {
+                width: 24px;
+                height: 2px;
+                background: var(--text-primary);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-form {
+                padding: var(--space-32);
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- NAVIGATION -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">Tenant Profile</div>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Michaela & Daniel Ferencz</a>
+            
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="financial.html">Financial Info</a></li>
                 <li><a href="rental-history.html">Rental History</a></li>
-                <li><a href="contact.html" class="active cta-nav">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
+            
+            <div class="nav-cta">
+                <a href="contact.html" class="btn-nav">Inquire</a>
+            </div>
+            
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -25,187 +507,117 @@
         </div>
     </nav>
 
+    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
+            <p class="eyebrow">Get in Touch</p>
             <h1>Contact Us</h1>
-            <p>Let's discuss your property</p>
+            <p class="page-subtitle">We'd love to hear about your property. Reach out via email, phone, or the form below.</p>
         </div>
     </section>
 
-    <section class="content-section">
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
         <div class="container">
-            <div class="contact-layout">
+            <div class="contact-grid">
+                <!-- CONTACT INFO -->
                 <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p>We are actively searching for an apartment in Hamburg and are ready to move quickly for the right property. We respond to all inquiries within 24 hours.</p>
+                    <p class="eyebrow">Reach Us</p>
+                    <h2>Contact Methods</h2>
                     
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <div class="method-icon">📧</div>
-                            <div>
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
                                 <h3>Email</h3>
                                 <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                                <span class="preferred">Preferred method</span>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">Response within 24 hours</p>
                             </div>
                         </div>
+                        
                         <div class="contact-method">
-                            <div class="method-icon">📱</div>
-                            <div>
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
                                 <h3>Phone</h3>
                                 <p><a href="tel:+49XXXXXXXXX">+49 XXX XXXXXXX</a></p>
-                                <span>Available Mon-Sat, 9:00-20:00</span>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">Available weekdays 9am–6pm</p>
                             </div>
                         </div>
+                        
                         <div class="contact-method">
-                            <div class="method-icon">💬</div>
-                            <div>
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
                                 <h3>WhatsApp</h3>
-                                <p>+49 XXX XXXXXXX</p>
-                                <span>Fast response for quick questions</span>
+                                <p><a href="https://wa.me/49XXXXXXXXX">+49 XXX XXXXXXX</a></p>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">Fast responses, anytime</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="availability-box">
-                        <h3>Viewing Availability</h3>
-                        <ul>
-                            <li><strong>Weekdays:</strong> Evenings after 17:00</li>
-                            <li><strong>Weekends:</strong> Flexible, any time between 9:00-20:00</li>
-                            <li><strong>Notice Required:</strong> Can arrange viewings with 24 hours notice</li>
-                            <li><strong>Video Calls:</strong> Available for initial discussions</li>
-                        </ul>
-                    </div>
-
-                    <div class="response-commitment">
-                        <h3>Our Commitment to You</h3>
-                        <p>✓ Response to inquiries within 24 hours<br>
-                        ✓ Complete documentation provided within 48 hours<br>
-                        ✓ Flexible viewing schedule<br>
-                        ✓ Professional communication<br>
-                        ✓ Quick decision-making<br>
-                        ✓ Ready to sign contract immediately</p>
                     </div>
                 </div>
-
-                <div class="contact-form-container">
-                    <h2>Send Us a Message</h2>
-                    <p class="form-intro">Interested in having us as tenants? Fill out the form below and we'll get back to you promptly.</p>
-                    
-                    <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                
+                <!-- CONTACT FORM -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom: var(--space-24);">Send a Message</h3>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                         <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Full name">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label for="email">Your Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label for="phone">Your Phone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+49 XXX XXXXXXX">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
-
+                        
                         <div class="form-group">
-                            <label for="property-address">Property Address *</label>
-                            <input type="text" id="property-address" name="property-address" required placeholder="Street, Postal Code, Hamburg">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your property..."></textarea>
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="property-size">Size (m²)</label>
-                                <input type="text" id="property-size" name="property-size" placeholder="e.g., 75">
-                            </div>
-                            <div class="form-group">
-                                <label for="rent">Monthly Rent (€)</label>
-                                <input type="text" id="rent" name="rent" placeholder="e.g., 1200">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="rooms">Rooms</label>
-                                <input type="text" id="rooms" name="rooms" placeholder="e.g., 2">
-                            </div>
-                            <div class="form-group">
-                                <label for="available-from">Available From</label>
-                                <input type="date" id="available-from" name="available-from">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Please provide details about your property, viewing availability, or any questions..."></textarea>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label>
-                                <input type="checkbox" name="documents-request">
-                                I would like to receive the complete documentation package
-                            </label>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label>
-                                <input type="checkbox" name="viewing-request">
-                                I would like to schedule a property viewing
-                            </label>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label>
-                                <input type="checkbox" name="privacy" required>
-                                I agree to the processing of my data according to GDPR *
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn-primary-large">Send Message</button>
+                        
+                        <button type="submit" class="btn-submit">Send Message</button>
                     </form>
-
-                    <p class="form-note">* Required fields</p>
-                </div>
-            </div>
-
-            <div class="content-box" style="margin-top: 50px;">
-                <h2>What Happens Next?</h2>
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>We Respond Quickly</h3>
-                            <p>You'll receive our reply within 24 hours</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Documents Provided</h3>
-                            <p>We send all documentation within 48 hours</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Schedule Viewing</h3>
-                            <p>We arrange a convenient viewing time</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Quick Decision</h3>
-                            <p>We can decide within 24 hours after viewing</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- QUICK INFO -->
+    <section class="quick-info">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: var(--space-48);">
+                <p class="eyebrow">Quick Reference</p>
+                <h2>What We're Looking For</h2>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🏠</div>
+                    <h3>Property Type</h3>
+                    <p>60–80 m² apartment<br>2–3 rooms, well-maintained</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Eimsbüttel, Altona,<br>Winterhude, Eppendorf</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📅</div>
+                    <h3>Move-In Date</h3>
+                    <p>March 2026 or later<br>Flexible timing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
@@ -220,19 +632,33 @@
                     <h4>Contact</h4>
                     <p>Email: your.email@example.com</p>
                     <p>Phone: +49 XXX XXXXXXX</p>
+                    <p>WhatsApp: +49 XXX XXXXXXX</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Privacy</h4>
-                    <p class="privacy-note">All data handling complies with GDPR regulations.</p>
+                    <h4>Searching For</h4>
+                    <p>60–80 m², 2–3 rooms</p>
+                    <p>Eimsbüttel, Altona, Winterhude</p>
+                    <p>Move-in: March 2026+</p>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Tenant Profile. All rights reserved.</p>
+                <p>© 2026 Tenant Profile Hamburg · All data handling complies with GDPR regulations</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+    </script>
+
 </body>
 </html>
 
