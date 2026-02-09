@@ -9,10 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ==============================================
-           BOUTIQUE INTERIOR STUDIO THEME - COMPACT
-           ============================================== */
-        
         :root {
             --bg-primary: #F8F6F4;
             --bg-secondary: #E8E6E4;
@@ -28,7 +24,7 @@
             --space-24: 24px;
             --space-32: 32px;
             --space-48: 48px;
-            --space-72: 72px;
+            --space-64: 64px;
             --radius: 14px;
             --radius-sm: 8px;
             --max-width: 1120px;
@@ -65,15 +61,15 @@
         }
         
         h1 {
-            font-size: 3.25rem;
-            line-height: 1.05;
+            font-size: 2.75rem;
+            line-height: 1.1;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: var(--space-24);
+            margin-bottom: var(--space-16);
         }
         
         h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             line-height: 1.15;
             letter-spacing: 0.04em;
             text-transform: uppercase;
@@ -81,10 +77,10 @@
         }
         
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 600;
             letter-spacing: 0.02em;
-            margin-bottom: var(--space-16);
+            margin-bottom: var(--space-12);
         }
         
         p {
@@ -186,90 +182,106 @@
             display: none;
         }
         
-        /* PAGE HEADER */
-        .page-header {
-            padding: var(--space-72) 0 var(--space-48);
-            text-align: center;
+        /* HERO SECTION - COMPACT */
+        .hero-about {
+            padding: var(--space-48) 0;
             background: var(--bg-primary);
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
         }
         
-        .page-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            max-width: 60ch;
-            margin: 0 auto;
-        }
-        
-        /* MAIN CONTENT - COMPACT */
-        .main-content {
-            padding: var(--space-72) 0;
-            background: var(--bg-primary);
-        }
-        
-        .content-grid {
+        .hero-grid {
             display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: var(--space-72);
-            align-items: start;
+            grid-template-columns: 380px 1fr;
+            gap: var(--space-64);
+            align-items: center;
         }
         
-        .content-image img {
+        .hero-image img {
             width: 100%;
-            height: 500px;
+            height: 480px;
             object-fit: cover;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             box-shadow: var(--shadow-soft);
         }
         
-        .content-text h2 {
-            margin-bottom: var(--space-32);
+        .hero-content h1 {
+            margin-bottom: var(--space-16);
         }
         
-        .content-text p {
-            margin-bottom: var(--space-24);
+        .hero-content p.intro {
             font-size: 1.0625rem;
+            line-height: 1.7;
+            margin-bottom: var(--space-24);
         }
         
-        /* ESSENTIALS SECTION */
-        .essentials-section {
-            padding: var(--space-72) 0;
+        .key-facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-24);
+            margin-top: var(--space-32);
+        }
+        
+        .fact-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: var(--space-24);
+            border-radius: var(--radius-sm);
+        }
+        
+        .fact-item h3 {
+            font-size: 1rem;
+            margin-bottom: var(--space-12);
+            color: var(--accent-taupe);
+        }
+        
+        .fact-item p {
+            font-size: 0.9375rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        /* DETAILS SECTION - COMPACT */
+        .details-section {
+            padding: var(--space-64) 0;
             background: var(--bg-secondary);
         }
         
-        .essentials-grid {
+        .details-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-32);
-            margin-top: var(--space-48);
+            gap: var(--space-24);
         }
         
-        .essential-card {
+        .detail-card {
             background: var(--white);
             border: 1px solid var(--border);
             padding: var(--space-32);
             border-radius: var(--radius);
         }
         
-        .essential-card h3 {
+        .detail-card h3 {
+            font-size: 1.125rem;
             margin-bottom: var(--space-24);
             color: var(--text-primary);
         }
         
-        .essential-list {
+        .detail-list {
             list-style: none;
         }
         
-        .essential-list li {
+        .detail-list li {
             padding: var(--space-12) 0;
             border-bottom: 1px solid var(--border);
             display: grid;
-            grid-template-columns: 140px 1fr;
+            grid-template-columns: 130px 1fr;
             gap: var(--space-16);
             font-size: 0.9375rem;
         }
         
-        .essential-list li:last-child {
+        .detail-list li:last-child {
             border-bottom: none;
         }
         
@@ -284,7 +296,7 @@
         
         /* CTA SECTION */
         .cta-section {
-            padding: var(--space-72) 0;
+            padding: var(--space-64) 0;
             background: var(--accent-taupe);
             text-align: center;
             color: white;
@@ -323,7 +335,7 @@
         /* FOOTER */
         footer {
             background: var(--bg-secondary);
-            padding: var(--space-72) 0 var(--space-32);
+            padding: var(--space-64) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
         
@@ -380,26 +392,34 @@
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .content-grid {
+            .hero-about {
+                min-height: auto;
+            }
+            
+            .hero-grid {
                 grid-template-columns: 1fr;
                 gap: var(--space-48);
             }
             
-            .content-image {
+            .hero-image {
                 max-width: 400px;
                 margin: 0 auto;
             }
             
-            .essentials-grid {
+            .key-facts {
+                grid-template-columns: 1fr;
+            }
+            
+            .details-grid {
                 grid-template-columns: 1fr;
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.25rem;
             }
             
             h2 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
         }
         
@@ -429,7 +449,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .essential-list li {
+            .detail-list li {
                 grid-template-columns: 1fr;
                 gap: var(--space-12);
             }
@@ -437,11 +457,11 @@
         
         @media (max-width: 480px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.875rem;
             }
             
             h2 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -451,7 +471,7 @@
     <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Tenant Profile</a>
+            <a href="index.html" class="nav-brand">Michaela & Daniel Ferencz</a>
             
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
@@ -473,45 +493,53 @@
         </div>
     </nav>
 
-    <!-- PAGE HEADER -->
-    <section class="page-header">
+    <!-- HERO - FITS IN ONE VIEW -->
+    <section class="hero-about">
         <div class="container">
-            <p class="eyebrow">Get to Know Us</p>
-            <h1>About Us</h1>
-            <p class="page-subtitle">Professional couple seeking a long-term home in Hamburg with excellent credentials and perfect rental history.</p>
-        </div>
-    </section>
-
-    <!-- MAIN CONTENT -->
-    <section class="main-content">
-        <div class="container">
-            <div class="content-grid">
-                <div class="content-image">
+            <div class="hero-grid">
+                <div class="hero-image">
                     <img src="images/240706—NL-096.jpg" alt="Professional Couple" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop'">
                 </div>
-                <div class="content-text">
-                    <p class="eyebrow">Our Story</p>
-                    <h2>Who We Are</h2>
-                    <p>We are a professional couple in our early 30s, relocating to Hamburg for exciting career opportunities. Both of us have accepted permanent positions with reputable companies in the city.</p>
-                    <p>With several years of successful renting experience, excellent financial credentials, and a proven track record of responsible tenancy, we're seeking a quality apartment where we can establish long-term roots in Hamburg.</p>
-                    <p>We bring financial stability, respect for property, and a genuine commitment to being exemplary tenants. Our previous landlords have consistently provided excellent references and are available for direct contact.</p>
+                <div class="hero-content">
+                    <p class="eyebrow">Get to Know Us</p>
+                    <h1>About Us</h1>
+                    <p class="intro">Professional couple in our early 30s, relocating to Hamburg for exciting career opportunities. We bring excellent financial credentials, perfect rental history, and a genuine commitment to being exemplary tenants.</p>
+                    
+                    <div class="key-facts">
+                        <div class="fact-item">
+                            <h3>Household</h3>
+                            <p>Professional couple, early 30s. Non-smokers, no pets. Quiet, respectful lifestyle.</p>
+                        </div>
+                        <div class="fact-item">
+                            <h3>Employment</h3>
+                            <p>Both full-time employed with permanent contracts in Hamburg-based positions.</p>
+                        </div>
+                        <div class="fact-item">
+                            <h3>Financial</h3>
+                            <p>€6,000+ net monthly income. Excellent SCHUFA. 3.5× income-to-rent ratio.</p>
+                        </div>
+                        <div class="fact-item">
+                            <h3>Hamburg Plans</h3>
+                            <p>Long-term commitment (5+ years). Move-in March 2026 or later.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ESSENTIALS -->
-    <section class="essentials-section">
+    <!-- DETAILED INFO -->
+    <section class="details-section">
         <div class="container">
             <div style="text-align: center; margin-bottom: var(--space-48);">
-                <p class="eyebrow">Essential Information</p>
-                <h2>Key Details</h2>
+                <p class="eyebrow">Essential Details</p>
+                <h2>Complete Profile</h2>
             </div>
             
-            <div class="essentials-grid">
-                <div class="essential-card">
-                    <h3>Household</h3>
-                    <ul class="essential-list">
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Personal Details</h3>
+                    <ul class="detail-list">
                         <li>
                             <span class="label">Composition</span>
                             <span class="value">Professional couple</span>
@@ -535,12 +563,12 @@
                     </ul>
                 </div>
                 
-                <div class="essential-card">
-                    <h3>Professional</h3>
-                    <ul class="essential-list">
+                <div class="detail-card">
+                    <h3>Professional Life</h3>
+                    <ul class="detail-list">
                         <li>
                             <span class="label">Employment</span>
-                            <span class="value">Both full-time employed</span>
+                            <span class="value">Both full-time</span>
                         </li>
                         <li>
                             <span class="label">Contracts</span>
@@ -548,7 +576,7 @@
                         </li>
                         <li>
                             <span class="label">Location</span>
-                            <span class="value">Hamburg-based positions</span>
+                            <span class="value">Hamburg-based</span>
                         </li>
                         <li>
                             <span class="label">Schedule</span>
@@ -556,25 +584,25 @@
                         </li>
                         <li>
                             <span class="label">Stability</span>
-                            <span class="value">Long-term career commitment</span>
+                            <span class="value">Long-term positions</span>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="essential-card">
+                <div class="detail-card">
                     <h3>Lifestyle</h3>
-                    <ul class="essential-list">
+                    <ul class="detail-list">
                         <li>
                             <span class="label">Personality</span>
-                            <span class="value">Quiet, respectful, responsible</span>
+                            <span class="value">Quiet, respectful</span>
                         </li>
                         <li>
                             <span class="label">Social Life</span>
-                            <span class="value">Prefer quiet evenings at home</span>
+                            <span class="value">Prefer quiet evenings</span>
                         </li>
                         <li>
                             <span class="label">Cleanliness</span>
-                            <span class="value">Very tidy and organized</span>
+                            <span class="value">Very tidy & organized</span>
                         </li>
                         <li>
                             <span class="label">Noise Level</span>
@@ -587,12 +615,12 @@
                     </ul>
                 </div>
                 
-                <div class="essential-card">
-                    <h3>Hamburg Plans</h3>
-                    <ul class="essential-list">
+                <div class="detail-card">
+                    <h3>Hamburg Search</h3>
+                    <ul class="detail-list">
                         <li>
                             <span class="label">Move-in</span>
-                            <span class="value">March 2026 or later</span>
+                            <span class="value">March 2026+</span>
                         </li>
                         <li>
                             <span class="label">Duration</span>
