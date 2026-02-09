@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Profile - Apartment Search Hamburg</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Tenant Profile</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="financial.html">Financial Info</a></li>
+                <li><a href="rental-history.html">Rental History</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="contact.html" class="cta-nav">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="images/profile-photo.jpg" alt="Profile Photo" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Your+Photo'">
+                </div>
+                <div class="hero-text">
+                    <h1>Professional Tenant Profile</h1>
+                    <h2>Seeking Apartment in Hamburg</h2>
+                    <p class="intro">Reliable, financially stable professionals looking for a long-term rental in Hamburg. We are a quiet, responsible couple with excellent rental history and strong financial credentials.</p>
+                    <a href="contact.html" class="btn-primary">Contact Us</a>
+                    <a href="#key-facts" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="key-facts" id="key-facts">
+        <div class="container">
+            <h2>Key Information at a Glance</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="icon">👔</div>
+                    <h3>Occupation</h3>
+                    <p>Full-time Professionals<br>Stable Employment</p>
+                </div>
+                <div class="fact-card">
+                    <div class="icon">💰</div>
+                    <h3>Income</h3>
+                    <p>Combined Monthly Income<br>3x Rent Capacity</p>
+                </div>
+                <div class="fact-card">
+                    <div class="icon">📅</div>
+                    <h3>Move-in Date</h3>
+                    <p>Flexible<br>March 2026 or later</p>
+                </div>
+                <div class="fact-card">
+                    <div class="icon">📍</div>
+                    <h3>Preferred Areas</h3>
+                    <p>Eimsbüttel, Altona<br>Winterhude, Eppendorf</p>
+                </div>
+                <div class="fact-card">
+                    <div class="icon">🏠</div>
+                    <h3>Apartment Size</h3>
+                    <p>60-80 m²<br>2-3 Rooms</p>
+                </div>
+                <div class="fact-card">
+                    <div class="icon">⏰</div>
+                    <h3>Rental Period</h3>
+                    <p>Long-term<br>Minimum 2 years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="container">
+            <h2>Why Choose Us as Tenants</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <h3>✓ Excellent Credit Score</h3>
+                    <p>Clean SCHUFA report available upon request</p>
+                </div>
+                <div class="benefit">
+                    <h3>✓ Stable Income</h3>
+                    <p>Permanent employment contracts with reliable companies</p>
+                </div>
+                <div class="benefit">
+                    <h3>✓ Perfect Rental History</h3>
+                    <p>Never missed a rent payment, excellent landlord references</p>
+                </div>
+                <div class="benefit">
+                    <h3>✓ Respectful & Quiet</h3>
+                    <p>Non-smokers, no pets, respect property and neighbors</p>
+                </div>
+                <div class="benefit">
+                    <h3>✓ All Documents Ready</h3>
+                    <p>Complete documentation package prepared</p>
+                </div>
+                <div class="benefit">
+                    <h3>✓ Long-term Commitment</h3>
+                    <p>Looking for stable, long-term residence in Hamburg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Discuss Your Property?</h2>
+            <p>We are available for viewings and can provide all required documentation immediately.</p>
+            <a href="contact.html" class="btn-primary-large">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="documents.html">Documents</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: your.email@example.com</p>
+                    <p>Phone: +49 XXX XXXXXXX</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Privacy</h4>
+                    <p class="privacy-note">Personal documents are shared only with verified landlords. All data handling complies with GDPR regulations.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tenant Profile. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
