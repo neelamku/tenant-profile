@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenant Profile - Apartment Search Hamburg</title>
+    <title>Professional Tenant Profile - Hamburg Apartment Search</title>
+    <meta name="description" content="Reliable, financially stable professionals seeking long-term apartment rental in Hamburg. Excellent credit, stable income, perfect rental history.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">Tenant Profile</div>
@@ -15,7 +17,6 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="financial.html">Financial Info</a></li>
                 <li><a href="rental-history.html">Rental History</a></li>
-                <li><a href="documents.html">Documents</a></li>
                 <li><a href="contact.html" class="cta-nav">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -26,101 +27,326 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-image">
-                    <img src="images/profile-photo.jpg" alt="Profile Photo" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Your+Photo'">
+                    <img src="images/profile-photo.jpg" alt="Professional Couple" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Your+Photo'">
                 </div>
                 <div class="hero-text">
-                    <h1>Professional Tenant Profile</h1>
-                    <h2>Seeking Apartment in Hamburg</h2>
-                    <p class="intro">Reliable, financially stable professionals looking for a long-term rental in Hamburg. We are a quiet, responsible couple with excellent rental history and strong financial credentials.</p>
-                    <a href="contact.html" class="btn-primary">Contact Us</a>
-                    <a href="#key-facts" class="btn-secondary">Learn More</a>
+                    <h1>Your Ideal Tenants in Hamburg</h1>
+                    <h2>Reliable • Professional • Long-term</h2>
+                    <p class="intro">We are a professional couple with excellent credit, stable employment, and perfect rental history. Currently seeking a long-term apartment (60-80m²) in Hamburg's desirable neighborhoods.</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="btn-primary">Contact Us Today</a>
+                        <a href="#key-facts" class="btn-secondary">See Our Profile</a>
+                    </div>
+                    <div class="hero-badges">
+                        <span class="badge">✓ Excellent SCHUFA</span>
+                        <span class="badge">✓ 3x Income Ratio</span>
+                        <span class="badge">✓ Zero Rent Debts</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Quick Stats Banner -->
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">On-Time Payments</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3.5x</div>
+                    <div class="stat-label">Income-to-Rent Ratio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Commitment</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Neighbor Complaints</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Facts Section -->
     <section class="key-facts" id="key-facts">
         <div class="container">
-            <h2>Key Information at a Glance</h2>
+            <h2>At a Glance</h2>
+            <p class="section-intro">Everything you need to know about us as your future tenants</p>
             <div class="facts-grid">
                 <div class="fact-card">
                     <div class="icon">👔</div>
-                    <h3>Occupation</h3>
-                    <p>Full-time Professionals<br>Stable Employment</p>
+                    <h3>Employment</h3>
+                    <p><strong>Permanent Contracts</strong><br>Full-time professionals with stable careers</p>
                 </div>
                 <div class="fact-card">
                     <div class="icon">💰</div>
                     <h3>Income</h3>
-                    <p>Combined Monthly Income<br>3x Rent Capacity</p>
+                    <p><strong>€6,000+ Net/Month</strong><br>Combined income exceeds 3x rent</p>
                 </div>
                 <div class="fact-card">
                     <div class="icon">📅</div>
                     <h3>Move-in Date</h3>
-                    <p>Flexible<br>March 2026 or later</p>
+                    <p><strong>March 2026+</strong><br>Flexible timing to suit you</p>
                 </div>
                 <div class="fact-card">
                     <div class="icon">📍</div>
                     <h3>Preferred Areas</h3>
-                    <p>Eimsbüttel, Altona<br>Winterhude, Eppendorf</p>
+                    <p><strong>Hamburg Districts</strong><br>Eimsbüttel, Altona, Winterhude, Eppendorf</p>
                 </div>
                 <div class="fact-card">
                     <div class="icon">🏠</div>
                     <h3>Apartment Size</h3>
-                    <p>60-80 m²<br>2-3 Rooms</p>
+                    <p><strong>60-80 m²</strong><br>2-3 rooms preferred</p>
                 </div>
                 <div class="fact-card">
                     <div class="icon">⏰</div>
                     <h3>Rental Period</h3>
-                    <p>Long-term<br>Minimum 2 years</p>
+                    <p><strong>Long-term</strong><br>Minimum 2 years, ideally longer</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
     <section class="why-us">
         <div class="container">
-            <h2>Why Choose Us as Tenants</h2>
+            <h2>Why Landlords Choose Us</h2>
+            <p class="section-intro">We meet and exceed all standard German landlord requirements</p>
             <div class="benefits-grid">
                 <div class="benefit">
-                    <h3>✓ Excellent Credit Score</h3>
-                    <p>Clean SCHUFA report available upon request</p>
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Excellent Credit Score</h3>
+                    <p>Current SCHUFA report with no negative entries, no debts, perfect payment history</p>
                 </div>
                 <div class="benefit">
-                    <h3>✓ Stable Income</h3>
-                    <p>Permanent employment contracts with reliable companies</p>
+                    <div class="benefit-icon">💼</div>
+                    <h3>Stable Employment</h3>
+                    <p>Both applicants have permanent contracts (Unbefristet) with established companies</p>
                 </div>
                 <div class="benefit">
-                    <h3>✓ Perfect Rental History</h3>
-                    <p>Never missed a rent payment, excellent landlord references</p>
+                    <div class="benefit-icon">📜</div>
+                    <h3>Perfect Rental History</h3>
+                    <p>Never missed a payment in [X] years of renting, excellent landlord references available</p>
                 </div>
                 <div class="benefit">
-                    <h3>✓ Respectful & Quiet</h3>
-                    <p>Non-smokers, no pets, respect property and neighbors</p>
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Respectful & Quiet</h3>
+                    <p>Non-smokers, no pets, quiet lifestyle, zero complaints from previous neighbors</p>
                 </div>
                 <div class="benefit">
-                    <h3>✓ All Documents Ready</h3>
-                    <p>Complete documentation package prepared</p>
+                    <div class="benefit-icon">📄</div>
+                    <h3>All Documents Ready</h3>
+                    <p>Complete documentation package prepared: SCHUFA, employment contracts, salary statements</p>
                 </div>
                 <div class="benefit">
-                    <h3>✓ Long-term Commitment</h3>
-                    <p>Looking for stable, long-term residence in Hamburg</p>
+                    <div class="benefit-icon">🏡</div>
+                    <h3>Long-term Commitment</h3>
+                    <p>Relocating to Hamburg permanently, seeking stable home for many years</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <!-- What We Offer Section -->
+    <section class="what-we-offer">
         <div class="container">
-            <h2>Ready to Discuss Your Property?</h2>
-            <p>We are available for viewings and can provide all required documentation immediately.</p>
-            <a href="contact.html" class="btn-primary-large">Get in Touch</a>
+            <h2>What We Bring as Tenants</h2>
+            <div class="offer-grid">
+                <div class="offer-item">
+                    <h3>💳 Financial Security</h3>
+                    <ul>
+                        <li>Combined net income: €6,000+ per month</li>
+                        <li>3.5x income-to-rent ratio (exceeds 3x standard)</li>
+                        <li>Full deposit available immediately</li>
+                        <li>Emergency savings for 6+ months expenses</li>
+                    </ul>
+                </div>
+                <div class="offer-item">
+                    <h3>📋 Complete Documentation</h3>
+                    <ul>
+                        <li>Employment contracts (Unbefristet)</li>
+                        <li>Last 3 months salary statements</li>
+                        <li>Current SCHUFA credit reports</li>
+                        <li>Mietschuldenfreiheitsbescheinigung</li>
+                        <li>Landlord references & contact info</li>
+                        <li>Personal liability insurance</li>
+                    </ul>
+                </div>
+                <div class="offer-item">
+                    <h3>🏆 Proven Track Record</h3>
+                    <ul>
+                        <li>100% on-time payment history</li>
+                        <li>Zero property damage claims</li>
+                        <li>Zero neighbor complaints</li>
+                        <li>Always left properties in excellent condition</li>
+                        <li>Full deposit returns from all previous landlords</li>
+                    </ul>
+                </div>
+                <div class="offer-item">
+                    <h3>✨ Ideal Tenant Qualities</h3>
+                    <ul>
+                        <li>Clean, organized, responsible</li>
+                        <li>Excellent communication skills</li>
+                        <li>Handle minor repairs ourselves</li>
+                        <li>Respect all house rules</li>
+                        <li>Work regular office hours (quiet during day)</li>
+                        <li>No smoking, no pets, no parties</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>Why We're Moving to Hamburg</h3>
+                    <p>We are a professional couple in our early 30s, relocating to Hamburg for exciting career opportunities. Both of us have accepted permanent positions with reputable companies in the city.</p>
+                    
+                    <p>We're drawn to Hamburg not just for work, but for its exceptional quality of life, cultural richness, and beautiful blend of urban energy and natural spaces. We're committed to making Hamburg our long-term home and becoming active members of the community.</p>
+                    
+                    <p>With stable careers, excellent financial credentials, and a perfect rental history, we're ready to establish roots in Hamburg and become the reliable, respectful tenants that landlords appreciate.</p>
+                    
+                    <a href="about.html" class="btn-secondary">Read More About Us</a>
+                </div>
+                <div class="story-highlights">
+                    <h3>Quick Facts</h3>
+                    <ul class="highlight-list">
+                        <li><strong>Household:</strong> Professional couple, no children</li>
+                        <li><strong>Pets:</strong> None (and no plans for any)</li>
+                        <li><strong>Lifestyle:</strong> Quiet, home-oriented, respectful</li>
+                        <li><strong>Languages:</strong> English (fluent), German (B1-B2)</li>
+                        <li><strong>Work:</strong> Full-time office positions in Hamburg</li>
+                        <li><strong>Commitment:</strong> Long-term residence (5+ years)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Previous Landlords Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">"Perfect tenants in every way. Never had to remind them about rent even once - always paid automatically on the first of the month. Left the apartment in better condition than when they moved in."</p>
+                    <p class="testimonial-author">— Previous Landlord, [City]</p>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">"Absolutely zero issues during their entire tenancy. Responsive, professional, and treated the property with great respect. Would rent to them again without hesitation."</p>
+                    <p class="testimonial-author">— Property Manager, [City]</p>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">"The other tenants never knew they were there - very quiet and respectful. Cleanest move-out I've ever experienced. Ideal tenants that any landlord would be lucky to have."</p>
+                    <p class="testimonial-author">— Previous Landlord, [City]</p>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Section -->
+    <section class="budget-section">
+        <div class="container">
+            <h2>Our Budget & Affordability</h2>
+            <div class="budget-content">
+                <div class="budget-box">
+                    <h3>Target Rent Range</h3>
+                    <div class="budget-amount">€1,200 - €1,800</div>
+                    <p class="budget-label">Cold rent per month (Kaltmiete)</p>
+                </div>
+                <div class="budget-box">
+                    <h3>Maximum Budget</h3>
+                    <div class="budget-amount">Up to €2,400</div>
+                    <p class="budget-label">Including utilities (Warmmiete)</p>
+                </div>
+                <div class="budget-box">
+                    <h3>Income Ratio</h3>
+                    <div class="budget-amount">3.5:1</div>
+                    <p class="budget-label">Exceeds German standard of 3:1</p>
+                </div>
+            </div>
+            <div class="budget-note">
+                <p><strong>Security Deposit:</strong> Full amount (typically 3 months cold rent) available immediately upon contract signing</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Checklist Section -->
+    <section class="documents-preview">
+        <div class="container">
+            <h2>Documentation Ready to Share</h2>
+            <p class="section-intro">All standard German rental application documents prepared and current</p>
+            <div class="documents-grid">
+                <div class="doc-preview-item">
+                    <span class="doc-icon">✓</span>
+                    <h4>Identity Documents</h4>
+                    <p>Valid passports/ID cards, address registration</p>
+                </div>
+                <div class="doc-preview-item">
+                    <span class="doc-icon">✓</span>
+                    <h4>Employment Contracts</h4>
+                    <p>Permanent contracts (Unbefristet) from both employers</p>
+                </div>
+                <div class="doc-preview-item">
+                    <span class="doc-icon">✓</span>
+                    <h4>Salary Statements</h4>
+                    <p>Last 3 months (Gehaltsabrechnungen)</p>
+                </div>
+                <div class="doc-preview-item">
+                    <span class="doc-icon">✓</span>
+                    <h4>SCHUFA Credit Report</h4>
+                    <p>Current report with excellent score</p>
+                </div>
+                <div class="doc-preview-item">
+                    <span class="doc-icon">✓</span>
+                    <h4>Landlord References</h4>
+                    <p>Mietschuldenfreiheitsbescheinigung + contacts</p>
+                </div>
+                <div class="doc-preview-item">
+                    <span class="doc-icon">✓</span>
+                    <h4>Insurance</h4>
+                    <p>Personal liability insurance (Privathaftpflicht)</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="contact.html" class="btn-secondary">Request Complete Package</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Have a Property in Hamburg?</h2>
+            <p>We are actively searching and ready to move quickly for the right apartment. All documentation is prepared, deposit is available, and we can make decisions within 24 hours of viewing.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary-large">Contact Us Now</a>
+                <a href="tel:+49XXXXXXXXX" class="btn-secondary-large">Call: +49 XXX XXXXXXX</a>
+            </div>
+            <p class="cta-note">Response time: Within 24 hours • Documentation delivery: Within 48 hours</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -129,22 +355,26 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="documents.html">Documents</a></li>
+                        <li><a href="financial.html">Financial Info</a></li>
+                        <li><a href="rental-history.html">Rental History</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: your.email@example.com</p>
-                    <p>Phone: +49 XXX XXXXXXX</p>
+                    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                    <p>Phone: <a href="tel:+49XXXXXXXXX">+49 XXX XXXXXXX</a></p>
+                    <p>WhatsApp: +49 XXX XXXXXXX</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Privacy</h4>
-                    <p class="privacy-note">Personal documents are shared only with verified landlords. All data handling complies with GDPR regulations.</p>
+                    <h4>Looking For</h4>
+                    <p>60-80 m², 2-3 rooms</p>
+                    <p>Eimsbüttel, Altona, Winterhude, Eppendorf</p>
+                    <p>Move-in: March 2026 or later</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Tenant Profile. All rights reserved.</p>
+                <p>&copy; 2026 Professional Tenant Profile • Hamburg, Germany • All data handling complies with GDPR</p>
             </div>
         </div>
     </footer>
@@ -152,3 +382,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
