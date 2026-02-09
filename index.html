@@ -212,35 +212,66 @@
         
         .hamburger {
             display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
         }
         
         /* ==============================================
-           HERO - 3 Column Editorial Layout
+           HERO - LUXE DOUBLE MAT FRAME
            ============================================== */
         .hero {
             padding: var(--space-72) 0;
             background: var(--bg-primary);
         }
         
-        .hero-grid {
+        .hero-grid-single {
             display: grid;
-            grid-template-columns: 320px 1fr 280px;
-            gap: var(--space-48);
+            grid-template-columns: 450px 1fr;
+            gap: var(--space-72);
             align-items: center;
         }
         
-        /* Left Image - Primary */
-        .hero-image-left {
+        .hero-image-elegant {
             position: relative;
         }
         
-        .hero-image-left img {
+        /* Double Mat Effect */
+        .frame-outer {
+            background: #F5F3F1;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(35, 35, 35, 0.12);
+            border: 1px solid rgba(182, 163, 150, 0.15);
+        }
+        
+        .frame-inner {
+            background: white;
+            padding: 20px;
+            border: 1px solid rgba(182, 163, 150, 0.2);
+            position: relative;
+        }
+        
+        .frame-inner::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(182, 163, 150, 0.15);
+            pointer-events: none;
+        }
+        
+        .hero-image-elegant img {
             width: 100%;
-            height: 440px;
+            height: 550px;
             object-fit: cover;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-soft);
+            display: block;
+            filter: saturate(0.88) contrast(1.03);
         }
         
         /* Center Content */
@@ -321,21 +352,6 @@
             color: var(--text-muted);
             text-align: center;
             letter-spacing: 0.02em;
-        }
-        
-        /* Right Image - Secondary */
-        .hero-image-right {
-            position: relative;
-            margin-top: var(--space-48);
-        }
-        
-        .hero-image-right img {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-soft);
         }
         
         /* ==============================================
@@ -632,17 +648,13 @@
         
         /* ≤1024px */
         @media (max-width: 1024px) {
-            .hero-grid {
+            .hero-grid-single {
                 grid-template-columns: 1fr;
                 gap: var(--space-48);
             }
             
-            .hero-image-right {
-                display: none;
-            }
-            
-            .hero-image-left {
-                max-width: 400px;
+            .hero-image-elegant {
+                max-width: 450px;
                 margin: 0 auto;
             }
             
@@ -680,8 +692,7 @@
             }
             
             .hamburger {
-                display: block;
-                cursor: pointer;
+                display: flex;
             }
             
             .trust-badges {
@@ -726,6 +737,14 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .frame-outer {
+                padding: 20px;
+            }
+            
+            .frame-inner {
+                padding: 12px;
+            }
         }
     </style>
 </head>
@@ -756,16 +775,20 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION WITH LUXE DOUBLE MAT FRAME -->
     <section class="hero">
         <div class="container">
-            <div class="hero-grid">
-                <!-- Left Image -->
-                <div class="hero-image-left">
-                    <img src="images/240706—NL-096.jpg" alt="Professional Couple">
+            <div class="hero-grid-single">
+                <!-- Single Elegant Photo with Double Mat Frame -->
+                <div class="hero-image-elegant">
+                    <div class="frame-outer">
+                        <div class="frame-inner">
+                            <img src="images/240706—NL-096.jpg" alt="Professional Couple">
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Center Content -->
+                <!-- Content -->
                 <div class="hero-content">
                     <p class="eyebrow">Hamburg Apartment Search</p>
                     <h1>Your Ideal<br>Tenants</h1>
@@ -782,11 +805,6 @@
                         <span class="badge">Non-Smokers</span>
                         <span class="badge">Long-Term</span>
                     </div>
-                </div>
-                
-                <!-- Right Image -->
-                <div class="hero-image-right">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=500&fit=crop" alt="Hamburg Interior">
                 </div>
             </div>
         </div>
@@ -997,3 +1015,4 @@
 
 </body>
 </html>
+
