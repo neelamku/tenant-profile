@@ -189,82 +189,70 @@
             display: none;
         }
         
-        /* HERO SECTION */
+        /* HERO SECTION - OVERLAPPING STYLE */
         .hero {
-            min-height: auto;
-            display: flex;
-            align-items: center;
-            padding: var(--space-64) 0 var(--space-48) 0;
+            padding: var(--space-80) 0;
             background: var(--bg-primary);
+            overflow: hidden;
         }
         
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 420px;
-            gap: var(--space-64);
-            align-items: center;
-        }
-        
-        .hero-content h1 {
-            margin-bottom: var(--space-32);
-        }
-        
-        .hero-intro {
-            font-size: 1.0625rem;
-            line-height: 1.65;
-            color: var(--text-muted);
-            margin-bottom: 0;
-            max-width: 48ch;
-        }
-        
-        /* ELEGANT PHOTO STYLING */
-        .hero-image {
+        .hero-overlap-container {
             position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-32);
         }
         
-        .hero-image-wrapper {
-            position: relative;
-            padding: var(--space-16);
-            background: linear-gradient(135deg, rgba(182, 163, 150, 0.08) 0%, rgba(182, 163, 150, 0.02) 100%);
-            border-radius: var(--radius);
-        }
-        
-        .hero-image img {
+        .hero-image-large {
             width: 100%;
-            height: 480px;
+            max-width: 680px;
+            height: 550px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-elegant);
+        }
+        
+        .hero-image-large img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: var(--radius-sm);
-            box-shadow: 
-                0 2px 8px rgba(35, 35, 35, 0.04),
-                0 8px 24px rgba(35, 35, 35, 0.08),
-                0 16px 48px rgba(35, 35, 35, 0.12);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.8);
         }
         
-        .hero-image img:hover {
-            transform: translateY(-4px);
-            box-shadow: 
-                0 4px 12px rgba(35, 35, 35, 0.06),
-                0 12px 32px rgba(35, 35, 35, 0.10),
-                0 24px 64px rgba(35, 35, 35, 0.14);
-        }
-        
-        /* Optional: Add decorative corner accent */
-        .hero-image-wrapper::before {
-            content: '';
+        .hero-content-box {
             position: absolute;
-            top: 0;
             right: 0;
-            width: 80px;
-            height: 80px;
+            bottom: 40px;
+            width: 520px;
             background: var(--accent-taupe);
-            opacity: 0.15;
-            border-radius: 0 var(--radius) 0 0;
-            z-index: -1;
+            padding: var(--space-64);
+            border-radius: var(--radius);
+            box-shadow: 
+                0 8px 24px rgba(35, 35, 35, 0.12),
+                0 16px 48px rgba(35, 35, 35, 0.08);
+            color: white;
         }
         
-        /* STORY SECTION - New section for family info */
+        .hero-content-box .eyebrow {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: var(--space-16);
+        }
+        
+        .hero-content-box h1 {
+            font-size: 2.75rem;
+            line-height: 1;
+            color: white;
+            margin-bottom: var(--space-24);
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-content-box p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+            margin: 0;
+        }
+        
+        /* STORY SECTION */
         .story-section {
             padding: var(--space-80) 0;
             background: var(--bg-primary);
@@ -503,18 +491,22 @@
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
+            .hero-overlap-container {
+                display: flex;
+                flex-direction: column;
                 gap: var(--space-48);
             }
             
-            .hero-image {
-                max-width: 450px;
-                margin: 0 auto;
+            .hero-image-large {
+                max-width: 100%;
+                height: 450px;
             }
             
-            .hero-image img {
-                height: 400px;
+            .hero-content-box {
+                position: static;
+                width: 100%;
+                max-width: 600px;
+                margin: -60px auto 0;
             }
             
             h1 {
@@ -565,13 +557,22 @@
                 background: var(--text-primary);
             }
             
-            h1 {
-                font-size: 2.5rem;
-                letter-spacing: 0.1em;
+            .hero {
+                padding: var(--space-48) 0;
             }
             
-            .hero {
-                padding: var(--space-48) 0 var(--space-32) 0;
+            .hero-image-large {
+                height: 400px;
+            }
+            
+            .hero-content-box {
+                padding: var(--space-48);
+                margin: -40px auto 0;
+            }
+            
+            .hero-content-box h1 {
+                font-size: 2.25rem;
+                letter-spacing: 0.08em;
             }
             
             .hero-cta {
@@ -607,25 +608,24 @@
                 letter-spacing: 0.02em;
             }
             
-            h1 {
-                font-size: 2rem;
-                letter-spacing: 0.08em;
+            .hero-image-large {
+                height: 350px;
+            }
+            
+            .hero-content-box {
+                padding: var(--space-32);
+            }
+            
+            .hero-content-box h1 {
+                font-size: 1.875rem;
             }
             
             h2 {
                 font-size: 1.75rem;
             }
             
-            .hero-intro {
-                font-size: 1rem;
-            }
-            
             .detail-icon {
                 font-size: 2.5rem;
-            }
-            
-            .hero-image-wrapper {
-                padding: var(--space-12);
             }
         }
     </style>
@@ -657,20 +657,16 @@
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO - OVERLAPPING STYLE -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <p class="eyebrow">Unsere Geschichte</p>
-                    <h1>Über Uns</h1>
-                    <p class="hero-intro">Nach über 30 Jahren in Mülheim an der Ruhr beginnen wir einen neuen Lebensabschnitt in Hamburg. Erfahren Sie mehr über uns, unsere Werte und warum wir die idealen Mieter für Ihre Immobilie sind.</p>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-image-wrapper">
-                        <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=800&h=600&fit=crop'">
-                    </div>
-                </div>
+        <div class="hero-overlap-container">
+            <div class="hero-image-large">
+                <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=1200&h=800&fit=crop'">
+            </div>
+            <div class="hero-content-box">
+                <p class="eyebrow">Unsere Geschichte</p>
+                <h1>Über Uns</h1>
+                <p>Nach über 30 Jahren in Mülheim an der Ruhr beginnen wir einen neuen Lebensabschnitt in Hamburg. Erfahren Sie mehr über uns, unsere Werte und warum wir die idealen Mieter für Ihre Immobilie sind.</p>
             </div>
         </div>
     </section>
