@@ -27,10 +27,12 @@
             --space-48: 48px;
             --space-64: 64px;
             --space-80: 80px;
+            --space-100: 100px;
             --radius: 14px;
             --radius-sm: 8px;
             --max-width: 1120px;
             --shadow-soft: 0 4px 16px rgba(35, 35, 35, 0.06);
+            --shadow-elegant: 0 8px 32px rgba(35, 35, 35, 0.08);
         }
         
         * {
@@ -63,43 +65,43 @@
         }
         
         h1 {
-            font-size: 3.5rem;
-            line-height: 1.05;
+            font-size: 4rem;
+            line-height: 1;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             margin-bottom: var(--space-32);
         }
         
         h2 {
-            font-size: 2rem;
+            font-size: 2.25rem;
             line-height: 1.15;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             margin-bottom: var(--space-24);
         }
         
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.375rem;
             font-weight: 600;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.04em;
             margin-bottom: var(--space-16);
         }
         
         p {
             font-size: 1rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: var(--text-muted);
             margin-bottom: var(--space-16);
         }
         
         .eyebrow {
             font-family: var(--font-body);
-            font-size: 0.8125rem;
-            font-weight: 500;
+            font-size: 0.75rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
+            letter-spacing: 0.3em;
             color: var(--accent-taupe);
-            margin-bottom: var(--space-16);
+            margin-bottom: var(--space-24);
         }
         
         .container {
@@ -116,6 +118,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(248, 246, 244, 0.95);
         }
         
         .nav-container {
@@ -185,79 +189,143 @@
             display: none;
         }
         
-        /* HERO SECTION WITH PHOTO */
+        /* HERO SECTION - ELEGANT */
         .hero {
-            padding: var(--space-80) 0;
-            background: var(--bg-primary);
+            padding: var(--space-100) 0;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
         }
         
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 450px;
-            gap: var(--space-64);
+            grid-template-columns: 1fr 480px;
+            gap: var(--space-80);
             align-items: center;
         }
         
         .hero-content h1 {
-            margin-bottom: var(--space-24);
+            margin-bottom: var(--space-32);
+            line-height: 0.95;
         }
         
         .hero-intro {
             font-size: 1.125rem;
-            line-height: 1.7;
+            line-height: 1.9;
             color: var(--text-muted);
             margin-bottom: 0;
+            max-width: 48ch;
+        }
+        
+        .hero-image-wrapper {
+            position: relative;
+            padding: var(--space-24);
+        }
+        
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: var(--space-48);
+            bottom: var(--space-48);
+            background: var(--accent-taupe);
+            opacity: 0.15;
+            border-radius: var(--radius);
+            z-index: 0;
         }
         
         .hero-image {
             position: relative;
+            z-index: 1;
         }
         
         .hero-image img {
             width: 100%;
-            height: 500px;
+            height: 550px;
             object-fit: cover;
             border-radius: var(--radius);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-elegant);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
         
-        /* PHOTO SECTION */
-        .photo-section {
-            padding: var(--space-64) 0;
-            background: var(--bg-secondary);
+        /* PHOTO GALLERY - ELEGANT */
+        .photo-gallery {
+            padding: var(--space-100) 0;
+            background: var(--white);
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: var(--space-64);
         }
         
         .photo-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-32);
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: var(--space-48);
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
-        .photo-item img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
+        .photo-frame {
+            position: relative;
+            overflow: hidden;
             border-radius: var(--radius);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-elegant);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* CARDS SECTION */
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(35, 35, 35, 0.1) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .photo-frame:hover::before {
+            opacity: 1;
+        }
+        
+        .photo-frame:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(35, 35, 35, 0.15);
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .photo-frame:hover img {
+            transform: scale(1.05);
+        }
+        
+        .photo-frame:first-child img {
+            height: 450px;
+        }
+        
+        /* INFO CARDS - REFINED */
         .cards-section {
-            padding: var(--space-80) 0;
-            background: var(--bg-primary);
+            padding: var(--space-100) 0;
+            background: var(--bg-secondary);
         }
         
         .section-header {
             text-align: center;
             max-width: 750px;
-            margin: 0 auto var(--space-64);
+            margin: 0 auto var(--space-80);
         }
         
         .section-intro {
             font-size: 1.125rem;
-            line-height: 1.7;
+            line-height: 1.8;
             margin: 0;
             color: var(--text-muted);
         }
@@ -265,42 +333,61 @@
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-32);
+            gap: var(--space-48);
         }
         
         .info-card {
             background: var(--white);
             border: 1px solid var(--border);
-            padding: var(--space-48);
+            padding: var(--space-64);
             border-radius: var(--radius);
             box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent-taupe);
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .info-card:hover::before {
+            height: 100%;
         }
         
         .info-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 32px rgba(35, 35, 35, 0.12);
-            border-color: var(--accent-taupe);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-elegant);
+            border-color: rgba(182, 163, 150, 0.3);
         }
         
         .card-icon {
-            font-size: 3rem;
-            margin-bottom: var(--space-24);
+            font-size: 3.5rem;
+            margin-bottom: var(--space-32);
             line-height: 1;
+            opacity: 0.9;
         }
         
         .info-card h3 {
             color: var(--accent-taupe);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-24);
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-32);
+            font-size: 1.25rem;
         }
         
         .info-card p {
             font-size: 1.0625rem;
-            line-height: 1.8;
+            line-height: 1.9;
             color: var(--text-primary);
-            margin-bottom: var(--space-16);
+            margin-bottom: var(--space-20);
         }
         
         .info-card p:last-child {
@@ -312,21 +399,36 @@
             font-weight: 600;
         }
         
-        /* CTA SECTION */
+        /* CTA SECTION - ELEGANT */
         .cta {
-            padding: var(--space-80) 0;
-            background: var(--bg-secondary);
+            padding: var(--space-100) 0;
+            background: linear-gradient(135deg, var(--accent-taupe) 0%, #9F8D81 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
         
         .cta h2 {
-            margin-bottom: var(--space-24);
+            margin-bottom: var(--space-32);
+            color: white;
         }
         
         .cta p {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             max-width: 60ch;
             margin: 0 auto var(--space-48);
+            color: rgba(255, 255, 255, 0.95);
         }
         
         .cta-buttons {
@@ -337,9 +439,9 @@
         }
         
         .btn-primary {
-            background: var(--accent-taupe);
-            color: white;
-            padding: 0.875rem 2rem;
+            background: white;
+            color: var(--text-primary);
+            padding: 1rem 2.5rem;
             border-radius: var(--radius);
             font-weight: 600;
             font-size: 0.9375rem;
@@ -347,20 +449,20 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            border: 2px solid var(--accent-taupe);
+            border: 2px solid white;
         }
         
         .btn-primary:hover {
-            background: #9F8D81;
-            border-color: #9F8D81;
+            background: transparent;
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(182, 163, 150, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
         
         .btn-secondary {
             background: transparent;
-            color: var(--text-primary);
-            padding: 0.875rem 2rem;
+            color: white;
+            padding: 1rem 2.5rem;
             border-radius: var(--radius);
             font-weight: 600;
             font-size: 0.9375rem;
@@ -368,12 +470,13 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            border: 2px solid var(--border);
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
         
         .btn-secondary:hover {
-            border-color: var(--accent-taupe);
-            color: var(--accent-taupe);
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
         
         /* FOOTER */
@@ -438,20 +541,20 @@
         @media (max-width: 1024px) {
             .hero-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-48);
+                gap: var(--space-64);
             }
             
-            .hero-image {
-                max-width: 500px;
+            .hero-image-wrapper {
+                max-width: 550px;
                 margin: 0 auto;
             }
             
             h1 {
-                font-size: 2.75rem;
+                font-size: 3rem;
             }
             
             h2 {
-                font-size: 1.75rem;
+                font-size: 2rem;
             }
             
             .cards-grid {
@@ -460,6 +563,11 @@
             
             .photo-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .photo-frame img,
+            .photo-frame:first-child img {
+                height: 450px;
             }
         }
         
@@ -495,28 +603,41 @@
             }
             
             h1 {
-                font-size: 2.25rem;
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: var(--space-64) 0;
             }
             
             .hero-image img {
+                height: 450px;
+            }
+            
+            .photo-gallery,
+            .cards-section,
+            .cta {
+                padding: var(--space-64) 0;
+            }
+            
+            .photo-frame img,
+            .photo-frame:first-child img {
                 height: 400px;
             }
             
-            .photo-item img {
-                height: 350px;
-            }
-            
             .info-card {
-                padding: var(--space-32);
+                padding: var(--space-48);
             }
             
             .cta-buttons {
                 flex-direction: column;
+                width: 100%;
             }
             
             .btn-primary,
             .btn-secondary {
                 width: 100%;
+                max-width: 350px;
                 text-align: center;
             }
             
@@ -532,19 +653,28 @@
             }
             
             h1 {
-                font-size: 1.875rem;
+                font-size: 2rem;
             }
             
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.625rem;
             }
             
             .hero-image img {
+                height: 400px;
+            }
+            
+            .photo-frame img,
+            .photo-frame:first-child img {
                 height: 350px;
             }
             
-            .photo-item img {
-                height: 300px;
+            .info-card {
+                padding: var(--space-32);
+            }
+            
+            .card-icon {
+                font-size: 2.75rem;
             }
         }
     </style>
@@ -576,31 +706,37 @@
         </div>
     </nav>
 
-    <!-- HERO WITH PHOTO -->
+    <!-- HERO WITH ELEGANT PHOTO -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <p class="eyebrow">Unsere Geschichte</p>
-                    <h1>Über Uns</h1>
+                    <p class="eyebrow">UNSERE GESCHICHTE</p>
+                    <h1>Über<br>Uns</h1>
                     <p class="hero-intro">Wir sind Michaela und Daniel Ferencz – ein Ehepaar, das einen neuen Lebensabschnitt beginnt. Nach über 30 Jahren in Mülheim an der Ruhr ziehen wir nach Hamburg, um näher bei unserer Familie zu sein. Erfahren Sie mehr über uns, unsere Werte und warum wir die idealen Mieter für Ihre Immobilie sind.</p>
                 </div>
-                <div class="hero-image">
-                    <img src="images/240706—NL-096.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&h=1000&fit=crop'">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image">
+                        <img src="images/240706—NL-096.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&h=1100&fit=crop'">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PHOTO SECTION -->
-    <section class="photo-section">
+    <!-- PHOTO GALLERY -->
+    <section class="photo-gallery">
         <div class="container">
+            <div class="gallery-header">
+                <p class="eyebrow">IMPRESSIONEN</p>
+                <h2>Wer Wir Sind</h2>
+            </div>
             <div class="photo-grid">
-                <div class="photo-item">
-                    <img src="images/IMG.jpg" alt="Michaela & Daniel" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=800&h=800&fit=crop'">
+                <div class="photo-frame">
+                    <img src="images/IMG.jpg" alt="Michaela & Daniel" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=800&h=900&fit=crop'">
                 </div>
-                <div class="photo-item">
-                    <img src="images/240706—NL-096.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=800&fit=crop'">
+                <div class="photo-frame">
+                    <img src="images/240706—NL-096.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=900&h=1000&fit=crop'">
                 </div>
             </div>
         </div>
@@ -610,7 +746,7 @@
     <section class="cards-section">
         <div class="container">
             <div class="section-header">
-                <p class="eyebrow">Wer Wir Sind</p>
+                <p class="eyebrow">WER WIR SIND</p>
                 <h2>Unsere Geschichte</h2>
                 <p class="section-intro">Alles, was Sie über uns wissen sollten – authentisch und persönlich.</p>
             </div>
@@ -716,4 +852,5 @@
 
 </body>
 </html>
+
 
