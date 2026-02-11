@@ -187,45 +187,20 @@
         
         /* PAGE HEADER */
         .page-header {
-            padding: var(--space-80) 0 var(--space-48);
+            padding: var(--space-80) 0 var(--space-64);
             text-align: center;
             background: var(--bg-primary);
         }
         
-        /* INTRO SECTION */
-        .intro-section {
-            padding: 0 0 var(--space-64);
+        /* PHOTO SECTION */
+        .photo-section {
+            padding: 0 0 var(--space-80);
             background: var(--bg-primary);
-        }
-        
-        .intro-text {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .intro-text p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin: 0;
-        }
-        
-        /* SPLIT LAYOUT SECTION */
-        .split-section {
-            padding: var(--space-80) 0;
-            background: var(--bg-secondary);
-        }
-        
-        .split-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-64);
-            align-items: center;
         }
         
         .photo-container {
-            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .photo-container img {
@@ -236,122 +211,9 @@
             box-shadow: var(--shadow-soft);
         }
         
-        .photo-caption {
-            text-align: center;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            margin-top: var(--space-16);
-            font-style: italic;
-        }
-        
-        /* QUICK FACTS */
-        .quick-facts h3 {
-            color: var(--accent-taupe);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-32);
-        }
-        
-        .fact-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-24);
-        }
-        
-        .fact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-16);
-        }
-        
-        .fact-icon {
-            font-size: 1.5rem;
-            min-width: 32px;
-            line-height: 1;
-        }
-        
-        .fact-content h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-12);
-            letter-spacing: 0.02em;
-        }
-        
-        .fact-content p {
-            margin: 0;
-            font-size: 0.9375rem;
-            line-height: 1.6;
-        }
-        
-        /* STORY SECTION */
-        .story-section {
-            padding: var(--space-80) 0;
-            background: var(--bg-primary);
-        }
-        
-        .story-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .story-section h2 {
-            text-align: center;
-            margin-bottom: var(--space-48);
-        }
-        
-        .story-section .eyebrow {
-            text-align: center;
-        }
-        
-        .story-paragraph {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin-bottom: var(--space-24);
-        }
-        
-        /* CTA SECTION */
-        .cta-section {
-            padding: var(--space-80) 0;
-            background: var(--bg-secondary);
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            margin-bottom: var(--space-24);
-        }
-        
-        .cta-section p {
-            font-size: 1.125rem;
-            max-width: 60ch;
-            margin: 0 auto var(--space-48);
-        }
-        
-        .btn-primary {
-            background: var(--accent-taupe);
-            color: white;
-            padding: 0.875rem 2rem;
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 0.9375rem;
-            letter-spacing: 0.02em;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent-taupe);
-        }
-        
-        .btn-primary:hover {
-            background: #9F8D81;
-            border-color: #9F8D81;
-            transform: translateY(-2px);
-        }
-        
         /* FOOTER */
         footer {
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
@@ -409,15 +271,6 @@
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .split-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-48);
-            }
-            
-            .photo-container {
-                order: -1;
-            }
-            
             h1 {
                 font-size: 2.5rem;
             }
@@ -471,10 +324,6 @@
             h2 {
                 font-size: 1.75rem;
             }
-            
-            .intro-text p {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
@@ -513,110 +362,12 @@
         </div>
     </section>
 
-    <!-- INTRO SECTION -->
-    <section class="intro-section">
+    <!-- PHOTO SECTION -->
+    <section class="photo-section">
         <div class="container">
-            <div class="intro-text">
-                <p>Wir sind Michaela und Daniel Ferencz, ein zuverlässiges Ehepaar auf der Suche nach unserem neuen Zuhause in Hamburg. Mit über 20 Jahren perfekter Miethistorie, stabilen Arbeitsverhältnissen und dem Wunsch, näher bei unserer Familie zu sein, freuen wir uns darauf, langfristig in Hamburg sesshaft zu werden.</p>
+            <div class="photo-container">
+                <img src="images/240706.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1511895426328-dc8714191300?w=900&h=600&fit=crop'">
             </div>
-        </div>
-    </section>
-
-    <!-- SPLIT LAYOUT SECTION -->
-    <section class="split-section">
-        <div class="container">
-            <div class="split-grid">
-                <!-- PHOTO -->
-                <div class="photo-container">
-                    <img src="images/240706.jpg" alt="Familie Ferencz" onerror="this.src='https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop'">
-                    <p class="photo-caption">Familie Ferencz – Gemeinsam stark</p>
-                </div>
-                
-                <!-- QUICK FACTS -->
-                <div class="quick-facts">
-                    <h3>Auf Einen Blick</h3>
-                    <ul class="fact-list">
-                        <li class="fact-item">
-                            <div class="fact-icon">👥</div>
-                            <div class="fact-content">
-                                <h4>Ehepaar</h4>
-                                <p>Verheiratet, keine Kinder im Haushalt, erwachsene Kinder leben in Hamburg</p>
-                            </div>
-                        </li>
-                        
-                        <li class="fact-item">
-                            <div class="fact-icon">🏠</div>
-                            <div class="fact-content">
-                                <h4>20+ Jahre Miethistorie</h4>
-                                <p>Seit März 2005 in derselben Wohnung in Mülheim an der Ruhr – perfekte Zahlungshistorie</p>
-                            </div>
-                        </li>
-                        
-                        <li class="fact-item">
-                            <div class="fact-icon">💼</div>
-                            <div class="fact-content">
-                                <h4>Beide Berufstätig</h4>
-                                <p>Michaela: Kindheits- und Familienpädagogin<br>Daniel: Bauleiter<br>Beide mit unbefristeten Verträgen</p>
-                            </div>
-                        </li>
-                        
-                        <li class="fact-item">
-                            <div class="fact-icon">💰</div>
-                            <div class="fact-content">
-                                <h4>Finanzielle Stabilität</h4>
-                                <p>€6.000 Netto-Monatseinkommen, einwandfreie SCHUFA, Kaution sofort verfügbar</p>
-                            </div>
-                        </li>
-                        
-                        <li class="fact-item">
-                            <div class="fact-icon">🚭</div>
-                            <div class="fact-content">
-                                <h4>Nichtraucher</h4>
-                                <p>Beide Nichtraucher, keine Haustiere, ruhiger Lebensstil</p>
-                            </div>
-                        </li>
-                        
-                        <li class="fact-item">
-                            <div class="fact-icon">❤️</div>
-                            <div class="fact-content">
-                                <h4>Familienorientiert</h4>
-                                <p>Umzug nach Hamburg, um näher bei unseren Kindern und Enkelkindern zu sein</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STORY SECTION -->
-    <section class="story-section">
-        <div class="container">
-            <div class="story-content">
-                <p class="eyebrow">Unsere Geschichte</p>
-                <h2>Warum Hamburg?</h2>
-                
-                <p class="story-paragraph">
-                    Nach über 20 Jahren in Mülheim an der Ruhr ist es nun an der Zeit für einen neuen Lebensabschnitt. Unsere Kinder haben sich in Hamburg niedergelassen und wir möchten Teil ihres Alltags sein – besonders jetzt, wo Enkelkinder hinzugekommen sind.
-                </p>
-                
-                <p class="story-paragraph">
-                    Hamburg bietet uns nicht nur die Nähe zur Familie, sondern auch eine lebendige Stadt mit hoher Lebensqualität. Wir suchen eine Wohnung in Schnelsen oder Umgebung, wo wir uns langfristig wohlfühlen und ein neues Kapitel beginnen können.
-                </p>
-                
-                <p class="story-paragraph">
-                    Als zuverlässige Mieter mit perfekter Zahlungshistorie und ausgezeichneten Referenzen freuen wir uns darauf, eine vertrauensvolle Beziehung mit unserem zukünftigen Vermieter aufzubauen. Wir behandeln jede Wohnung mit Respekt und Sorgfalt, als wäre es unser eigenes Zuhause.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Lernen Sie Uns Besser Kennen</h2>
-            <p>Haben Sie Fragen oder möchten Sie mehr über uns erfahren? Wir freuen uns darauf, von Ihnen zu hören.</p>
-            <a href="contact.html" class="btn-primary">Kontakt Aufnehmen</a>
         </div>
     </section>
 
@@ -667,6 +418,7 @@
 
 </body>
 </html>
+
 
 
 
