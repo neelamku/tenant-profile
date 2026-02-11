@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us — Tenant Profile Hamburg</title>
+    <title>Über Uns — Michaela & Daniel Ferencz</title>
+    <meta name="description" content="Erfahren Sie mehr über uns - Ein Ehepaar, das nach Hamburg zieht, um näher bei der Familie zu sein.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,6 +26,7 @@
             --space-32: 32px;
             --space-48: 48px;
             --space-64: 64px;
+            --space-80: 80px;
             --radius: 14px;
             --radius-sm: 8px;
             --max-width: 1120px;
@@ -61,8 +63,8 @@
         }
         
         h1 {
-            font-size: 4rem;
-            line-height: 1;
+            font-size: 3.5rem;
+            line-height: 1.05;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-bottom: var(--space-32);
@@ -77,10 +79,10 @@
         }
         
         h3 {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             font-weight: 600;
             letter-spacing: 0.02em;
-            margin-bottom: var(--space-12);
+            margin-bottom: var(--space-16);
         }
         
         p {
@@ -128,11 +130,12 @@
         
         .nav-brand {
             font-family: var(--font-heading);
-            font-size: 1.22rem;  /* Slightly smaller for longer name */
+            font-size: 1.125rem;
             font-weight: 600;
             color: var(--text-primary);
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
             text-decoration: none;
+            line-height: 1.2;
         }
         
         .nav-menu {
@@ -182,225 +185,115 @@
             display: none;
         }
         
-        /* HERO - EDITORIAL SPLIT */
-        .hero-editorial {
-            min-height: calc(100vh - 80px);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: var(--bg-primary);
-        }
-        
-        /* Left Side - Text */
-        .hero-text {
-            padding: var(--space-64);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-right: 1px solid var(--border);
-        }
-        
-        .hero-text h1 {
-            line-height: 0.95;
-        }
-        
-        .hero-text .intro {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin-bottom: var(--space-32);
-            max-width: 32ch;
-        }
-        
-        .stats-mini {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-32);
-            padding-top: var(--space-32);
-            border-top: 1px solid var(--border);
-        }
-        
-        .stat-mini {
-            
-        }
-        
-        .stat-mini-number {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--accent-taupe);
-            line-height: 1;
-            margin-bottom: var(--space-12);
-        }
-        
-        .stat-mini-label {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-        
-        /* Right Side - Image */
-        .hero-image-full {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-image-full img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-        
-        /* PROFILE GRID */
-        .profile-section {
-            padding: var(--space-64) 0;
-            background: var(--bg-secondary);
-        }
-        
-        .profile-header {
+        /* PAGE HEADER */
+        .page-header {
+            padding: var(--space-80) 0 var(--space-64);
             text-align: center;
-            margin-bottom: var(--space-64);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .profile-header h2 {
-            margin-bottom: var(--space-24);
-        }
-        
-        .profile-header p {
-            font-size: 1.0625rem;
-            line-height: 1.7;
-            margin: 0;
-        }
-        
-        .profile-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-24);
-        }
-        
-        .profile-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: var(--space-32);
-            border-radius: var(--radius);
-        }
-        
-        .profile-card-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: var(--space-24);
-        }
-        
-        .profile-card h3 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-16);
-            color: var(--accent-taupe);
-        }
-        
-        .profile-card p {
-            font-size: 0.9375rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-        
-        /* DETAILS TABLE */
-        .details-section {
-            padding: var(--space-64) 0;
             background: var(--bg-primary);
         }
         
-        .details-wrapper {
-            max-width: 900px;
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 65ch;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* STORY SECTION */
+        .story-section {
+            padding: var(--space-64) 0;
+            background: var(--bg-secondary);
+        }
+        
+        .story-content {
+            max-width: 850px;
             margin: 0 auto;
         }
         
-        .details-header {
-            text-align: center;
-            margin-bottom: var(--space-48);
-        }
-        
-        .details-table {
+        .story-block {
             background: var(--white);
-            border: 1px solid var(--border);
+            padding: var(--space-64);
             border-radius: var(--radius);
-            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: var(--space-48);
+            box-shadow: var(--shadow-soft);
         }
         
-        .table-section {
-            padding: var(--space-32);
-            border-bottom: 1px solid var(--border);
+        .story-block:last-child {
+            margin-bottom: 0;
         }
         
-        .table-section:last-child {
-            border-bottom: none;
-        }
-        
-        .table-section h3 {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .story-block h2 {
             color: var(--accent-taupe);
+            margin-bottom: var(--space-32);
+        }
+        
+        .story-block p {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--text-primary);
             margin-bottom: var(--space-24);
         }
         
-        .table-rows {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-16);
+        .story-block p:last-child {
+            margin-bottom: 0;
         }
         
-        .table-row {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: var(--space-24);
-            padding: var(--space-12) 0;
+        .story-block strong {
+            color: var(--accent-taupe);
+            font-weight: 600;
         }
         
-        .table-label {
-            font-weight: 500;
-            font-size: 0.9375rem;
-            color: var(--text-primary);
+        .highlight-text {
+            background: var(--bg-secondary);
+            padding: var(--space-24) var(--space-32);
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--accent-taupe);
+            margin: var(--space-32) 0;
         }
         
-        .table-value {
-            font-size: 0.9375rem;
+        .highlight-text p {
+            margin: 0;
+            font-size: 1.0625rem;
+            font-style: italic;
             color: var(--text-muted);
         }
         
-        /* CTA BAND */
-        .cta-band {
-            background: var(--accent-taupe);
-            padding: var(--space-64) 0;
-            text-align: center;
-            color: white;
+        /* DIVIDER */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: var(--space-48) 0;
         }
         
-        .cta-band h2 {
-            color: white;
+        /* CTA SECTION */
+        .cta {
+            padding: var(--space-80) 0;
+            background: var(--bg-primary);
+            text-align: center;
+        }
+        
+        .cta h2 {
             margin-bottom: var(--space-24);
         }
         
-        .cta-band p {
-            color: rgba(255, 255, 255, 0.9);
+        .cta p {
             font-size: 1.125rem;
             max-width: 60ch;
-            margin: 0 auto var(--space-32);
+            margin: 0 auto var(--space-48);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-24);
+            justify-content: center;
+            align-items: center;
         }
         
         .btn-primary {
-            background: white;
-            color: var(--accent-taupe);
+            background: var(--accent-taupe);
+            color: white;
             padding: 0.875rem 2rem;
             border-radius: var(--radius);
             font-weight: 600;
@@ -409,31 +302,52 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            border: 2px solid white;
+            border: 2px solid var(--accent-taupe);
         }
         
         .btn-primary:hover {
+            background: #9F8D81;
+            border-color: #9F8D81;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(182, 163, 150, 0.3);
+        }
+        
+        .btn-secondary {
             background: transparent;
-            color: white;
+            color: var(--text-primary);
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent-taupe);
+            color: var(--accent-taupe);
         }
         
         /* FOOTER */
         footer {
             background: var(--bg-secondary);
-            padding: var(--space-64) 0 var(--space-32);
+            padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
         
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-48);
-            margin-bottom: var(--space-48);
+            gap: var(--space-64);
+            margin-bottom: var(--space-64);
         }
         
         .footer-section h4 {
             font-family: var(--font-heading);
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: var(--space-24);
             letter-spacing: 0.02em;
@@ -465,43 +379,28 @@
         
         .footer-bottom {
             text-align: center;
-            padding-top: var(--space-32);
+            padding-top: var(--space-48);
             border-top: 1px solid var(--border);
         }
         
         .footer-bottom p {
-            font-size: 0.8125rem;
+            font-size: 0.875rem;
             color: var(--text-muted);
             margin: 0;
         }
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero-editorial {
-                grid-template-columns: 1fr;
-                min-height: auto;
-            }
-            
-            .hero-text {
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-                padding: var(--space-48) var(--space-32);
-            }
-            
-            .hero-image-full {
-                height: 500px;
-            }
-            
-            .profile-grid {
-                grid-template-columns: 1fr;
-            }
-            
             h1 {
-                font-size: 3rem;
+                font-size: 2.75rem;
             }
             
             h2 {
                 font-size: 1.75rem;
+            }
+            
+            .story-block {
+                padding: var(--space-48);
             }
         }
         
@@ -510,7 +409,16 @@
                 grid-template-columns: 1fr auto;
             }
             
+            .nav-brand {
+                font-size: 0.9375rem;
+                letter-spacing: 0.03em;
+            }
+            
             .nav-menu {
+                display: none;
+            }
+            
+            .nav-cta {
                 display: none;
             }
             
@@ -527,31 +435,44 @@
                 background: var(--text-primary);
             }
             
+            h1 {
+                font-size: 2.25rem;
+            }
+            
+            .story-block {
+                padding: var(--space-32);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
             .footer-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .table-row {
-                grid-template-columns: 1fr;
-                gap: var(--space-12);
-            }
-            
-            .stats-mini {
-                grid-template-columns: 1fr;
-                gap: var(--space-24);
             }
         }
         
         @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 0.875rem;
+                letter-spacing: 0.02em;
+            }
+            
             h1 {
-                font-size: 2.25rem;
+                font-size: 1.875rem;
             }
             
             h2 {
                 font-size: 1.5rem;
             }
             
-            .hero-text .intro {
+            .page-subtitle {
                 font-size: 1.0625rem;
             }
         }
@@ -565,15 +486,15 @@
             <a href="index.html" class="nav-brand">Michaela & Daniel Ferencz</a>
             
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="financial.html">Financial Info</a></li>
-                <li><a href="rental-history.html">Rental History</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="about.html" class="active">Über Uns</a></li>
+                <li><a href="financial.html">Finanzen</a></li>
+                <li><a href="rental-history.html">Mieterhistorie</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
             </ul>
             
             <div class="nav-cta">
-                <a href="contact.html" class="btn-nav">Inquire</a>
+                <a href="contact.html#message" class="btn-nav">Nachricht Senden</a>
             </div>
             
             <div class="hamburger">
@@ -584,187 +505,80 @@
         </div>
     </nav>
 
-    <!-- HERO - EDITORIAL SPLIT SCREEN -->
-    <section class="hero-editorial">
-        <!-- Left: Text -->
-        <div class="hero-text">
-            <p class="eyebrow">Who We Are</p>
-            <h1>About<br>Us</h1>
-            <p class="intro">Professional couple seeking a long-term home in Hamburg. We bring financial stability, perfect rental history, and a commitment to being exemplary tenants.</p>
-            
-            <div class="stats-mini">
-                <div class="stat-mini">
-                    <div class="stat-mini-number">€6K+</div>
-                    <div class="stat-mini-label">Net monthly income with 3.5× rent ratio</div>
-                </div>
-                <div class="stat-mini">
-                    <div class="stat-mini-number">100%</div>
-                    <div class="stat-mini-label">Perfect payment record & SCHUFA score</div>
-                </div>
-                <div class="stat-mini">
-                    <div class="stat-mini-number">5+ Yrs</div>
-                    <div class="stat-mini-label">Long-term commitment to Hamburg</div>
-                </div>
-                <div class="stat-mini">
-                    <div class="stat-mini-number">Zero</div>
-                    <div class="stat-mini-label">Complaints from neighbors ever</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Right: Full-bleed Image -->
-        <div class="hero-image-full">
-            <img src="images/240706—NL-096.jpg" alt="Professional Couple" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=1400&fit=crop'">
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <p class="eyebrow">Unsere Geschichte</p>
+            <h1>Über Uns</h1>
+            <p class="page-subtitle">Wir sind Michaela und Daniel Ferencz – ein Ehepaar, das einen neuen Lebensabschnitt beginnt. Erfahren Sie, wer wir sind und warum Hamburg unser neues Zuhause werden soll.</p>
         </div>
     </section>
 
-    <!-- PROFILE OVERVIEW -->
-    <section class="profile-section">
+    <!-- STORY SECTIONS -->
+    <section class="story-section">
         <div class="container">
-            <div class="profile-header">
-                <p class="eyebrow">Our Story</p>
-                <h2>Building Our Future in Hamburg</h2>
-                <p>We are a professional couple in our early 30s, relocating to Hamburg for exciting career opportunities. Both of us have accepted permanent positions with reputable companies, and we're seeking a quality apartment where we can establish long-term roots in this vibrant city.</p>
-            </div>
-            
-            <div class="profile-grid">
-                <div class="profile-card">
-                    <div class="profile-card-icon">👥</div>
-                    <h3>Household</h3>
-                    <p>Professional couple, early 30s. Non-smokers, no pets. Quiet, respectful lifestyle with zero neighbor complaints ever.</p>
-                </div>
+            <div class="story-content">
                 
-                <div class="profile-card">
-                    <div class="profile-card-icon">💼</div>
-                    <h3>Employment</h3>
-                    <p>Both full-time employed with permanent contracts (Unbefristet) in Hamburg-based positions. Strong job security.</p>
+                <!-- WER WIR SIND -->
+                <div class="story-block">
+                    <p class="eyebrow">Wer Wir Sind</p>
+                    <h2>Unsere Geschichte</h2>
+                    <p>Wir sind ein berufstätiges Ehepaar, <strong>55 und 57 Jahre alt</strong>, das nach Hamburg ziehen möchte, um näher bei unseren Kindern und deren junger Familie zu sein. Familie und Zusammenhalt sind uns sehr wichtig, und dieser Umzug ermöglicht es uns, Zeit mit unseren Kindern und Enkelkindern zu verbringen und sie im Alltag zu unterstützen.</p>
+                    <p>Nach über <strong>30 Jahren in Mülheim an der Ruhr</strong>, wo wir beruflich fest verwurzelt sind, beginnen wir nun ein neues Kapitel. Hamburg bietet uns die Möglichkeit, unsere Familie öfter zu sehen und ein Teil ihres Lebens zu sein, während wir weiterhin unseren beruflichen Verpflichtungen nachkommen.</p>
                 </div>
-                
-                <div class="profile-card">
-                    <div class="profile-card-icon">💰</div>
-                    <h3>Financial</h3>
-                    <p>€6,000+ net monthly income. Excellent SCHUFA score with no negative entries. 3.5× income-to-rent ratio.</p>
-                </div>
-                
-                <div class="profile-card">
-                    <div class="profile-card-icon">🏠</div>
-                    <h3>Rental History</h3>
-                    <p>Perfect payment record across all previous rentals. Excellent landlord references available for contact.</p>
-                </div>
-                
-                <div class="profile-card">
-                    <div class="profile-card-icon">🌍</div>
-                    <h3>Languages</h3>
-                    <p>Fluent English speakers with intermediate German (B1-B2). Clear communication in both languages.</p>
-                </div>
-                
-                <div class="profile-card">
-                    <div class="profile-card-icon">⏰</div>
-                    <h3>Commitment</h3>
-                    <p>Seeking long-term home (5+ years minimum). Move-in March 2026 or later, with flexible timing.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- DETAILED INFORMATION TABLE -->
-    <section class="details-section">
-        <div class="container">
-            <div class="details-wrapper">
-                <div class="details-header">
-                    <p class="eyebrow">Complete Profile</p>
-                    <h2>Essential Details</h2>
-                </div>
-                
-                <div class="details-table">
-                    <div class="table-section">
-                        <h3>Personal Information</h3>
-                        <div class="table-rows">
-                            <div class="table-row">
-                                <div class="table-label">Household Composition</div>
-                                <div class="table-value">Professional couple, no children</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Ages</div>
-                                <div class="table-value">Early 30s</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Pets</div>
-                                <div class="table-value">None (no plans to get any)</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Smoking</div>
-                                <div class="table-value">Non-smokers</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Personality</div>
-                                <div class="table-value">Quiet, respectful, responsible</div>
-                            </div>
-                        </div>
+                <!-- WARUM HAMBURG -->
+                <div class="story-block">
+                    <p class="eyebrow">Warum Hamburg</p>
+                    <h2>Näher Bei Der Familie</h2>
+                    <p>Der Hauptgrund für unseren Umzug nach Hamburg ist ganz klar: <strong>unsere Familie</strong>. Unsere Kinder haben hier ihr Leben aufgebaut, und wir möchten Teil ihrer und der Leben unserer Enkelkinder sein. Die Möglichkeit, regelmäßig Zeit mit ihnen zu verbringen, gemeinsame Momente zu teilen und für sie da zu sein, bedeutet uns alles.</p>
+                    
+                    <div class="highlight-text">
+                        <p>"Familie ist das Wichtigste im Leben. Der Umzug nach Hamburg bringt uns dorthin, wo wir am meisten gebraucht werden und am glücklichsten sind."</p>
                     </div>
                     
-                    <div class="table-section">
-                        <h3>Professional Details</h3>
-                        <div class="table-rows">
-                            <div class="table-row">
-                                <div class="table-label">Employment Status</div>
-                                <div class="table-value">Both full-time employed</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Contract Type</div>
-                                <div class="table-value">Permanent (Unbefristet)</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Work Location</div>
-                                <div class="table-value">Hamburg-based positions</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Work Schedule</div>
-                                <div class="table-value">Regular office hours (9am–6pm)</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Job Stability</div>
-                                <div class="table-value">Long-term career positions</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="table-section">
-                        <h3>Hamburg Search</h3>
-                        <div class="table-rows">
-                            <div class="table-row">
-                                <div class="table-label">Target Move-in Date</div>
-                                <div class="table-value">March 2026 or later (flexible)</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Desired Location</div>
-                                <div class="table-value">Eimsbüttel, Altona, Winterhude, Eppendorf</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Apartment Size</div>
-                                <div class="table-value">60–80 m², 2–3 rooms</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Rental Duration</div>
-                                <div class="table-value">Long-term commitment (5+ years ideal)</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-label">Why Hamburg</div>
-                                <div class="table-value">Career opportunities & building permanent life</div>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Wir suchen daher gezielt nach einer Wohnung in der Nähe von <strong>Schnelsen</strong>, wo unsere Familie lebt, um kurze Wege und häufige Besuche zu ermöglichen.</p>
                 </div>
+
+                <!-- UNSER LEBENSSTIL -->
+                <div class="story-block">
+                    <p class="eyebrow">Unser Lebensstil</p>
+                    <h2>Wie Wir Leben</h2>
+                    <p>Wir führen einen <strong>ruhigen und respektvollen Lebensstil</strong>. Beide sind wir Nichtraucher und haben keine Haustiere. Unser Alltag ist strukturiert und ausgeglichen – wir schätzen die Ruhe zu Hause und pflegen gute Nachbarschaftsbeziehungen.</p>
+                    <p>Pünktliche Mietzahlungen und ein sorgsamer Umgang mit unserem Zuhause sind für uns selbstverständlich. Wir legen großen Wert darauf, vorbildliche Mieter zu sein und eine vertrauensvolle Beziehung zu unserem Vermieter aufzubauen.</p>
+                    <p>Unser Ziel ist es, ein langfristiges Zuhause zu finden, in dem wir uns wohlfühlen und in dem wir ein Teil der Gemeinschaft sein können. Wir suchen nicht nur eine Wohnung, sondern einen Ort, an dem wir die nächsten Jahre unseres Lebens verbringen möchten.</p>
+                </div>
+
+                <!-- BERUFLICHE SITUATION -->
+                <div class="story-block">
+                    <p class="eyebrow">Beruflich</p>
+                    <h2>Unsere Arbeit</h2>
+                    <p>Beruflich sind wir beide fest etabliert mit <strong>unbefristeten Arbeitsverträgen</strong> in stabilen Unternehmen. Wir haben über 30 Jahre Berufserfahrung und genießen sichere Positionen mit ausgezeichnetem Einkommen.</p>
+                    <p>Der Umzug nach Hamburg bedeutet einen Wechsel unseres Arbeitsortes, aber unsere berufliche Stabilität bleibt davon unberührt. Wir verfügen über exzellente finanzielle Voraussetzungen und können alle erforderlichen Nachweise problemlos vorlegen.</p>
+                </div>
+
+                <!-- WAS WIR SUCHEN -->
+                <div class="story-block">
+                    <p class="eyebrow">Was Wir Suchen</p>
+                    <h2>Unser Zuhause In Hamburg</h2>
+                    <p>Wir suchen eine <strong>gepflegte Wohnung mit 70–100 m² und 3 Zimmern</strong> in ruhiger Lage, idealerweise in der Nähe von Schnelsen oder den umliegenden Stadtteilen. Unser Budget liegt bei <strong>bis zu €1.800 Warmmiete</strong>.</p>
+                    <p>Besonders wichtig ist uns eine <strong>langfristige Vermietung</strong>. Wir planen, mindestens 5 Jahre zu bleiben – wahrscheinlich deutlich länger. Wir suchen ein echtes Zuhause, keine Übergangslösung.</p>
+                    <p>Der frühestmögliche Einzug wäre <strong>ab Mai 2026</strong>, aber wir sind zeitlich flexibel und können uns nach Ihrem Zeitplan richten.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CTA BAND -->
-    <section class="cta-band">
+    <!-- CTA -->
+    <section class="cta">
         <div class="container">
-            <h2>Ready to Learn More?</h2>
-            <p>View our complete financial information and rental history, or get in touch to discuss your property.</p>
-            <a href="contact.html" class="btn-primary">Contact Us</a>
+            <h2>Möchten Sie Mehr Erfahren?</h2>
+            <p>Wir würden uns freuen, von Ihnen zu hören und weitere Details über Ihre Immobilie zu besprechen.</p>
+            <div class="cta-buttons">
+                <a href="financial.html" class="btn-primary">Finanzielle Details</a>
+                <a href="contact.html" class="btn-secondary">Kontakt Aufnehmen</a>
+            </div>
         </div>
     </section>
 
@@ -773,31 +587,31 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Schnelllinks</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="financial.html">Financial Info</a></li>
-                        <li><a href="rental-history.html">Rental History</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="about.html">Über Uns</a></li>
+                        <li><a href="financial.html">Finanzen</a></li>
+                        <li><a href="rental-history.html">Mieterhistorie</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: your.email@example.com</p>
-                    <p>Phone: +49 XXX XXXXXXX</p>
+                    <h4>Kontakt</h4>
+                    <p>E-Mail: your.email@example.com</p>
+                    <p>Telefon: +49 XXX XXXXXXX</p>
                     <p>WhatsApp: +49 XXX XXXXXXX</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Searching For</h4>
-                    <p>60–80 m², 2–3 rooms</p>
-                    <p>Eimsbüttel, Altona, Winterhude</p>
-                    <p>Move-in: March 2026+</p>
+                    <h4>Wir Suchen</h4>
+                    <p>70–100 m², 3 Zimmer</p>
+                    <p>Schnelsen und Umgebung</p>
+                    <p>Einzug: Ab Mai 2026</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2026 Tenant Profile Hamburg · All data handling complies with GDPR regulations</p>
+                <p>© 2026 Michaela & Daniel Ferencz · Alle Datenverarbeitungen entsprechen der DSGVO</p>
             </div>
         </div>
     </footer>
@@ -815,5 +629,4 @@
 
 </body>
 </html>
-
 
