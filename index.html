@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenant Profile — Premium Hamburg Apartment Search</title>
+    <title>Mieterprofil Hamburg — Michaela & Daniel Ferencz</title>
+    <meta name="description" content="Professionelles Paar sucht langfristige Wohnung in Hamburg. Ausgezeichnete Bonität, perfekte Mieterhistorie und unbefristete Arbeitsverträge.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ==============================================
-           BOUTIQUE INTERIOR STUDIO THEME
-           Quiet Luxury • Editorial • Minimalist
-           ============================================== */
-        
         :root {
-            /* Brand Tokens */
             --bg-primary: #F8F6F4;
             --bg-secondary: #E8E6E4;
             --accent-taupe: #B6A396;
@@ -23,35 +18,21 @@
             --text-muted: #6F6A66;
             --border: rgba(35, 35, 35, 0.12);
             --white: #FFFFFF;
-            
-            /* Typography */
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Inter', sans-serif;
-            
-            /* Spacing Scale */
-            --space-8: 8px;
             --space-12: 12px;
             --space-16: 16px;
             --space-24: 24px;
             --space-32: 32px;
             --space-48: 48px;
-            --space-72: 72px;
-            
-            /* Border Radius */
+            --space-64: 64px;
+            --space-80: 80px;
             --radius: 14px;
             --radius-sm: 8px;
-            
-            /* Max Width */
             --max-width: 1120px;
-            
-            /* Shadows */
             --shadow-soft: 0 4px 16px rgba(35, 35, 35, 0.06);
-            --shadow-medium: 0 8px 24px rgba(35, 35, 35, 0.08);
         }
         
-        /* ==============================================
-           RESET & BASE
-           ============================================== */
         * {
             margin: 0;
             padding: 0;
@@ -75,9 +56,6 @@
             display: block;
         }
         
-        /* ==============================================
-           TYPOGRAPHY
-           ============================================== */
         h1, h2, h3 {
             font-family: var(--font-heading);
             font-weight: 600;
@@ -85,25 +63,23 @@
         }
         
         h1 {
-            font-size: 3.25rem;
-            font-weight: 600;
-            line-height: 1.05;
+            font-size: 4.5rem;
+            line-height: 1;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: var(--space-24);
+            margin-bottom: var(--space-32);
         }
         
         h2 {
             font-size: 2.5rem;
-            font-weight: 600;
-            line-height: 1.15;
+            line-height: 1.1;
             letter-spacing: 0.04em;
             text-transform: uppercase;
             margin-bottom: var(--space-24);
         }
         
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
             letter-spacing: 0.02em;
             margin-bottom: var(--space-16);
@@ -123,21 +99,16 @@
             text-transform: uppercase;
             letter-spacing: 0.25em;
             color: var(--accent-taupe);
-            margin-bottom: var(--space-12);
+            margin-bottom: var(--space-16);
         }
         
-        /* ==============================================
-           CONTAINER
-           ============================================== */
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 var(--space-32);
         }
         
-        /* ==============================================
-           NAVIGATION - Minimal & Clean
-           ============================================== */
+        /* NAVIGATION */
         .navbar {
             background: var(--bg-primary);
             border-bottom: 1px solid var(--border);
@@ -159,10 +130,11 @@
         
         .nav-brand {
             font-family: var(--font-heading);
-            font-size: 1.25rem;  /* Slightly smaller for longer name */
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-primary);
             letter-spacing: 0.02em;
+            text-decoration: none;
         }
         
         .nav-menu {
@@ -201,8 +173,6 @@
             letter-spacing: 0.02em;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
         }
         
         .btn-nav:hover {
@@ -212,122 +182,75 @@
         
         .hamburger {
             display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
         }
         
-        .hamburger span {
-            width: 24px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-        
-        /* ==============================================
-           HERO - LUXE DOUBLE MAT FRAME
-           ============================================== */
+        /* HERO SECTION */
         .hero {
-            padding: var(--space-72) 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: var(--space-80) 0;
             background: var(--bg-primary);
         }
         
-        .hero-grid-single {
+        .hero-grid {
             display: grid;
-            grid-template-columns: 450px 1fr;
-            gap: var(--space-72);
+            grid-template-columns: 1fr 480px;
+            gap: var(--space-80);
             align-items: center;
         }
         
-        .hero-image-elegant {
-            position: relative;
+        .hero-content h1 {
+            margin-bottom: var(--space-32);
         }
         
-        /* Double Mat Effect */
-        .frame-outer {
-            background: #F5F3F1;
-            padding: 32px;
-            box-shadow: 0 8px 32px rgba(35, 35, 35, 0.12);
-            border: 1px solid rgba(182, 163, 150, 0.15);
-        }
-        
-        .frame-inner {
-            background: white;
-            padding: 20px;
-            border: 1px solid rgba(182, 163, 150, 0.2);
-            position: relative;
-        }
-        
-        .frame-inner::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(182, 163, 150, 0.15);
-            pointer-events: none;
-        }
-        
-        .hero-image-elegant img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-            display: block;
-            filter: saturate(0.88) contrast(1.03);
-        }
-        
-        /* Center Content */
-        .hero-content {
-            text-align: center;
-            padding: 0 var(--space-24);
-        }
-        
-        .hero-content p.intro {
-            font-size: 1.0625rem;
-            line-height: 1.7;
+        .hero-intro {
+            font-size: 1.375rem;
+            line-height: 1.6;
             color: var(--text-muted);
-            margin-bottom: var(--space-32);
-            max-width: 42ch;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: var(--space-48);
+            max-width: 36ch;
         }
         
-        /* Buttons */
-        .hero-buttons {
+        .hero-cta {
             display: flex;
-            gap: var(--space-16);
-            justify-content: center;
-            margin-bottom: var(--space-32);
-        }
-        
-        .btn-primary,
-        .btn-secondary {
-            padding: 0.875rem 2rem;
-            border-radius: var(--radius);
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 0.9375rem;
-            letter-spacing: 0.02em;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: inline-block;
+            gap: var(--space-24);
+            align-items: center;
         }
         
         .btn-primary {
             background: var(--accent-taupe);
             color: white;
-            border: 1px solid var(--accent-taupe);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-taupe);
         }
         
         .btn-primary:hover {
             background: #9F8D81;
             border-color: #9F8D81;
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(182, 163, 150, 0.3);
         }
         
         .btn-secondary {
             background: transparent;
             color: var(--text-primary);
-            border: 1px solid var(--border);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
         }
         
         .btn-secondary:hover {
@@ -335,272 +258,197 @@
             color: var(--accent-taupe);
         }
         
-        /* Trust Badges */
-        .trust-badges {
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        /* HIGHLIGHTS BAR */
+        .highlights {
+            background: var(--accent-taupe);
+            padding: var(--space-64) 0;
+        }
+        
+        .highlights-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-12);
+            gap: var(--space-64);
         }
         
-        .badge {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: var(--space-12) var(--space-16);
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-muted);
+        .highlight-item {
             text-align: center;
-            letter-spacing: 0.02em;
-        }
-        
-        /* ==============================================
-           TAUPE BAND - Left Text / Right Image
-           ============================================== */
-        .taupe-band {
-            background: var(--accent-taupe);
-            padding: 0;
-            margin: var(--space-72) 0;
-        }
-        
-        .taupe-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: stretch;
-            min-height: 500px;
-        }
-        
-        .taupe-content {
-            padding: var(--space-72) var(--space-72);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             color: white;
         }
         
-        .taupe-content .eyebrow {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .taupe-content h2 {
-            color: white;
-            margin-bottom: var(--space-24);
-        }
-        
-        .taupe-content p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: var(--space-24);
-            font-size: 1.0625rem;
-            line-height: 1.7;
-        }
-        
-        .btn-outline-light {
-            background: transparent;
-            color: white;
-            border: 1.5px solid white;
-            padding: 0.875rem 2rem;
-            border-radius: var(--radius);
+        .highlight-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
             font-weight: 600;
-            font-size: 0.9375rem;
+            line-height: 1;
+            margin-bottom: var(--space-16);
             letter-spacing: 0.02em;
-            text-decoration: none;
-            display: inline-block;
-            width: fit-content;
-            transition: all 0.3s ease;
         }
         
-        .btn-outline-light:hover {
-            background: white;
-            color: var(--accent-taupe);
+        .highlight-label {
+            font-size: 0.9375rem;
+            opacity: 0.9;
+            letter-spacing: 0.02em;
         }
         
-        .taupe-image {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .taupe-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* ==============================================
-           SECTION - Key Facts Grid
-           ============================================== */
-        .section {
-            padding: var(--space-72) 0;
+        /* WHY US SECTION */
+        .why-us {
+            padding: var(--space-80) 0;
+            background: var(--bg-secondary);
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: var(--space-48);
+            max-width: 700px;
+            margin: 0 auto var(--space-64);
         }
         
         .section-intro {
-            font-size: 1.0625rem;
-            color: var(--text-muted);
-            max-width: 56ch;
-            margin: 0 auto;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin: 0;
         }
         
-        .facts-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--space-32);
         }
         
-        .fact-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: var(--space-32);
-            border-radius: var(--radius);
-            text-align: center;
-        }
-        
-        .fact-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-16);
-            opacity: 0.85;
-        }
-        
-        .fact-card h3 {
-            font-size: 1.125rem;
-            color: var(--text-primary);
-            margin-bottom: var(--space-12);
-            letter-spacing: 0.02em;
-        }
-        
-        .fact-card p {
-            font-size: 0.9375rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin: 0;
-        }
-        
-        /* ==============================================
-           TWO-COLUMN SPLIT - Alternating
-           ============================================== */
-        .split-section {
-            padding: var(--space-72) 0;
-            background: var(--bg-secondary);
-        }
-        
-        .split-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-72);
-            align-items: center;
-        }
-        
-        .split-content h2 {
-            margin-bottom: var(--space-24);
-        }
-        
-        .split-content p {
-            margin-bottom: var(--space-24);
-        }
-        
-        .split-image img {
-            width: 100%;
-            height: 520px;
-            object-fit: cover;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-        }
-        
-        /* Reverse layout */
-        .split-grid.reverse {
-            direction: rtl;
-        }
-        
-        .split-grid.reverse > * {
-            direction: ltr;
-        }
-        
-        /* ==============================================
-           CARDS GRID - Benefits/Features
-           ============================================== */
-        .cards-section {
-            padding: var(--space-72) 0;
-        }
-        
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-24);
-        }
-        
         .feature-card {
             background: var(--white);
             border: 1px solid var(--border);
-            padding: var(--space-32);
+            padding: var(--space-48);
             border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: var(--space-24);
         }
         
         .feature-card h3 {
-            font-size: 1.125rem;
             margin-bottom: var(--space-16);
         }
         
         .feature-card p {
-            font-size: 0.9375rem;
             margin: 0;
+            font-size: 0.9375rem;
+            line-height: 1.7;
         }
         
-        /* ==============================================
-           STATS BAR
-           ============================================== */
-        .stats-bar {
-            background: var(--text-primary);
-            padding: var(--space-48) 0;
+        /* DETAILS SECTION */
+        .details {
+            padding: var(--space-80) 0;
+            background: var(--bg-primary);
         }
         
-        .stats-grid {
+        .details-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-48);
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-32);
+        }
+        
+        .detail-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: var(--space-48);
+            border-radius: var(--radius);
+        }
+        
+        .detail-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-32);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-taupe);
+        }
+        
+        .detail-list {
+            list-style: none;
+        }
+        
+        .detail-list li {
+            padding: var(--space-16) 0;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: var(--space-24);
+            font-size: 0.9375rem;
+        }
+        
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .value {
+            color: var(--text-muted);
+        }
+        
+        /* CTA SECTION */
+        .cta {
+            padding: var(--space-80) 0;
+            background: var(--bg-secondary);
             text-align: center;
         }
         
-        .stat-item {
-            color: white;
+        .cta h2 {
+            margin-bottom: var(--space-24);
         }
         
-        .stat-number {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: var(--space-8);
-            letter-spacing: 0.02em;
+        .cta p {
+            font-size: 1.25rem;
+            max-width: 60ch;
+            margin: 0 auto var(--space-48);
         }
         
-        .stat-label {
-            font-size: 0.875rem;
-            opacity: 0.8;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-        
-        /* ==============================================
-           FOOTER
-           ============================================== */
+        /* FOOTER */
         footer {
-            background: var(--bg-secondary);
-            padding: var(--space-72) 0 var(--space-32);
+            background: var(--bg-primary);
+            padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
         
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-48);
-            margin-bottom: var(--space-48);
+            gap: var(--space-64);
+            margin-bottom: var(--space-64);
         }
         
         .footer-section h4 {
             font-family: var(--font-heading);
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: var(--space-24);
             letter-spacing: 0.02em;
@@ -627,53 +475,48 @@
         
         .footer-section p {
             font-size: 0.9375rem;
-            margin-bottom: var(--space-8);
+            margin-bottom: var(--space-12);
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: var(--space-32);
+            padding-top: var(--space-48);
             border-top: 1px solid var(--border);
         }
         
         .footer-bottom p {
-            font-size: 0.8125rem;
+            font-size: 0.875rem;
             color: var(--text-muted);
             margin: 0;
         }
         
-        /* ==============================================
-           RESPONSIVE BREAKPOINTS
-           ============================================== */
-        
-        /* ≤1024px */
+        /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero-grid-single {
+            .hero-grid {
                 grid-template-columns: 1fr;
                 gap: var(--space-48);
             }
             
-            .hero-image-elegant {
-                max-width: 450px;
+            .hero-image {
+                max-width: 500px;
                 margin: 0 auto;
             }
             
-            .taupe-grid,
-            .split-grid {
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-48);
+            }
+            
+            .features-grid {
                 grid-template-columns: 1fr;
             }
             
-            .cards-grid,
-            .facts-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .details-grid {
+                grid-template-columns: 1fr;
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
             }
             
             h2 {
@@ -681,7 +524,6 @@
             }
         }
         
-        /* ≤768px */
         @media (max-width: 768px) {
             .nav-container {
                 grid-template-columns: 1fr auto;
@@ -691,59 +533,63 @@
                 display: none;
             }
             
-            .hamburger {
-                display: flex;
+            .nav-cta {
+                display: none;
             }
             
-            .trust-badges {
-                grid-template-columns: repeat(2, 1fr);
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+            }
+            
+            .hamburger span {
+                width: 24px;
+                height: 2px;
+                background: var(--text-primary);
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                text-align: center;
+            }
+            
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-32);
             }
             
             .footer-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .detail-list li {
+                grid-template-columns: 1fr;
+                gap: var(--space-12);
+            }
         }
         
-        /* ≤480px */
         @media (max-width: 480px) {
-            :root {
-                --space-32: 20px;
-                --space-48: 32px;
-                --space-72: 48px;
-            }
-            
             h1 {
-                font-size: 2rem;
-                letter-spacing: 0.05em;
+                font-size: 2.5rem;
             }
             
             h2 {
                 font-size: 1.75rem;
             }
             
-            .cards-grid,
-            .facts-grid,
-            .trust-badges,
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .hero-intro {
+                font-size: 1.125rem;
             }
             
-            .hero-buttons {
-                flex-direction: column;
-            }
-            
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .frame-outer {
-                padding: 20px;
-            }
-            
-            .frame-inner {
-                padding: 12px;
+            .nav-brand {
+                font-size: 1rem;
             }
         }
     </style>
@@ -753,18 +599,18 @@
     <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">Michaela & Daniel Ferencz</div>
+            <a href="index.html" class="nav-brand">Michaela & Daniel Ferencz</a>
             
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="financial.html">Financial Info</a></li>
-                <li><a href="rental-history.html">Rental History</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="active">Startseite</a></li>
+                <li><a href="about.html">Über Uns</a></li>
+                <li><a href="financial.html">Finanzen</a></li>
+                <li><a href="rental-history.html">Mieterhistorie</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
             </ul>
             
             <div class="nav-cta">
-                <a href="contact.html" class="btn-nav">Inquire</a>
+                <a href="contact.html#message" class="btn-nav">Nachricht Senden</a>
             </div>
             
             <div class="hamburger">
@@ -775,194 +621,223 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH LUXE DOUBLE MAT FRAME -->
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <div class="hero-grid-single">
-                <!-- Single Elegant Photo with Double Mat Frame -->
-                <div class="hero-image-elegant">
-                    <div class="frame-outer">
-                        <div class="frame-inner">
-                            <img src="images/240706—NL-096.jpg" alt="Professional Couple">
-                        </div>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow">Ihr Idealer Mieter</p>
+                    <h1>Vertrauens-würdig.<br>Zuver-lässig.<br>Lang-fristig.</h1>
+                    <p class="hero-intro">Professionelles Paar sucht langfristige Wohnung in Hamburg. Wir bringen ausgezeichnete Bonität, perfekte Mieterhistorie und echtes Engagement für verantwortungsvolle Mieterschaft.</p>
+                    <div class="hero-cta">
+                        <a href="about.html" class="btn-primary">Mehr Erfahren</a>
+                        <a href="contact.html" class="btn-secondary">Kontakt Aufnehmen</a>
                     </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/240706—NL-096.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights">
+        <div class="container">
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <div class="highlight-number">€6.000+</div>
+                    <div class="highlight-label">Netto-Monatseinkommen</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">100%</div>
+                    <div class="highlight-label">Pünktliche Mietzahlung</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">0</div>
+                    <div class="highlight-label">Beschwerden von Nachbarn</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">5+ Jahre</div>
+                    <div class="highlight-label">Langfristige Bindung</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Warum Wir</p>
+                <h2>Die Perfekte Wahl</h2>
+                <p class="section-intro">Wir bringen alles mit, was Sie sich von idealen Mietern wünschen: finanzielle Stabilität, einwandfreie Mieterhistorie und einen respektvollen, ruhigen Lebensstil.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Starke Finanzen</h3>
+                    <p>€6.000+ Netto-Monatseinkommen mit einem Einkommen-zu-Miete-Verhältnis von 3,5×. Ausgezeichnete SCHUFA ohne negative Einträge.</p>
                 </div>
                 
-                <!-- Content -->
-                <div class="hero-content">
-                    <p class="eyebrow">Hamburg Apartment Search</p>
-                    <h1>Your Ideal<br>Tenants</h1>
-                    <p class="intro">Professional couple with excellent credit, stable employment, and perfect rental history seeking a long-term home in Hamburg's finest neighborhoods.</p>
-                    
-                    <div class="hero-buttons">
-                        <a href="contact.html" class="btn-primary">Contact Us</a>
-                        <a href="about.html" class="btn-secondary">View Profile</a>
-                    </div>
-                    
-                    <div class="trust-badges">
-                        <span class="badge">Excellent SCHUFA</span>
-                        <span class="badge">Stable Jobs</span>
-                        <span class="badge">Non-Smokers</span>
-                        <span class="badge">Long-Term</span>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Sichere Beschäftigung</h3>
+                    <p>Beide in Vollzeit beschäftigt mit unbefristeten Verträgen bei renommierten Unternehmen in Hamburg.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Perfekte Mieterhistorie</h3>
+                    <p>Nie eine Mietzahlung versäumt. Ausgezeichnete Referenzen von allen früheren Vermietern, die gerne direkt kontaktiert werden können.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Ruhiger Lebensstil</h3>
+                    <p>Professionelles Paar Anfang 30. Nichtraucher, keine Haustiere. Respektvoll, ordentlich und null Beschwerden von Nachbarn.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Langfristig Orientiert</h3>
+                    <p>Wir suchen ein Zuhause, nicht nur eine Mietwohnung. Mindestens 5+ Jahre Engagement bedeutet Stabilität für Sie als Vermieter.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Problemlos</h3>
+                    <p>Klare Kommunikation, sofortige Problemberichterstattung und respektvolle Einhaltung aller Hausordnungen. Null Drama.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS BAR -->
-    <section class="stats-bar">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">On-Time Payments</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">3.5×</div>
-                    <div class="stat-label">Income Ratio</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2+</div>
-                    <div class="stat-label">Years Commitment</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">Complaints</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KEY FACTS -->
-    <section class="section">
+    <!-- DETAILS -->
+    <section class="details">
         <div class="container">
             <div class="section-header">
-                <p class="eyebrow">At a Glance</p>
-                <h2>Essential Details</h2>
-                <p class="section-intro">Everything you need to know about us as your future tenants, presented clearly and professionally.</p>
+                <p class="eyebrow">Schnellübersicht</p>
+                <h2>Wichtige Details</h2>
             </div>
             
-            <div class="facts-grid">
-                <div class="fact-card">
-                    <div class="fact-icon">👔</div>
-                    <h3>Employment</h3>
-                    <p>Permanent contracts with stable companies. Full-time professionals in established industries.</p>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Über Uns</h3>
+                    <ul class="detail-list">
+                        <li>
+                            <span class="label">Haushalt</span>
+                            <span class="value">Professionelles Paar</span>
+                        </li>
+                        <li>
+                            <span class="label">Alter</span>
+                            <span class="value">Anfang 30</span>
+                        </li>
+                        <li>
+                            <span class="label">Beruf</span>
+                            <span class="value">Beide Vollzeit, unbefristet</span>
+                        </li>
+                        <li>
+                            <span class="label">Haustiere</span>
+                            <span class="value">Keine</span>
+                        </li>
+                        <li>
+                            <span class="label">Rauchen</span>
+                            <span class="value">Nichtraucher</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="fact-card">
-                    <div class="fact-icon">💰</div>
-                    <h3>Income</h3>
-                    <p>€6,000+ net monthly. 3.5× income-to-rent ratio exceeding German standards.</p>
+                
+                <div class="detail-card">
+                    <h3>Finanzielle Details</h3>
+                    <ul class="detail-list">
+                        <li>
+                            <span class="label">Einkommen</span>
+                            <span class="value">€6.000+ netto/Monat</span>
+                        </li>
+                        <li>
+                            <span class="label">SCHUFA</span>
+                            <span class="value">Ausgezeichnet</span>
+                        </li>
+                        <li>
+                            <span class="label">Verhältnis</span>
+                            <span class="value">3,5× Einkommen zu Miete</span>
+                        </li>
+                        <li>
+                            <span class="label">Kaution</span>
+                            <span class="value">Sofort verfügbar</span>
+                        </li>
+                        <li>
+                            <span class="label">Versicherung</span>
+                            <span class="value">Privathaftpflicht aktiv</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="fact-card">
-                    <div class="fact-icon">📅</div>
-                    <h3>Move-In</h3>
-                    <p>March 2026 or later. Flexible timing to accommodate your schedule.</p>
+                
+                <div class="detail-card">
+                    <h3>Wohnungssuche</h3>
+                    <ul class="detail-list">
+                        <li>
+                            <span class="label">Größe</span>
+                            <span class="value">60–80 m², 2–3 Zimmer</span>
+                        </li>
+                        <li>
+                            <span class="label">Stadtteile</span>
+                            <span class="value">Eimsbüttel, Altona, Winterhude</span>
+                        </li>
+                        <li>
+                            <span class="label">Einzug</span>
+                            <span class="value">März 2026 oder später</span>
+                        </li>
+                        <li>
+                            <span class="label">Dauer</span>
+                            <span class="value">Langfristig (5+ Jahre)</span>
+                        </li>
+                        <li>
+                            <span class="label">Flexibilität</span>
+                            <span class="value">Einzugsdatum flexibel</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="fact-card">
-                    <div class="fact-icon">📍</div>
-                    <h3>Location</h3>
-                    <p>Eimsbüttel, Altona, Winterhude, Eppendorf. Quality Hamburg neighborhoods.</p>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">🏠</div>
-                    <h3>Size</h3>
-                    <p>60–80 m², 2–3 rooms. Well-maintained apartment in good condition.</p>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">⏰</div>
-                    <h3>Duration</h3>
-                    <p>Long-term rental. Minimum 2 years, ideally 5+ years commitment.</p>
+                
+                <div class="detail-card">
+                    <h3>Mieterhistorie</h3>
+                    <ul class="detail-list">
+                        <li>
+                            <span class="label">Zahlungen</span>
+                            <span class="value">100% pünktlich, immer</span>
+                        </li>
+                        <li>
+                            <span class="label">Beschwerden</span>
+                            <span class="value">Null, jemals</span>
+                        </li>
+                        <li>
+                            <span class="label">Referenzen</span>
+                            <span class="value">Alle verfügbar</span>
+                        </li>
+                        <li>
+                            <span class="label">Zustand</span>
+                            <span class="value">Immer einwandfrei gepflegt</span>
+                        </li>
+                        <li>
+                            <span class="label">Kautionen</span>
+                            <span class="value">100% zurückerhalten</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TAUPE BAND - WHO WE ARE -->
-    <section class="taupe-band">
-        <div class="taupe-grid">
-            <div class="taupe-content">
-                <p class="eyebrow">About Us</p>
-                <h2>Who We Are</h2>
-                <p>We are a professional couple in our early 30s relocating to Hamburg for career opportunities. With excellent financial credentials, perfect rental history, and a commitment to being exemplary tenants, we're seeking a long-term home in one of Hamburg's distinguished neighborhoods.</p>
-                <p>Both non-smokers with no pets, we maintain a quiet, respectful lifestyle and have never missed a rent payment in our years of renting experience.</p>
-                <a href="about.html" class="btn-outline-light">Learn More</a>
-            </div>
-            <div class="taupe-image">
-                <img src="images/IMG.jpg" alt="Professional Lifestyle">
-            </div>
-        </div>
-    </section>
-
-    <!-- BENEFITS CARDS -->
-    <section class="cards-section">
+    <!-- CTA -->
+    <section class="cta">
         <div class="container">
-            <div class="section-header">
-                <p class="eyebrow">Why Choose Us</p>
-                <h2>Landlord Benefits</h2>
-            </div>
-            
-            <div class="cards-grid">
-                <div class="feature-card">
-                    <h3>Excellent Credit</h3>
-                    <p>Current SCHUFA report with no negative entries. Perfect payment history across all financial obligations.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Stable Employment</h3>
-                    <p>Permanent contracts (Unbefristet) with reputable Hamburg companies. Strong job security.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Perfect History</h3>
-                    <p>Never missed a rent payment. Excellent references from all previous landlords available.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Complete Docs</h3>
-                    <p>All documentation prepared: SCHUFA, employment contracts, salary statements, references.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Quiet Lifestyle</h3>
-                    <p>Respectful, professional couple. No smoking, no pets, no noise complaints ever.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Long-Term</h3>
-                    <p>Seeking permanent Hamburg residence. Minimum 2 years, ideally much longer commitment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SPLIT SECTION - DOCUMENTS -->
-    <section class="split-section">
-        <div class="container">
-            <div class="split-grid">
-                <div class="split-content">
-                    <p class="eyebrow">Documentation</p>
-                    <h2>Everything Ready</h2>
-                    <p>We understand the importance of complete, current documentation. All standard German rental application materials are prepared and can be provided within 24–48 hours of your request.</p>
-                    <p>This includes employment contracts, salary statements, SCHUFA credit reports, landlord references (Mietschuldenfreiheitsbescheinigung), and proof of insurance. Every document is current, verified, and ready for your review.</p>
-                    <a href="contact.html" class="btn-secondary">Request Documents</a>
-                </div>
-                <div class="split-image">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop" alt="Professional Documents">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SPLIT SECTION - RENTAL HISTORY (REVERSED) -->
-    <section class="split-section" style="background: var(--bg-primary);">
-        <div class="container">
-            <div class="split-grid reverse">
-                <div class="split-image">
-                    <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=800&h=600&fit=crop" alt="Beautiful Hamburg Apartment">
-                </div>
-                <div class="split-content">
-                    <p class="eyebrow">Track Record</p>
-                    <h2>Proven Excellence</h2>
-                    <p>Our rental history speaks for itself: years of perfect on-time payments, zero property damage, and consistently positive landlord relationships. We've never received a single complaint from neighbors or building management.</p>
-                    <p>All previous landlords have provided excellent written references and are available for direct contact. We left every property in pristine condition and received full deposit returns.</p>
-                    <a href="rental-history.html" class="btn-secondary">View History</a>
-                </div>
+            <h2>Bereit Mehr Zu Erfahren?</h2>
+            <p>Sehen Sie sich unser vollständiges Profil an, oder kontaktieren Sie uns, um Ihre Immobilie zu besprechen.</p>
+            <div class="hero-cta" style="justify-content: center;">
+                <a href="about.html" class="btn-primary">Vollständiges Profil</a>
+                <a href="contact.html" class="btn-secondary">Kontakt Aufnehmen</a>
             </div>
         </div>
     </section>
@@ -972,37 +847,36 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Schnelllinks</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="financial.html">Financial Info</a></li>
-                        <li><a href="rental-history.html">Rental History</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="about.html">Über Uns</a></li>
+                        <li><a href="financial.html">Finanzen</a></li>
+                        <li><a href="rental-history.html">Mieterhistorie</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: your.email@example.com</p>
-                    <p>Phone: +49 XXX XXXXXXX</p>
+                    <h4>Kontakt</h4>
+                    <p>E-Mail: your.email@example.com</p>
+                    <p>Telefon: +49 XXX XXXXXXX</p>
                     <p>WhatsApp: +49 XXX XXXXXXX</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Searching For</h4>
-                    <p>60–80 m², 2–3 rooms</p>
+                    <h4>Wir Suchen</h4>
+                    <p>60–80 m², 2–3 Zimmer</p>
                     <p>Eimsbüttel, Altona, Winterhude</p>
-                    <p>Move-in: March 2026+</p>
+                    <p>Einzug: März 2026+</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2026 Tenant Profile Hamburg · All data handling complies with GDPR regulations</p>
+                <p>© 2026 Michaela & Daniel Ferencz · Alle Datenverarbeitungen entsprechen der DSGVO</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Minimal mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
         
@@ -1015,4 +889,5 @@
 
 </body>
 </html>
+
 
