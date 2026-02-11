@@ -532,10 +532,8 @@
         }
 
         .search-box {
-            background: var(--white);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: var(--space-32) 0;
+            background: var(--bg-secondary);
+            padding: var(--space-64) 0;
         }
 
         .search-content {
@@ -543,28 +541,76 @@
         }
 
         .search-content h3 {
-            font-size: 1.125rem;
-            margin-bottom: var(--space-24);
-            color: var(--accent-taupe);
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: var(--space-48);
+            color: var(--text-primary);
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        .search-details {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-32);
-            flex-wrap: wrap;
+        .search-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--space-24);
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .search-item {
+        .search-card {
+            background: white;
+            padding: var(--space-32) var(--space-24);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .search-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--accent-taupe);
+        }
+
+        .search-card-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-16);
+        }
+
+        .search-card-label {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--accent-taupe);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-12);
+        }
+
+        .search-card-value {
             font-size: 0.9375rem;
             font-weight: 500;
             color: var(--text-primary);
-            padding: var(--space-12) var(--space-24);
-            background: var(--bg-secondary);
-            border-radius: var(--radius-sm);
+            line-height: 1.4;
         }
+
+@media (max-width: 1024px) {
+    .search-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .search-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .search-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
         @media (max-width: 768px) {
             .search-details {
@@ -717,7 +763,7 @@
                     <p class="eyebrow">Auf Der Suche Nach Unserem Neuen Zuhause</p>
                     <h1>Vertrauens-würdig.<br>Zuver-lässig.<br>Lang-fristig.</h1>
                     <p class="hero-subtitle">Michaela & Daniel Ferencz</p>
-                    <p class="hero-intro">Wir sind ein berufstätiges Ehepaar mit ausgezeichnetem Einkommen, stabilen Arbeitsverhältnissen und einwandfreier Bonität sowie perfekter Mietgeschichte. Um näher bei unseren Kindern und deren Familie zu sein, möchten wir unseren Lebensmittelpunkt nach Hamburg verlegen. Für diesen neuen Lebensabschnitt suchen wir ein langfristiges Zuhause in einer der schönen und lebenswerten Hamburger Wohnlagen, idealerweise in der Nähe von Schnelsen.</p>
+                    <p class="hero-intro">Wir sind ein berufstätiges Ehepaar Ende 50 mit ausgezeichnetem Einkommen, stabilen Arbeitsverhältnissen und einwandfreier Bonität sowie perfekter Mietgeschichte. Um näher bei unseren Kindern und deren Familie zu sein, möchten wir unseren Lebensmittelpunkt nach Hamburg verlegen. Für diesen neuen Lebensabschnitt suchen wir ein langfristiges Zuhause in einer der schönen und lebenswerten Hamburger Wohnlagen, idealerweise in der Nähe von Schnelsen.</p>
                     <div class="hero-cta">
                         <a href="about.html" class="btn-primary">Mehr Erfahren</a>
                         <a href="contact.html" class="btn-secondary">Kontakt Aufnehmen</a>
@@ -760,15 +806,31 @@
             <div class="search-content">
                 <h3>Was Wir Suchen</h3>
                 <div class="search-details">
-                    <span class="search-item">📐 60–80 m²</span>
-                    <span class="search-item">🛏️ 2–3 Zimmer</span>
-                    <span class="search-item">💰 Bis €1.800 Warmmiete</span>
-                    <span class="search-item">📍 Schnelsen, Eimsbüttel, Altona</span>
-                    <span class="search-item">📅 Ab Mai 2026</span>
+                    <div class="search-item">
+                        <span class="search-icon">📐</span>
+                        <span class="search-text">60–80 m²</span>
+                    </div>
+                    <div class="search-item">
+                        <span class="search-icon">🛏️</span>
+                        <span class="search-text">2–3 Zimmer</span>
+                    </div>
+                    <div class="search-item">
+                        <span class="search-icon">💰</span>
+                        <span class="search-text">Bis €1.800 Warmmiete</span>
+                    </div>
+                    <div class="search-item">
+                        <span class="search-icon">📍</span>
+                        <span class="search-text">Schnelsen, Eimsbüttel, Altona</span>
+                    </div>
+                    <div class="search-item">
+                        <span class="search-icon">📅</span>
+                        <span class="search-text">Ab Mai 2026</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- WHY US -->
     <section class="why-us">
@@ -783,7 +845,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>Starke Finanzen</h3>
-                    <p>€6.000+ Netto-Monatseinkommen. Ausgezeichnete SCHUFA ohne negative Einträge.</p>
+                    <p>€6.000+ Netto-Monatseinkommen. Ausgezeichnete SCHUFA ohne negative Einträge. </p>
                 </div>
                 
                 <div class="feature-card">
@@ -801,13 +863,13 @@
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
                     <h3>Ruhiger Lebensstil</h3>
-                    <p>Professionelles Paar Anfang 50. Nichtraucher, keine Haustiere. Respektvoll, ordentlich und null Beschwerden von Nachbarn.</p>
+                    <p>Nichtraucher, keine Haustiere. Respektvoll, ordentlich und null Beschwerden von Nachbarn.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">⏰</div>
                     <h3>Langfristig Orientiert</h3>
-                    <p>Wir suchen ein Zuhause für die Zukunft, nicht nur eine Mietwohnung.</p>
+                    <p>Wir suchen ein Zuhause für die Zukunft, nicht nur eine Mietwohnung. Langfristige Stabilität für Sie als Vermieter.</p>
                 </div>
                 
                 <div class="feature-card">
