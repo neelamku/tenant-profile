@@ -108,7 +108,7 @@
             padding: 0 var(--space-32);
         }
         
-        /* NAVIGATION */
+        /* NAVIGATION - IMPROVED BRAND NAME */
         .navbar {
             background: var(--bg-primary);
             border-bottom: 1px solid var(--border);
@@ -130,11 +130,12 @@
         
         .nav-brand {
             font-family: var(--font-heading);
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 600;
             color: var(--text-primary);
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
             text-decoration: none;
+            line-height: 1.2;
         }
         
         .nav-menu {
@@ -184,12 +185,12 @@
             display: none;
         }
         
-        /* HERO SECTION - COMPACT FOR FIRST VIEW */
+        /* HERO SECTION - MORE BOTTOM PADDING */
         .hero {
             min-height: auto;
             display: flex;
             align-items: center;
-            padding: var(--space-48) 0 0 0;
+            padding: var(--space-48) 0 var(--space-48) 0;
             background: var(--bg-primary);
         }
         
@@ -216,6 +217,7 @@
             display: flex;
             gap: var(--space-24);
             align-items: center;
+            padding-bottom: var(--space-24);
         }
         
         .btn-primary {
@@ -534,6 +536,11 @@
                 grid-template-columns: 1fr auto;
             }
             
+            .nav-brand {
+                font-size: 0.9375rem;
+                letter-spacing: 0.03em;
+            }
+            
             .nav-menu {
                 display: none;
             }
@@ -559,9 +566,14 @@
                 font-size: 2.75rem;
             }
             
+            .hero {
+                padding: var(--space-32) 0 var(--space-32) 0;
+            }
+            
             .hero-cta {
                 flex-direction: column;
                 align-items: stretch;
+                padding-bottom: var(--space-32);
             }
             
             .btn-primary,
@@ -589,6 +601,11 @@
         }
         
         @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 0.875rem;
+                letter-spacing: 0.02em;
+            }
+            
             h1 {
                 font-size: 2.25rem;
             }
@@ -598,10 +615,6 @@
             }
             
             .hero-intro {
-                font-size: 1rem;
-            }
-            
-            .nav-brand {
                 font-size: 1rem;
             }
             
@@ -910,6 +923,7 @@
 
 </body>
 </html>
+
 
 
 
