@@ -78,7 +78,7 @@
             line-height: 1.1;
             letter-spacing: 0.04em;
             text-transform: uppercase;
-            margin-bottom: var(--space-32);
+            margin-bottom: var(--space-48);
         }
         
         h3 {
@@ -189,80 +189,134 @@
             display: none;
         }
         
-        /* HERO SECTION */
-        .hero {
-            min-height: auto;
-            padding: var(--space-100) 0;
+        /* PAGE HEADER */
+        .page-header {
+            padding: var(--space-80) 0 var(--space-48);
+            text-align: center;
             background: var(--bg-primary);
         }
         
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
+        /* STORY SECTION WITH PHOTO */
+        .story-section {
+            padding: var(--space-64) 0 var(--space-100);
+            background: var(--bg-primary);
         }
         
-        .hero-content h1 {
-            margin-bottom: var(--space-48);
+        .story-grid {
+            display: grid;
+            grid-template-columns: 450px 1fr;
+            gap: var(--space-80);
+            align-items: start;
         }
         
-        .hero-image {
-            max-width: 700px;
-            margin: 0 auto;
+        /* PHOTO SIDE */
+        .photo-side {
+            position: sticky;
+            top: 120px;
         }
         
-        .hero-image img {
+        .photo-container {
+            position: relative;
+        }
+        
+        .photo-container img {
             width: 100%;
-            height: 550px;
+            height: 600px;
             object-fit: cover;
             border-radius: var(--radius);
             box-shadow: var(--shadow-soft);
         }
         
-        /* STORY SECTION */
-        .story-section {
-            padding: var(--space-100) 0;
-            background: var(--bg-primary);
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            padding: var(--space-32);
+            border-radius: 0 0 var(--radius) var(--radius);
+            color: white;
         }
         
-        .story-content {
-            max-width: 850px;
-            margin: 0 auto;
+        .photo-overlay p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: white;
+            opacity: 0.95;
         }
         
-        .story-content .eyebrow {
-            text-align: center;
+        /* CONTENT SIDE */
+        .content-side {
+            padding-top: var(--space-24);
         }
         
-        .story-content h2 {
-            text-align: center;
+        .story-header {
             margin-bottom: var(--space-64);
         }
         
         .story-text {
-            display: grid;
+            display: flex;
+            flex-direction: column;
             gap: var(--space-48);
         }
         
-        .story-paragraph {
-            background: var(--bg-primary);
-            padding: var(--space-48);
-            border-radius: var(--radius);
-            border-left: 4px solid var(--accent-taupe);
-            box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
+        .story-block {
+            position: relative;
+            padding-left: var(--space-48);
         }
         
-        .story-paragraph:hover {
-            transform: translateX(8px);
-            box-shadow: 0 8px 24px rgba(35, 35, 35, 0.1);
+        .story-block::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-taupe), transparent);
         }
         
-        .story-paragraph p {
+        .story-block p {
             font-size: 1.125rem;
             line-height: 1.9;
             color: var(--text-primary);
             margin: 0;
+        }
+        
+        .story-highlight {
+            background: var(--bg-secondary);
+            padding: var(--space-32);
+            border-radius: var(--radius);
+            margin-top: var(--space-48);
+            border-left: 4px solid var(--accent-taupe);
+        }
+        
+        .story-highlight p {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin: 0;
+            font-style: italic;
+        }
+        
+        /* DECORATIVE QUOTE */
+        .decorative-quote {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: var(--accent-taupe);
+            text-align: center;
+            margin: var(--space-64) 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .decorative-quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            left: -30px;
+            top: -20px;
+            opacity: 0.3;
         }
         
         /* CTA SECTION */
@@ -389,20 +443,21 @@
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
+            .story-grid {
+                grid-template-columns: 400px 1fr;
+                gap: var(--space-64);
+            }
+            
+            .photo-container img {
+                height: 500px;
+            }
+            
             h1 {
                 font-size: 3.25rem;
             }
             
             h2 {
                 font-size: 2rem;
-            }
-            
-            .hero-image img {
-                height: 450px;
-            }
-            
-            .story-paragraph {
-                padding: var(--space-32);
             }
         }
         
@@ -437,33 +492,45 @@
                 background: var(--text-primary);
             }
             
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-48);
+            }
+            
+            .photo-side {
+                position: relative;
+                top: 0;
+            }
+            
+            .photo-container img {
+                height: 450px;
+            }
+            
             h1 {
                 font-size: 2.5rem;
                 letter-spacing: 0.1em;
-            }
-            
-            .hero {
-                padding: var(--space-64) 0;
-            }
-            
-            .hero-image img {
-                height: 400px;
             }
             
             .story-section {
                 padding: var(--space-64) 0;
             }
             
-            .story-paragraph {
-                padding: var(--space-24);
+            .story-block {
+                padding-left: var(--space-32);
             }
             
-            .story-paragraph:hover {
-                transform: translateX(4px);
-            }
-            
-            .story-paragraph p {
+            .story-block p {
                 font-size: 1rem;
+            }
+            
+            .decorative-quote {
+                font-size: 1.25rem;
+                margin: var(--space-48) 0;
+            }
+            
+            .decorative-quote::before {
+                font-size: 3rem;
+                left: -20px;
             }
             
             .hero-cta {
@@ -496,8 +563,12 @@
                 font-size: 1.75rem;
             }
             
-            .hero-image img {
+            .photo-container img {
                 height: 350px;
+            }
+            
+            .story-highlight {
+                padding: var(--space-24);
             }
         }
     </style>
@@ -529,37 +600,55 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- PAGE HEADER -->
+    <section class="page-header">
         <div class="container">
-            <div class="hero-content">
-                <p class="eyebrow">Wer Wir Sind</p>
-                <h1>Über Uns</h1>
-                <div class="hero-image">
-                    <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=1200&h=800&fit=crop'">
-                </div>
-            </div>
+            <p class="eyebrow">Wer Wir Sind</p>
+            <h1>Über Uns</h1>
         </div>
     </section>
 
-    <!-- STORY SECTION -->
+    <!-- STORY SECTION WITH PHOTO -->
     <section class="story-section">
         <div class="container">
-            <div class="story-content">
-                <p class="eyebrow">Familie & Leben</p>
-                <h2>Unsere Geschichte</h2>
+            <div class="story-grid">
+                <!-- PHOTO SIDE -->
+                <div class="photo-side">
+                    <div class="photo-container">
+                        <img src="images/240706.jpg" alt="Michaela & Daniel Ferencz Familie" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=900&h=1200&fit=crop'">
+                        <div class="photo-overlay">
+                            <p>Familie Ferencz – Gemeinsam stark</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="story-text">
-                    <div class="story-paragraph">
-                        <p>Wir sind ein berufstätiges Ehepaar (55 und 57 Jahre alt), das nach Hamburg ziehen möchte, um näher bei unseren Kindern und deren junger Familie zu sein. Familie und Zusammenhalt sind uns sehr wichtig, und dieser Umzug ermöglicht es uns, Zeit mit unseren Kindern und Enkelkindern zu verbringen und sie im Alltag zu unterstützen.</p>
+                <!-- CONTENT SIDE -->
+                <div class="content-side">
+                    <div class="story-header">
+                        <p class="eyebrow">Familie & Leben</p>
+                        <h2>Unsere Geschichte</h2>
                     </div>
                     
-                    <div class="story-paragraph">
-                        <p>Beruflich sind wir beide fest etabliert mit unbefristeten Arbeitsverträgen in stabilen Unternehmen. Wir verfügen über exzellente finanzielle Voraussetzungen, eine perfekte Miethistorie und legen großen Wert darauf, vorbildliche Mieter zu sein.</p>
-                    </div>
-                    
-                    <div class="story-paragraph">
-                        <p>Beide Nichtraucher, ohne Haustiere, führen wir einen ruhigen, respektvollen Lebensstil. Pünktliche Mietzahlungen und sorgsamer Umgang mit unserem Zuhause sind für uns selbstverständlich. Wir suchen ein langfristiges Zuhause, in dem wir uns wohlfühlen und in dem wir ein Teil der Gemeinschaft sein können.</p>
+                    <div class="story-text">
+                        <div class="story-block">
+                            <p>Wir sind ein berufstätiges Ehepaar (55 und 57 Jahre alt), das nach Hamburg ziehen möchte, um näher bei unseren Kindern und deren junger Familie zu sein. Familie und Zusammenhalt sind uns sehr wichtig, und dieser Umzug ermöglicht es uns, Zeit mit unseren Kindern und Enkelkindern zu verbringen und sie im Alltag zu unterstützen.</p>
+                        </div>
+                        
+                        <div class="story-block">
+                            <p>Beruflich sind wir beide fest etabliert mit unbefristeten Arbeitsverträgen in stabilen Unternehmen. Wir verfügen über exzellente finanzielle Voraussetzungen, eine perfekte Miethistorie und legen großen Wert darauf, vorbildliche Mieter zu sein.</p>
+                        </div>
+                        
+                        <div class="decorative-quote">
+                            Familie ist nicht nur wichtig, sie ist alles.
+                        </div>
+                        
+                        <div class="story-block">
+                            <p>Beide Nichtraucher, ohne Haustiere, führen wir einen ruhigen, respektvollen Lebensstil. Pünktliche Mietzahlungen und sorgsamer Umgang mit unserem Zuhause sind für uns selbstverständlich. Wir suchen ein langfristiges Zuhause, in dem wir uns wohlfühlen und in dem wir ein Teil der Gemeinschaft sein können.</p>
+                        </div>
+                        
+                        <div class="story-highlight">
+                            <p>Nach über 20 Jahren in derselben Wohnung in Mülheim an der Ruhr freuen wir uns auf diesen neuen Lebensabschnitt in Hamburg – einer Stadt voller Leben, Kultur und vor allem: unserer Familie.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -600,7 +689,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Wir Suchen</h4>
-                    <p>70–100 m², 3 Zimmer</p>
+                    <p>70–100 m², 3-4 Zimmer</p>
                     <p>Schnelsen und Umgebung</p>
                     <p>Einzug: Ab Mai 2026</p>
                 </div>
