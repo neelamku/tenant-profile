@@ -104,22 +104,15 @@
             margin-bottom: var(--space-24);
         }
         
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--space-32);
-        }
-        
         /* NAVIGATION */
         .navbar {
-            background: var(--bg-primary);
+            background: rgba(248, 246, 244, 0.95);
             border-bottom: 1px solid var(--border);
             padding: var(--space-24) 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            background: rgba(248, 246, 244, 0.95);
         }
         
         .nav-container {
@@ -189,22 +182,59 @@
             display: none;
         }
         
-        /* HERO SECTION - ELEGANT */
+        /* HERO SECTION - FULL HEIGHT SPLIT */
         .hero {
-            padding: var(--space-100) 0;
-            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--bg-primary);
         }
         
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 480px;
-            gap: var(--space-80);
+        /* Left Side - Full Height Image */
+        .hero-image-side {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: var(--space-48);
+            background: linear-gradient(180deg, transparent 0%, rgba(35, 35, 35, 0.7) 100%);
+        }
+        
+        .image-caption {
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
+        }
+        
+        /* Right Side - Content */
+        .hero-content-side {
+            display: flex;
             align-items: center;
+            padding: var(--space-80) var(--space-64);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        
+        .hero-content {
+            max-width: 550px;
         }
         
         .hero-content h1 {
-            margin-bottom: var(--space-32);
             line-height: 0.95;
+            margin-bottom: var(--space-32);
         }
         
         .hero-intro {
@@ -212,109 +242,20 @@
             line-height: 1.9;
             color: var(--text-muted);
             margin-bottom: 0;
-            max-width: 48ch;
         }
         
-        .hero-image-wrapper {
-            position: relative;
-            padding: var(--space-24);
-        }
+        /* PHOTO SECTION - REMOVED */
         
-        .hero-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: var(--space-48);
-            bottom: var(--space-48);
-            background: var(--accent-taupe);
-            opacity: 0.15;
-            border-radius: var(--radius);
-            z-index: 0;
-        }
-        
-        .hero-image {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-elegant);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-        
-        /* PHOTO GALLERY - ELEGANT */
-        .photo-gallery {
-            padding: var(--space-100) 0;
-            background: var(--white);
-        }
-        
-        .gallery-header {
-            text-align: center;
-            margin-bottom: var(--space-64);
-        }
-        
-        .photo-grid {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: var(--space-48);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .photo-frame {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-elegant);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .photo-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(35, 35, 35, 0.1) 100%);
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .photo-frame:hover::before {
-            opacity: 1;
-        }
-        
-        .photo-frame:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 48px rgba(35, 35, 35, 0.15);
-        }
-        
-        .photo-frame img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .photo-frame:hover img {
-            transform: scale(1.05);
-        }
-        
-        .photo-frame:first-child img {
-            height: 450px;
-        }
-        
-        /* INFO CARDS - REFINED */
+        /* CARDS SECTION */
         .cards-section {
             padding: var(--space-100) 0;
             background: var(--bg-secondary);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-32);
         }
         
         .section-header {
@@ -399,7 +340,7 @@
             font-weight: 600;
         }
         
-        /* CTA SECTION - ELEGANT */
+        /* CTA SECTION */
         .cta {
             padding: var(--space-100) 0;
             background: linear-gradient(135deg, var(--accent-taupe) 0%, #9F8D81 100%);
@@ -539,14 +480,18 @@
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero-grid {
+            .hero {
                 grid-template-columns: 1fr;
-                gap: var(--space-64);
+                min-height: auto;
             }
             
-            .hero-image-wrapper {
-                max-width: 550px;
-                margin: 0 auto;
+            .hero-image-side img {
+                height: 60vh;
+                min-height: 500px;
+            }
+            
+            .hero-content-side {
+                padding: var(--space-64) var(--space-48);
             }
             
             h1 {
@@ -559,15 +504,6 @@
             
             .cards-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .photo-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .photo-frame img,
-            .photo-frame:first-child img {
-                height: 450px;
             }
         }
         
@@ -606,23 +542,18 @@
                 font-size: 2.5rem;
             }
             
-            .hero {
-                padding: var(--space-64) 0;
+            .hero-image-side img {
+                height: 50vh;
+                min-height: 400px;
             }
             
-            .hero-image img {
-                height: 450px;
+            .hero-content-side {
+                padding: var(--space-48) var(--space-32);
             }
             
-            .photo-gallery,
             .cards-section,
             .cta {
                 padding: var(--space-64) 0;
-            }
-            
-            .photo-frame img,
-            .photo-frame:first-child img {
-                height: 400px;
             }
             
             .info-card {
@@ -660,13 +591,9 @@
                 font-size: 1.625rem;
             }
             
-            .hero-image img {
-                height: 400px;
-            }
-            
-            .photo-frame img,
-            .photo-frame:first-child img {
-                height: 350px;
+            .hero-image-side img {
+                height: 40vh;
+                min-height: 350px;
             }
             
             .info-card {
@@ -706,38 +633,22 @@
         </div>
     </nav>
 
-    <!-- HERO WITH ELEGANT PHOTO -->
+    <!-- HERO - FULL HEIGHT SPLIT -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <p class="eyebrow">UNSERE GESCHICHTE</p>
-                    <h1>Über<br>Uns</h1>
-                    <p class="hero-intro">Wir sind Michaela und Daniel Ferencz – ein Ehepaar, das einen neuen Lebensabschnitt beginnt. Nach über 30 Jahren in Mülheim an der Ruhr ziehen wir nach Hamburg, um näher bei unserer Familie zu sein. Erfahren Sie mehr über uns, unsere Werte und warum wir die idealen Mieter für Ihre Immobilie sind.</p>
-                </div>
-                <div class="hero-image-wrapper">
-                    <div class="hero-image">
-                        <img src="images/240706—NL-096.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&h=1100&fit=crop'">
-                    </div>
-                </div>
+        <!-- Left Side - Full Height Image -->
+        <div class="hero-image-side">
+            <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=1200&h=1600&fit=crop'">
+            <div class="hero-image-overlay">
+                <p class="image-caption">Michaela & Daniel Ferencz</p>
             </div>
         </div>
-    </section>
-
-    <!-- PHOTO GALLERY -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="gallery-header">
-                <p class="eyebrow">IMPRESSIONEN</p>
-                <h2>Wer Wir Sind</h2>
-            </div>
-            <div class="photo-grid">
-                <div class="photo-frame">
-                    <img src="images/IMG.jpg" alt="Michaela & Daniel" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=800&h=900&fit=crop'">
-                </div>
-                <div class="photo-frame">
-                    <img src="images/240706—NL-096.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=900&h=1000&fit=crop'">
-                </div>
+        
+        <!-- Right Side - Content -->
+        <div class="hero-content-side">
+            <div class="hero-content">
+                <p class="eyebrow">UNSERE GESCHICHTE</p>
+                <h1>Über<br>Uns</h1>
+                <p class="hero-intro">Wir sind Michaela und Daniel Ferencz – ein Ehepaar, das einen neuen Lebensabschnitt beginnt. Nach über 30 Jahren in Mülheim an der Ruhr ziehen wir nach Hamburg, um näher bei unserer Familie zu sein. Erfahren Sie mehr über uns, unsere Werte und warum wir die idealen Mieter für Ihre Immobilie sind.</p>
             </div>
         </div>
     </section>
@@ -852,5 +763,6 @@
 
 </body>
 </html>
+
 
 
