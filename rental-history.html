@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rental History — Tenant Profile Hamburg</title>
+    <title>Mieterhistorie — Michaela & Daniel Ferencz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ==============================================
-           BOUTIQUE INTERIOR STUDIO THEME - ULTRA COMPACT
-           ============================================== */
-        
         :root {
-            --bg-primary: #F8F6F4;
-            --bg-secondary: #E8E6E4;
+            --bg-primary: #F5EDE8;
+            --bg-secondary: #EFE5DD;
             --accent-taupe: #B6A396;
             --text-primary: #232323;
             --text-muted: #6F6A66;
@@ -28,7 +24,9 @@
             --space-24: 24px;
             --space-32: 32px;
             --space-48: 48px;
+            --space-64: 64px;
             --space-72: 72px;
+            --space-80: 80px;
             --radius: 14px;
             --radius-sm: 8px;
             --max-width: 1120px;
@@ -96,12 +94,13 @@
         
         .eyebrow {
             font-family: var(--font-body);
-            font-size: 0.8125rem;
+            font-size: 0.75rem;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--accent-taupe);
-            margin-bottom: var(--space-12);
+            letter-spacing: 0.3em;
+            color: #9B8A7D;
+            margin-bottom: var(--space-24);
+            opacity: 0.85;
         }
         
         .container {
@@ -132,11 +131,12 @@
         
         .nav-brand {
             font-family: var(--font-heading);
-            font-size: 1.25rem;  /* Slightly smaller for longer name */
+            font-size: 1.125rem;
             font-weight: 600;
             color: var(--text-primary);
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
             text-decoration: none;
+            line-height: 1.2;
         }
         
         .nav-menu {
@@ -188,7 +188,7 @@
         
         /* PAGE HEADER */
         .page-header {
-            padding: var(--space-72) 0 var(--space-48);
+            padding: var(--space-80) 0 var(--space-64);
             text-align: center;
             background: var(--bg-primary);
         }
@@ -228,18 +228,18 @@
         .summary-label {
             font-size: 0.875rem;
             opacity: 0.9;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
         }
         
-        /* LAST RESIDENCE */
+        /* CURRENT RESIDENCE */
         .residence-section {
-            padding: var(--space-72) 0;
-            background: var(--bg-primary);
+            padding: var(--space-80) 0;
+            background: var(--bg-secondary);
         }
         
         .residence-card {
-            background: var(--white);
+            background: var(--bg-secondary);
             border: 1px solid var(--border);
             padding: var(--space-48);
             border-radius: var(--radius);
@@ -255,11 +255,12 @@
         .residence-header h3 {
             font-size: 1.5rem;
             margin-bottom: var(--space-12);
+            color: var(--accent-taupe);
         }
         
         .residence-header .location {
             font-size: 1rem;
-            color: var(--accent-taupe);
+            color: var(--text-muted);
             font-weight: 500;
         }
         
@@ -307,8 +308,8 @@
         
         /* EXPECTATIONS */
         .expectations-section {
-            padding: var(--space-72) 0;
-            background: var(--bg-secondary);
+            padding: var(--space-80) 0;
+            background: var(--bg-primary);
         }
         
         .expectations-grid {
@@ -319,22 +320,30 @@
         }
         
         .expectation-card {
-            background: var(--white);
+            background: var(--bg-primary);
             border: 1px solid var(--border);
-            padding: var(--space-32);
+            padding: var(--space-48);
             border-radius: var(--radius);
             text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .expectation-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--accent-taupe);
         }
         
         .expectation-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-16);
-            opacity: 0.85;
+            font-size: 3rem;
+            margin-bottom: var(--space-24);
+            line-height: 1;
         }
         
         .expectation-card h3 {
             font-size: 1.125rem;
             margin-bottom: var(--space-16);
+            color: var(--accent-taupe);
         }
         
         .expectation-card p {
@@ -345,8 +354,8 @@
         
         /* CTA SECTION */
         .cta-section {
-            padding: var(--space-72) 0;
-            background: var(--bg-primary);
+            padding: var(--space-80) 0;
+            background: var(--bg-secondary);
             text-align: center;
         }
         
@@ -357,7 +366,7 @@
         .cta-section p {
             font-size: 1.125rem;
             max-width: 60ch;
-            margin: 0 auto var(--space-32);
+            margin: 0 auto var(--space-48);
         }
         
         .btn-primary {
@@ -371,7 +380,7 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            border: 1px solid var(--accent-taupe);
+            border: 2px solid var(--accent-taupe);
         }
         
         .btn-primary:hover {
@@ -382,21 +391,21 @@
         
         /* FOOTER */
         footer {
-            background: var(--bg-secondary);
-            padding: var(--space-72) 0 var(--space-32);
+            background: var(--bg-primary);
+            padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
         
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-48);
-            margin-bottom: var(--space-48);
+            gap: var(--space-64);
+            margin-bottom: var(--space-64);
         }
         
         .footer-section h4 {
             font-family: var(--font-heading);
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: var(--space-24);
             letter-spacing: 0.02em;
@@ -428,12 +437,12 @@
         
         .footer-bottom {
             text-align: center;
-            padding-top: var(--space-32);
+            padding-top: var(--space-48);
             border-top: 1px solid var(--border);
         }
         
         .footer-bottom p {
-            font-size: 0.8125rem;
+            font-size: 0.875rem;
             color: var(--text-muted);
             margin: 0;
         }
@@ -449,7 +458,7 @@
             }
             
             .expectations-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
             
             h1 {
@@ -466,7 +475,16 @@
                 grid-template-columns: 1fr auto;
             }
             
+            .nav-brand {
+                font-size: 0.9375rem;
+                letter-spacing: 0.03em;
+            }
+            
             .nav-menu {
+                display: none;
+            }
+            
+            .nav-cta {
                 display: none;
             }
             
@@ -490,6 +508,10 @@
             .summary-grid {
                 grid-template-columns: 1fr;
                 gap: var(--space-32);
+            }
+            
+            .expectations-grid {
+                grid-template-columns: 1fr;
             }
             
             .detail-list li {
@@ -517,15 +539,15 @@
             <a href="index.html" class="nav-brand">Michaela & Daniel Ferencz</a>
             
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="financial.html">Financial Info</a></li>
-                <li><a href="rental-history.html" class="active">Rental History</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="about.html">Über Uns</a></li>
+                <li><a href="financial.html">Finanzen</a></li>
+                <li><a href="rental-history.html" class="active">Mieterhistorie</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
             </ul>
             
             <div class="nav-cta">
-                <a href="contact.html" class="btn-nav">Inquire</a>
+                <a href="contact.html#message" class="btn-nav">Nachricht Senden</a>
             </div>
             
             <div class="hamburger">
@@ -539,9 +561,9 @@
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
-            <p class="eyebrow">Rental Track Record</p>
-            <h1>Rental History</h1>
-            <p class="page-subtitle">Perfect payment record, excellent landlord references, and a proven commitment to responsible tenancy.</p>
+            <p class="eyebrow">Zuverlässige Mieterhistorie</p>
+            <h1>Mieterhistorie</h1>
+            <p class="page-subtitle">Perfekte Zahlungshistorie, ausgezeichnete Referenzen und nachgewiesenes Engagement für verantwortungsvolles Mieten.</p>
         </div>
     </section>
 
@@ -550,88 +572,88 @@
         <div class="container">
             <div class="summary-grid">
                 <div class="summary-item">
-                    <div class="summary-number">100%</div>
-                    <div class="summary-label">On-Time Payments</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-number">0</div>
-                    <div class="summary-label">Missed Payments</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-number">0</div>
-                    <div class="summary-label">Complaints</div>
+                    <div class="summary-number">20+</div>
+                    <div class="summary-label">Jahre Miethistorie</div>
                 </div>
                 <div class="summary-item">
                     <div class="summary-number">100%</div>
-                    <div class="summary-label">Deposit Returns</div>
+                    <div class="summary-label">Pünktliche Zahlungen</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">0</div>
+                    <div class="summary-label">Beschwerden</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">0</div>
+                    <div class="summary-label">Mietschulden</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LAST RESIDENCE -->
+    <!-- CURRENT RESIDENCE -->
     <section class="residence-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: var(--space-48);">
-                <p class="eyebrow">Most Recent</p>
-                <h2>Last Residence</h2>
+            <div style="text-align: center; margin-bottom: var(--space-64);">
+                <p class="eyebrow">Aktueller Wohnsitz</p>
+                <h2>Aktuelle Wohnung</h2>
             </div>
             
             <div class="residence-card">
                 <div class="residence-header">
-                    <h3>Modern Apartment</h3>
-                    <p class="location">[City Name], [Country] · [Month Year] – Present</p>
+                    <h3>4-Zimmer-Wohnung (78 m²)</h3>
+                    <p class="location">Mülheim an der Ruhr · Seit März 2005</p>
                 </div>
                 
                 <div class="residence-details">
                     <div class="detail-group">
-                        <h4>Rental Details</h4>
+                        <h4>Mietdetails</h4>
                         <ul class="detail-list">
                             <li>
-                                <span class="label">Duration</span>
-                                <span class="value">[X] years</span>
+                                <span class="label">Mietdauer</span>
+                                <span class="value">20+ Jahre</span>
                             </li>
                             <li>
-                                <span class="label">Monthly Rent</span>
-                                <span class="value">€[Amount]</span>
+                                <span class="label">Wohnungsgröße</span>
+                                <span class="value">78 m², 4 Zimmer</span>
                             </li>
                             <li>
-                                <span class="label">Apartment Size</span>
-                                <span class="value">[XX] m², [X] rooms</span>
+                                <span class="label">Vertragsart</span>
+                                <span class="value">Standardmietvertrag</span>
                             </li>
                             <li>
-                                <span class="label">Lease Type</span>
-                                <span class="value">Standard contract</span>
+                                <span class="label">Umzugsgrund</span>
+                                <span class="value">Nähe zu unseren Kindern</span>
                             </li>
                         </ul>
                     </div>
                     
                     <div class="detail-group">
-                        <h4>Performance</h4>
+                        <h4>Mietverhalten</h4>
                         <ul class="detail-list">
                             <li>
-                                <span class="label">Payment Record</span>
-                                <span class="value">100% on-time</span>
+                                <span class="label">Zahlungshistorie</span>
+                                <span class="value">100% pünktlich</span>
                             </li>
                             <li>
-                                <span class="label">Property Condition</span>
-                                <span class="value">Excellent maintenance</span>
+                                <span class="label">Wohnungszustand</span>
+                                <span class="value">Ausgezeichnete Pflege</span>
                             </li>
                             <li>
-                                <span class="label">Neighbor Relations</span>
-                                <span class="value">Zero complaints</span>
+                                <span class="label">Nachbarschaft</span>
+                                <span class="value">Keine Beschwerden</span>
                             </li>
                             <li>
-                                <span class="label">Communication</span>
-                                <span class="value">Prompt & professional</span>
+                                <span class="label">Kommunikation</span>
+                                <span class="value">Zuverlässig & professionell</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 
-                <div style="background: var(--bg-secondary); padding: var(--space-24); border-radius: var(--radius-sm); margin-top: var(--space-32);">
+                <div style="background: var(--bg-primary); padding: var(--space-24); border-radius: var(--radius-sm); margin-top: var(--space-32);">
                     <p style="margin: 0; font-size: 0.9375rem; line-height: 1.7;">
-                        <strong style="color: var(--text-primary);">Landlord Reference:</strong> Available for direct contact. Our current landlord has provided an excellent written reference (Mietschuldenfreiheitsbescheinigung) confirming zero rent arrears and exemplary tenancy.
+                        <strong style="color: var(--text-primary);">Vermieterbescheinigung:</strong> Auf Anfrage verfügbar. Unser aktueller Vermieter kann direkt kontaktiert werden und bestätigt eine einwandfreie Miethistorie ohne Mietschulden.
                     </p>
                 </div>
             </div>
@@ -641,46 +663,46 @@
     <!-- WHAT TO EXPECT -->
     <section class="expectations-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: var(--space-48);">
-                <p class="eyebrow">As Our Landlord</p>
-                <h2>What You Can Expect</h2>
+            <div style="text-align: center; margin-bottom: var(--space-64);">
+                <p class="eyebrow">Als Vermieter</p>
+                <h2>Was Sie Erwarten Können</h2>
             </div>
             
             <div class="expectations-grid">
                 <div class="expectation-card">
                     <div class="expectation-icon">💰</div>
-                    <h3>Reliable Payments</h3>
-                    <p>Rent paid on the 1st of every month via SEPA direct debit. Never a late payment in our entire rental history.</p>
+                    <h3>Zuverlässige Zahlungen</h3>
+                    <p>Miete pünktlich zum 1. des Monats per SEPA-Lastschrift. Nie eine verspätete Zahlung in unserer gesamten Miethistorie.</p>
                 </div>
                 
                 <div class="expectation-card">
                     <div class="expectation-icon">🏠</div>
-                    <h3>Property Care</h3>
-                    <p>We treat every property as our own. Regular cleaning, preventive maintenance, and immediate reporting of any issues.</p>
+                    <h3>Sorgfältige Pflege</h3>
+                    <p>Wir behandeln jede Wohnung wie unser Eigentum. Regelmäßige Reinigung und sofortige Meldung von Problemen.</p>
                 </div>
                 
                 <div class="expectation-card">
                     <div class="expectation-icon">💬</div>
-                    <h3>Clear Communication</h3>
-                    <p>Responsive, professional, and respectful. We keep landlords informed and address concerns proactively.</p>
+                    <h3>Klare Kommunikation</h3>
+                    <p>Zeitnah, professionell und respektvoll. Wir halten Vermieter informiert und gehen proaktiv auf Anliegen ein.</p>
                 </div>
                 
                 <div class="expectation-card">
                     <div class="expectation-icon">🤝</div>
-                    <h3>Respectful Living</h3>
-                    <p>Quiet lifestyle, considerate of neighbors, and adherence to all house rules and community standards.</p>
+                    <h3>Respektvolles Wohnen</h3>
+                    <p>Ruhiger Lebensstil, rücksichtsvoll gegenüber Nachbarn und Einhaltung aller Hausregeln.</p>
                 </div>
                 
                 <div class="expectation-card">
                     <div class="expectation-icon">⏰</div>
-                    <h3>Long-term Commitment</h3>
-                    <p>We're seeking a home, not just a rental. Minimum 5+ years commitment means stability for you as landlord.</p>
+                    <h3>Langfristige Bindung</h3>
+                    <p>Wir suchen ein Zuhause, nicht nur eine Mietwohnung. Mindestens 5+ Jahre bedeutet Stabilität für Sie als Vermieter.</p>
                 </div>
                 
                 <div class="expectation-card">
                     <div class="expectation-icon">✨</div>
-                    <h3>Zero Drama</h3>
-                    <p>No complaints, no disputes, no hassles. We've maintained excellent relationships with all previous landlords.</p>
+                    <h3>Unkompliziert</h3>
+                    <p>Keine Beschwerden, keine Konflikte, kein Stress. Wir pflegen ausgezeichnete Beziehungen zu allen Vermietern.</p>
                 </div>
             </div>
         </div>
@@ -689,9 +711,9 @@
     <!-- CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>Landlord References Available</h2>
-            <p>Our previous landlords are happy to speak with you directly about their experience. Contact us to request references.</p>
-            <a href="contact.html" class="btn-primary">Get in Touch</a>
+            <h2>Vermieterreferenzen Verfügbar</h2>
+            <p>Unser Vermieter ist gerne bereit, direkt über seine Erfahrungen mit uns zu sprechen. Kontaktieren Sie uns für Referenzen.</p>
+            <a href="contact.html" class="btn-primary">Kontakt Aufnehmen</a>
         </div>
     </section>
 
@@ -700,31 +722,31 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Schnelllinks</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="financial.html">Financial Info</a></li>
-                        <li><a href="rental-history.html">Rental History</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="about.html">Über Uns</a></li>
+                        <li><a href="financial.html">Finanzen</a></li>
+                        <li><a href="rental-history.html">Mieterhistorie</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: your.email@example.com</p>
-                    <p>Phone: +49 XXX XXXXXXX</p>
+                    <h4>Kontakt</h4>
+                    <p>E-Mail: your.email@example.com</p>
+                    <p>Telefon: +49 XXX XXXXXXX</p>
                     <p>WhatsApp: +49 XXX XXXXXXX</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Searching For</h4>
-                    <p>60–80 m², 2–3 rooms</p>
-                    <p>Eimsbüttel, Altona, Winterhude</p>
-                    <p>Move-in: March 2026+</p>
+                    <h4>Wir Suchen</h4>
+                    <p>70–100 m², 3-4 Zimmer</p>
+                    <p>Schnelsen und Umgebung</p>
+                    <p>Einzug: Ab Mai 2026</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2026 Tenant Profile Hamburg · All data handling complies with GDPR regulations</p>
+                <p>© 2026 Michaela & Daniel Ferencz · Alle Datenverarbeitungen entsprechen der DSGVO</p>
             </div>
         </div>
     </footer>
@@ -742,4 +764,5 @@
 
 </body>
 </html>
+
 
