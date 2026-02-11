@@ -331,6 +331,11 @@
             gap: var(--space-32);
         }
         
+        /* Center the 7th card when alone on last row */
+        .detail-card:nth-child(7):last-child {
+            grid-column: 2 / 3;
+        }
+        
         .detail-card {
             background: var(--white);
             border: 1px solid var(--border);
@@ -469,6 +474,11 @@
             
             .details-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* Reset centering on tablet */
+            .detail-card:nth-child(7):last-child {
+                grid-column: auto;
             }
             
             h2 {
@@ -657,7 +667,7 @@
             <div class="section-header">
                 <p class="eyebrow">Auf Einen Blick</p>
                 <h2>Wichtige Details</h2>
-                <p class="section-intro">Alles, was Sie über uns als Ihre zukünftigen Mieter wissen müssen – klar und professionell dargestellt.</p>
+                <p class="section-intro">Alles, was Sie über uns als Ihre zukünftigen Mieter wissen müssen.</p>
             </div>
             
             <div class="details-grid">
@@ -670,7 +680,7 @@
                 <div class="detail-card">
                     <div class="detail-icon">💰</div>
                     <h3>Einkommen</h3>
-                    <p>€6.000+ netto monatlich. Einkommens-zu-Miete-Verhältnis von 3,5× – über dem deutschen Standard.</p>
+                    <p>€6.000+ netto monatlich. Einkommens-zu-Miete-Verhältnis von 3,5×.</p>
                 </div>
                 
                 <div class="detail-card">
@@ -688,13 +698,13 @@
                 <div class="detail-card">
                     <div class="detail-icon">📐</div>
                     <h3>Größe</h3>
-                    <p>70–100 m², 3 Zimmer. Gepflegte Wohnung in gutem Zustand.</p>
+                    <p>60–100 m², 3-3.5 Zimmer. Gepflegte Wohnung in gutem Zustand.</p>
                 </div>
                 
                 <div class="detail-card">
                     <div class="detail-icon">⏰</div>
                     <h3>Dauer</h3>
-                    <p>Langfristige Vermietung. Mindestens 5 Jahre – wir suchen ein Zuhause, keine Übergangslösung.</p>
+                    <p>Langfristige Vermietung. Wir suchen ein Zuhause, keine Übergangslösung.</p>
                 </div>
                 
                 <div class="detail-card">
@@ -740,7 +750,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Wir Suchen</h4>
-                    <p>70–100 m², 3 Zimmer</p>
+                    <p>60–100 m², 3-3.5 Zimmer</p>
                     <p>Schnelsen und Umgebung</p>
                     <p>Einzug: Ab Mai 2026</p>
                 </div>
@@ -765,6 +775,7 @@
 
 </body>
 </html>
+
 
 
 
