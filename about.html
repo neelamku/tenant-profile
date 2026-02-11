@@ -27,6 +27,7 @@
             --space-48: 48px;
             --space-64: 64px;
             --space-80: 80px;
+            --space-100: 100px;
             --radius: 14px;
             --radius-sm: 8px;
             --max-width: 1120px;
@@ -77,7 +78,7 @@
             line-height: 1.1;
             letter-spacing: 0.04em;
             text-transform: uppercase;
-            margin-bottom: var(--space-24);
+            margin-bottom: var(--space-32);
         }
         
         h3 {
@@ -188,139 +189,80 @@
             display: none;
         }
         
-        /* HERO SECTION - Simple Clean Style */
+        /* HERO SECTION */
         .hero {
             min-height: auto;
-            display: flex;
-            align-items: center;
-            padding: var(--space-64) 0 var(--space-48) 0;
+            padding: var(--space-100) 0;
             background: var(--bg-primary);
         }
         
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-64);
-            align-items: center;
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
         
         .hero-content h1 {
-            margin-bottom: var(--space-32);
+            margin-bottom: var(--space-48);
         }
         
         .hero-image {
-            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         .hero-image img {
             width: 100%;
-            height: 500px;
+            height: 550px;
             object-fit: cover;
             border-radius: var(--radius);
             box-shadow: var(--shadow-soft);
         }
         
-        /* STORY SECTION - Two Columns */
+        /* STORY SECTION */
         .story-section {
-            padding: var(--space-80) 0;
-            background: var(--bg-secondary);
-        }
-        
-        .story-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-64);
-            align-items: start;
-        }
-        
-        .story-column h2 {
-            margin-bottom: var(--space-32);
-        }
-        
-        .story-column .eyebrow {
-            display: block;
-        }
-        
-        .story-column p {
-            font-size: 1.0625rem;
-            line-height: 1.85;
-            color: var(--text-primary);
-            margin-bottom: var(--space-24);
-        }
-        
-        .story-column p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* DETAILS SECTION */
-        .details {
-            padding: var(--space-80) 0;
+            padding: var(--space-100) 0;
             background: var(--bg-primary);
         }
         
-        .section-header {
+        .story-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        
+        .story-content .eyebrow {
             text-align: center;
-            max-width: 750px;
-            margin: 0 auto var(--space-64);
         }
         
-        .section-intro {
-            font-size: 1.125rem;
-            line-height: 1.7;
-            margin: 0;
-            color: var(--text-muted);
+        .story-content h2 {
+            text-align: center;
+            margin-bottom: var(--space-64);
         }
         
-        .details-grid {
+        .story-text {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-32);
+            gap: var(--space-48);
         }
         
-        .detail-card {
+        .story-paragraph {
             background: var(--white);
-            border: 1px solid var(--border);
             padding: var(--space-48);
             border-radius: var(--radius);
-            text-align: center;
+            border-left: 4px solid var(--accent-taupe);
+            box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
         }
         
-        .detail-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-soft);
-            border-color: var(--accent-taupe);
+        .story-paragraph:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 24px rgba(35, 35, 35, 0.1);
         }
         
-        .detail-icon {
-            font-size: 3rem;
-            margin-bottom: var(--space-24);
-            line-height: 1;
-        }
-        
-        .detail-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: var(--space-16);
-            color: var(--accent-taupe);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .detail-card p {
-            margin: 0 0 var(--space-16) 0;
-            font-size: 0.9375rem;
-            line-height: 1.7;
-            color: var(--text-muted);
-            text-align: left;
-        }
-        
-        .detail-card p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .detail-card strong {
+        .story-paragraph p {
+            font-size: 1.125rem;
+            line-height: 1.9;
             color: var(--text-primary);
-            font-weight: 600;
+            margin: 0;
         }
         
         /* CTA SECTION */
@@ -447,20 +389,6 @@
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-48);
-            }
-            
-            .hero-image img {
-                height: 400px;
-            }
-            
-            .story-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-48);
-            }
-            
             h1 {
                 font-size: 3.25rem;
             }
@@ -469,8 +397,12 @@
                 font-size: 2rem;
             }
             
-            .details-grid {
-                grid-template-columns: 1fr;
+            .hero-image img {
+                height: 450px;
+            }
+            
+            .story-paragraph {
+                padding: var(--space-32);
             }
         }
         
@@ -511,11 +443,27 @@
             }
             
             .hero {
-                padding: var(--space-48) 0 var(--space-32) 0;
+                padding: var(--space-64) 0;
             }
             
             .hero-image img {
-                height: 350px;
+                height: 400px;
+            }
+            
+            .story-section {
+                padding: var(--space-64) 0;
+            }
+            
+            .story-paragraph {
+                padding: var(--space-24);
+            }
+            
+            .story-paragraph:hover {
+                transform: translateX(4px);
+            }
+            
+            .story-paragraph p {
+                font-size: 1rem;
             }
             
             .hero-cta {
@@ -526,14 +474,6 @@
             .btn-primary,
             .btn-secondary {
                 text-align: center;
-            }
-            
-            .detail-card {
-                padding: var(--space-32);
-            }
-            
-            .story-column p {
-                font-size: 1rem;
             }
             
             .footer-grid {
@@ -557,11 +497,7 @@
             }
             
             .hero-image img {
-                height: 300px;
-            }
-            
-            .detail-icon {
-                font-size: 2.5rem;
+                height: 350px;
             }
         }
     </style>
@@ -596,11 +532,9 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <p class="eyebrow">Wer Wir Sind</p>
-                    <h1>Über Uns</h1>
-                </div>
+            <div class="hero-content">
+                <p class="eyebrow">Wer Wir Sind</p>
+                <h1>Über Uns</h1>
                 <div class="hero-image">
                     <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=1200&h=800&fit=crop'">
                 </div>
@@ -608,71 +542,26 @@
         </div>
     </section>
 
-    <!-- STORY SECTION - Two Columns -->
+    <!-- STORY SECTION -->
     <section class="story-section">
         <div class="container">
-            <div class="story-grid">
-                <!-- Column 1: Unsere Geschichte -->
-                <div class="story-column">
-                    <p class="eyebrow">Familie & Leben</p>
-                    <h2>Unsere Geschichte</h2>
-                    <p>Wir sind ein berufstätiges Ehepaar (55 und 57 Jahre alt), das nach Hamburg ziehen möchte, um näher bei unseren Kindern und deren junger Familie zu sein. Familie und Zusammenhalt sind uns sehr wichtig, und dieser Umzug ermöglicht es uns, Zeit mit unseren Kindern und Enkelkindern zu verbringen und sie im Alltag zu unterstützen.</p>
-                    <p>Beruflich sind wir beide fest etabliert mit unbefristeten Arbeitsverträgen in stabilen Unternehmen. Wir verfügen über exzellente finanzielle Voraussetzungen, eine perfekte Miethistorie und legen großen Wert darauf, vorbildliche Mieter zu sein.</p>
-                    <p>Beide Nichtraucher, ohne Haustiere, führen wir einen ruhigen, respektvollen Lebensstil. Pünktliche Mietzahlungen und sorgsamer Umgang mit unserem Zuhause sind für uns selbstverständlich. Wir suchen ein langfristiges Zuhause, in dem wir uns wohlfühlen und in dem wir ein Teil der Gemeinschaft sein können.</p>
-                </div>
+            <div class="story-content">
+                <p class="eyebrow">Familie & Leben</p>
+                <h2>Unsere Geschichte</h2>
                 
-                <!-- Column 2: Additional Details -->
-                <div class="story-column">
-                    <p class="eyebrow">Was Uns Ausmacht</p>
-                    <h2>Unsere Werte</h2>
-                    <p><strong>Stabilität:</strong> Mit über 30 Jahren Berufserfahrung und unbefristeten Arbeitsverträgen bringen wir finanzielle Sicherheit und Zuverlässigkeit mit.</p>
-                    <p><strong>Verantwortung:</strong> Wir haben eine makellose Miethistorie ohne Beschwerden und behandeln jede Wohnung mit größtem Respekt und Sorgfalt.</p>
-                    <p><strong>Gemeinschaft:</strong> Als ruhige, respektvolle Nachbarn legen wir Wert auf ein harmonisches Miteinander und langfristige Beziehungen.</p>
-                    <p><strong>Transparenz:</strong> Alle unsere Dokumente – von SCHUFA-Auskunft über Gehaltsnachweise bis zu Vermieterbescheinigungen – stehen zur Verfügung.</p>
+                <div class="story-text">
+                    <div class="story-paragraph">
+                        <p>Wir sind ein berufstätiges Ehepaar (55 und 57 Jahre alt), das nach Hamburg ziehen möchte, um näher bei unseren Kindern und deren junger Familie zu sein. Familie und Zusammenhalt sind uns sehr wichtig, und dieser Umzug ermöglicht es uns, Zeit mit unseren Kindern und Enkelkindern zu verbringen und sie im Alltag zu unterstützen.</p>
+                    </div>
+                    
+                    <div class="story-paragraph">
+                        <p>Beruflich sind wir beide fest etabliert mit unbefristeten Arbeitsverträgen in stabilen Unternehmen. Wir verfügen über exzellente finanzielle Voraussetzungen, eine perfekte Miethistorie und legen großen Wert darauf, vorbildliche Mieter zu sein.</p>
+                    </div>
+                    
+                    <div class="story-paragraph">
+                        <p>Beide Nichtraucher, ohne Haustiere, führen wir einen ruhigen, respektvollen Lebensstil. Pünktliche Mietzahlungen und sorgsamer Umgang mit unserem Zuhause sind für uns selbstverständlich. Wir suchen ein langfristiges Zuhause, in dem wir uns wohlfühlen und in dem wir ein Teil der Gemeinschaft sein können.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DETAILS -->
-    <section class="details">
-        <div class="container">
-            <div class="section-header">
-                <p class="eyebrow">Konkrete Angaben</p>
-                <h2>Was Wir Suchen</h2>
-                <p class="section-intro">Alle wichtigen Informationen über unsere Wohnungssuche auf einen Blick.</p>
-            </div>
-            
-            <div class="details-grid">
-                
-                <div class="detail-card">
-                    <div class="detail-icon">🔑</div>
-                    <h3>Wohnung</h3>
-                    <p><strong>70–100 m²</strong> mit 3 Zimmern in gepflegtem Zustand</p>
-                    <p>Idealerweise in <strong>Schnelsen und Umgebung</strong>, um in der Nähe unserer Familie zu sein</p>
-                </div>
-                
-                <div class="detail-card">
-                    <div class="detail-icon">💶</div>
-                    <h3>Budget</h3>
-                    <p>Bis zu <strong>€1.800 Warmmiete</strong></p>
-                    <p>Einkommens-zu-Miete-Verhältnis von über 3,5× für finanzielle Sicherheit</p>
-                </div>
-                
-                <div class="detail-card">
-                    <div class="detail-icon">📅</div>
-                    <h3>Einzug</h3>
-                    <p>Frühestmöglich <strong>ab Mai 2026</strong></p>
-                    <p>Flexible Termine nach Absprache möglich</p>
-                </div>
-                
-                <div class="detail-card">
-                    <div class="detail-icon">⏰</div>
-                    <h3>Mietdauer</h3>
-                    <p><strong>Langfristig</strong> (mindestens 5 Jahre)</p>
-                    <p>Wir suchen ein echtes Zuhause, keine Übergangslösung</p>
-                </div>
-                
             </div>
         </div>
     </section>
