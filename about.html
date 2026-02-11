@@ -31,7 +31,6 @@
             --radius-sm: 8px;
             --max-width: 1120px;
             --shadow-soft: 0 4px 16px rgba(35, 35, 35, 0.06);
-            --shadow-elegant: 0 12px 40px rgba(35, 35, 35, 0.12);
         }
         
         * {
@@ -189,119 +188,74 @@
             display: none;
         }
         
-        /* HERO SECTION - OVERLAPPING STYLE WITH DISSOLVING EFFECT */
+        /* HERO SECTION - Simple Clean Style */
         .hero {
-            padding: var(--space-80) 0;
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            padding: var(--space-64) 0 var(--space-48) 0;
             background: var(--bg-primary);
-            overflow: hidden;
         }
         
-        .hero-overlap-container {
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-64);
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            margin-bottom: var(--space-32);
+        }
+        
+        .hero-image {
             position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-32);
         }
         
-        .hero-image-large {
+        .hero-image img {
             width: 100%;
-            max-width: 680px;
-            height: 550px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-image-large img {
-            width: 100%;
-            height: 100%;
+            height: 500px;
             object-fit: cover;
-            /* Dissolving effect - gradient mask */
-            mask-image: radial-gradient(ellipse 90% 85% at 45% 50%, black 40%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse 90% 85% at 45% 50%, black 40%, transparent 100%);
-        }
-        
-        .hero-content-box {
-            position: absolute;
-            right: 0;
-            bottom: 40px;
-            width: 520px;
-            background: var(--accent-taupe);
-            padding: var(--space-64);
             border-radius: var(--radius);
-            box-shadow: 
-                0 8px 24px rgba(35, 35, 35, 0.12),
-                0 16px 48px rgba(35, 35, 35, 0.08);
-            color: white;
-        }
-        
-        .hero-content-box .eyebrow {
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: var(--space-16);
-        }
-        
-        .hero-content-box h1 {
-            font-size: 2.75rem;
-            line-height: 1;
-            color: white;
-            margin-bottom: var(--space-24);
-            letter-spacing: 0.1em;
-        }
-        
-        .hero-content-box p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.95);
-            margin: 0;
-        }
-        
-        /* STORY SECTION */
-        .story-section {
-            padding: var(--space-80) 0;
-            background: var(--bg-primary);
-        }
-        
-        .story-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .story-content h2 {
-            text-align: center;
-            margin-bottom: var(--space-48);
-        }
-        
-        .story-content .eyebrow {
-            text-align: center;
-        }
-        
-        .story-text {
-            background: var(--white);
-            padding: var(--space-64);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
             box-shadow: var(--shadow-soft);
         }
         
-        .story-text p {
-            font-size: 1.125rem;
-            line-height: 1.9;
+        /* STORY SECTION - Two Columns */
+        .story-section {
+            padding: var(--space-80) 0;
+            background: var(--bg-secondary);
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-64);
+            align-items: start;
+        }
+        
+        .story-column h2 {
+            margin-bottom: var(--space-32);
+        }
+        
+        .story-column .eyebrow {
+            display: block;
+        }
+        
+        .story-column p {
+            font-size: 1.0625rem;
+            line-height: 1.85;
             color: var(--text-primary);
             margin-bottom: var(--space-24);
         }
         
-        .story-text p:last-child {
+        .story-column p:last-child {
             margin-bottom: 0;
-        }
-        
-        .story-text strong {
-            color: var(--accent-taupe);
-            font-weight: 600;
         }
         
         /* DETAILS SECTION */
         .details {
             padding: var(--space-80) 0;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
         }
         
         .section-header {
@@ -372,7 +326,7 @@
         /* CTA SECTION */
         .cta {
             padding: var(--space-80) 0;
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             text-align: center;
         }
         
@@ -435,7 +389,7 @@
         
         /* FOOTER */
         footer {
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
@@ -493,22 +447,18 @@
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero-overlap-container {
-                display: flex;
-                flex-direction: column;
+            .hero-grid {
+                grid-template-columns: 1fr;
                 gap: var(--space-48);
             }
             
-            .hero-image-large {
-                max-width: 100%;
-                height: 450px;
+            .hero-image img {
+                height: 400px;
             }
             
-            .hero-content-box {
-                position: static;
-                width: 100%;
-                max-width: 600px;
-                margin: -60px auto 0;
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-48);
             }
             
             h1 {
@@ -521,10 +471,6 @@
             
             .details-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .story-text {
-                padding: var(--space-48);
             }
         }
         
@@ -559,27 +505,17 @@
                 background: var(--text-primary);
             }
             
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.1em;
+            }
+            
             .hero {
-                padding: var(--space-48) 0;
+                padding: var(--space-48) 0 var(--space-32) 0;
             }
             
-            .hero-image-large {
-                height: 400px;
-            }
-            
-            .hero-image-large img {
-                mask-image: radial-gradient(ellipse 95% 90% at 50% 50%, black 50%, transparent 100%);
-                -webkit-mask-image: radial-gradient(ellipse 95% 90% at 50% 50%, black 50%, transparent 100%);
-            }
-            
-            .hero-content-box {
-                padding: var(--space-48);
-                margin: -40px auto 0;
-            }
-            
-            .hero-content-box h1 {
-                font-size: 2.25rem;
-                letter-spacing: 0.08em;
+            .hero-image img {
+                height: 350px;
             }
             
             .hero-cta {
@@ -596,11 +532,7 @@
                 padding: var(--space-32);
             }
             
-            .story-text {
-                padding: var(--space-32);
-            }
-            
-            .story-text p {
+            .story-column p {
                 font-size: 1rem;
             }
             
@@ -615,20 +547,17 @@
                 letter-spacing: 0.02em;
             }
             
-            .hero-image-large {
-                height: 350px;
-            }
-            
-            .hero-content-box {
-                padding: var(--space-32);
-            }
-            
-            .hero-content-box h1 {
-                font-size: 1.875rem;
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 0.08em;
             }
             
             h2 {
                 font-size: 1.75rem;
+            }
+            
+            .hero-image img {
+                height: 300px;
             }
             
             .detail-icon {
@@ -664,30 +593,42 @@
         </div>
     </nav>
 
-    <!-- HERO - OVERLAPPING STYLE WITH DISSOLVING PHOTO -->
+    <!-- HERO -->
     <section class="hero">
-        <div class="hero-overlap-container">
-            <div class="hero-image-large">
-                <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=1200&h=800&fit=crop'">
-            </div>
-            <div class="hero-content-box">
-                <p class="eyebrow">Unsere Geschichte</p>
-                <h1>Über Uns</h1>
-                <p>Nach über 30 Jahren in Mülheim an der Ruhr beginnen wir einen neuen Lebensabschnitt in Hamburg. Erfahren Sie mehr über uns, unsere Werte und warum wir die idealen Mieter für Ihre Immobilie sind.</p>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow">Wer Wir Sind</p>
+                    <h1>Über Uns</h1>
+                </div>
+                <div class="hero-image">
+                    <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=1200&h=800&fit=crop'">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- OUR STORY - Family Info Section -->
+    <!-- STORY SECTION - Two Columns -->
     <section class="story-section">
         <div class="container">
-            <div class="story-content">
-                <p class="eyebrow">Wer Wir Sind</p>
-                <h2>Unsere Geschichte</h2>
-                <div class="story-text">
-                    <p>Wir sind ein berufstätiges Ehepaar, <strong>55 und 57 Jahre alt</strong>, das nach Hamburg zieht, um näher bei unseren Kindern und Enkelkindern zu sein.</p>
-                    <p>Familie und Zusammenhalt sind uns sehr wichtig. Dieser Umzug ermöglicht es uns, regelmäßig Zeit mit unseren Kindern und Enkelkindern zu verbringen und sie im Alltag zu unterstützen.</p>
-                    <p>Wir suchen gezielt in der Nähe von <strong>Schnelsen</strong>, wo unsere Familie lebt.</p>
+            <div class="story-grid">
+                <!-- Column 1: Unsere Geschichte -->
+                <div class="story-column">
+                    <p class="eyebrow">Familie & Leben</p>
+                    <h2>Unsere Geschichte</h2>
+                    <p>Wir sind ein berufstätiges Ehepaar (55 und 57 Jahre alt), das nach Hamburg ziehen möchte, um näher bei unseren Kindern und deren junger Familie zu sein. Familie und Zusammenhalt sind uns sehr wichtig, und dieser Umzug ermöglicht es uns, Zeit mit unseren Kindern und Enkelkindern zu verbringen und sie im Alltag zu unterstützen.</p>
+                    <p>Beruflich sind wir beide fest etabliert mit unbefristeten Arbeitsverträgen in stabilen Unternehmen. Wir verfügen über exzellente finanzielle Voraussetzungen, eine perfekte Miethistorie und legen großen Wert darauf, vorbildliche Mieter zu sein.</p>
+                    <p>Beide Nichtraucher, ohne Haustiere, führen wir einen ruhigen, respektvollen Lebensstil. Pünktliche Mietzahlungen und sorgsamer Umgang mit unserem Zuhause sind für uns selbstverständlich. Wir suchen ein langfristiges Zuhause, in dem wir uns wohlfühlen und in dem wir ein Teil der Gemeinschaft sein können.</p>
+                </div>
+                
+                <!-- Column 2: Additional Details -->
+                <div class="story-column">
+                    <p class="eyebrow">Was Uns Ausmacht</p>
+                    <h2>Unsere Werte</h2>
+                    <p><strong>Stabilität:</strong> Mit über 30 Jahren Berufserfahrung und unbefristeten Arbeitsverträgen bringen wir finanzielle Sicherheit und Zuverlässigkeit mit.</p>
+                    <p><strong>Verantwortung:</strong> Wir haben eine makellose Miethistorie ohne Beschwerden und behandeln jede Wohnung mit größtem Respekt und Sorgfalt.</p>
+                    <p><strong>Gemeinschaft:</strong> Als ruhige, respektvolle Nachbarn legen wir Wert auf ein harmonisches Miteinander und langfristige Beziehungen.</p>
+                    <p><strong>Transparenz:</strong> Alle unsere Dokumente – von SCHUFA-Auskunft über Gehaltsnachweise bis zu Vermieterbescheinigungen – stehen zur Verfügung.</p>
                 </div>
             </div>
         </div>
@@ -697,46 +638,39 @@
     <section class="details">
         <div class="container">
             <div class="section-header">
-                <p class="eyebrow">Weitere Details</p>
-                <h2>Was Sie Wissen Sollten</h2>
-                <p class="section-intro">Wichtige Informationen über uns als Ihre zukünftigen Mieter.</p>
+                <p class="eyebrow">Konkrete Angaben</p>
+                <h2>Was Wir Suchen</h2>
+                <p class="section-intro">Alle wichtigen Informationen über unsere Wohnungssuche auf einen Blick.</p>
             </div>
             
             <div class="details-grid">
                 
-                <!-- LEBENSSTIL CARD -->
-                <div class="detail-card">
-                    <div class="detail-icon">🏡</div>
-                    <h3>Lebensstil</h3>
-                    <p>Wir führen einen <strong>ruhigen und respektvollen Lebensstil</strong>. Beide sind wir Nichtraucher und haben keine Haustiere.</p>
-                    <p>Pünktliche Mietzahlungen und sorgsamer Umgang mit unserem Zuhause sind für uns selbstverständlich. Wir legen großen Wert darauf, vorbildliche Mieter zu sein.</p>
-                    <p>Wir suchen ein <strong>langfristiges Zuhause</strong>, in dem wir uns wohlfühlen und ein Teil der Gemeinschaft sein können.</p>
-                </div>
-                
-                <!-- BERUF CARD -->
-                <div class="detail-card">
-                    <div class="detail-icon">💼</div>
-                    <h3>Beruf</h3>
-                    <p>Beruflich sind wir beide fest etabliert mit <strong>unbefristeten Arbeitsverträgen</strong> in stabilen Unternehmen.</p>
-                    <p>Wir leben seit <strong>über 30 Jahren in Mülheim an der Ruhr</strong>, wo wir beruflich fest verwurzelt sind. Der Umzug nach Hamburg bedeutet einen Wechsel unseres Arbeitsortes nach Hamburg.</p>
-                    <p>Unsere berufliche Stabilität und exzellenten finanziellen Voraussetzungen bleiben davon unberührt.</p>
-                </div>
-                
-                <!-- ZUHAUSE CARD -->
                 <div class="detail-card">
                     <div class="detail-icon">🔑</div>
-                    <h3>Unser Zuhause</h3>
-                    <p>Wir suchen eine <strong>gepflegte Wohnung mit 70–100 m² und 3 Zimmern</strong> in ruhiger Lage, idealerweise in der Nähe von Schnelsen.</p>
-                    <p>Unser Budget liegt bei <strong>bis zu €1.800 Warmmiete</strong>. Der frühestmögliche Einzug wäre <strong>ab Mai 2026</strong>, aber wir sind zeitlich flexibel.</p>
-                    <p>Wir planen eine <strong>langfristige Vermietung von mindestens 5 Jahren</strong> – wahrscheinlich deutlich länger. Wir suchen ein echtes Zuhause, keine Übergangslösung.</p>
+                    <h3>Wohnung</h3>
+                    <p><strong>70–100 m²</strong> mit 3 Zimmern in gepflegtem Zustand</p>
+                    <p>Idealerweise in <strong>Schnelsen und Umgebung</strong>, um in der Nähe unserer Familie zu sein</p>
                 </div>
-
-                <!-- FINANCIAL CARD -->
+                
                 <div class="detail-card">
-                    <div class="detail-icon">💰</div>
-                    <h3>Finanzen</h3>
-                    <p>Wir verfügen über ein <strong>kombiniertes Nettoeinkommen von über €6.000 monatlich</strong>, was uns ein komfortables Einkommens-zu-Miete-Verhältnis von 3,5× ermöglicht.</p>
-                    <p>Unsere <strong>SCHUFA-Auskunft ist exzellent</strong> ohne negative Einträge. Wir haben eine perfekte Zahlungshistorie und können alle erforderlichen Dokumente bereitstellen.</p>
+                    <div class="detail-icon">💶</div>
+                    <h3>Budget</h3>
+                    <p>Bis zu <strong>€1.800 Warmmiete</strong></p>
+                    <p>Einkommens-zu-Miete-Verhältnis von über 3,5× für finanzielle Sicherheit</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">📅</div>
+                    <h3>Einzug</h3>
+                    <p>Frühestmöglich <strong>ab Mai 2026</strong></p>
+                    <p>Flexible Termine nach Absprache möglich</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">⏰</div>
+                    <h3>Mietdauer</h3>
+                    <p><strong>Langfristig</strong> (mindestens 5 Jahre)</p>
+                    <p>Wir suchen ein echtes Zuhause, keine Übergangslösung</p>
                 </div>
                 
             </div>
