@@ -306,56 +306,10 @@
             color: var(--text-muted);
         }
         
-        /* EXPECTATIONS */
-        .expectations-section {
-            padding: var(--space-80) 0;
-            background: var(--bg-primary);
-        }
-        
-        .expectations-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-32);
-            margin-top: var(--space-48);
-        }
-        
-        .expectation-card {
-            background: var(--bg-primary);
-            border: 1px solid var(--border);
-            padding: var(--space-48);
-            border-radius: var(--radius);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .expectation-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-soft);
-            border-color: var(--accent-taupe);
-        }
-        
-        .expectation-icon {
-            font-size: 3rem;
-            margin-bottom: var(--space-24);
-            line-height: 1;
-        }
-        
-        .expectation-card h3 {
-            font-size: 1.125rem;
-            margin-bottom: var(--space-16);
-            color: var(--accent-taupe);
-        }
-        
-        .expectation-card p {
-            font-size: 0.9375rem;
-            margin: 0;
-            line-height: 1.6;
-        }
-        
         /* CTA SECTION */
         .cta-section {
             padding: var(--space-80) 0;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             text-align: center;
         }
         
@@ -391,7 +345,7 @@
         
         /* FOOTER */
         footer {
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
@@ -457,10 +411,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .expectations-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             h1 {
                 font-size: 2.5rem;
             }
@@ -508,10 +458,6 @@
             .summary-grid {
                 grid-template-columns: 1fr;
                 gap: var(--space-32);
-            }
-            
-            .expectations-grid {
-                grid-template-columns: 1fr;
             }
             
             .detail-list li {
@@ -660,54 +606,6 @@
         </div>
     </section>
 
-    <!-- WHAT TO EXPECT -->
-    <section class="expectations-section">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: var(--space-64);">
-                <p class="eyebrow">Als Vermieter</p>
-                <h2>Was Sie Erwarten Können</h2>
-            </div>
-            
-            <div class="expectations-grid">
-                <div class="expectation-card">
-                    <div class="expectation-icon">💰</div>
-                    <h3>Zuverlässige Zahlungen</h3>
-                    <p>Miete pünktlich zum 1. des Monats per SEPA-Lastschrift. Nie eine verspätete Zahlung in unserer gesamten Miethistorie.</p>
-                </div>
-                
-                <div class="expectation-card">
-                    <div class="expectation-icon">🏠</div>
-                    <h3>Sorgfältige Pflege</h3>
-                    <p>Wir behandeln jede Wohnung wie unser Eigentum. Regelmäßige Reinigung und sofortige Meldung von Problemen.</p>
-                </div>
-                
-                <div class="expectation-card">
-                    <div class="expectation-icon">💬</div>
-                    <h3>Klare Kommunikation</h3>
-                    <p>Zeitnah, professionell und respektvoll. Wir halten Vermieter informiert und gehen proaktiv auf Anliegen ein.</p>
-                </div>
-                
-                <div class="expectation-card">
-                    <div class="expectation-icon">🤝</div>
-                    <h3>Respektvolles Wohnen</h3>
-                    <p>Ruhiger Lebensstil, rücksichtsvoll gegenüber Nachbarn und Einhaltung aller Hausregeln.</p>
-                </div>
-                
-                <div class="expectation-card">
-                    <div class="expectation-icon">⏰</div>
-                    <h3>Langfristige Bindung</h3>
-                    <p>Wir suchen ein Zuhause, nicht nur eine Mietwohnung. Mindestens 5+ Jahre bedeutet Stabilität für Sie als Vermieter.</p>
-                </div>
-                
-                <div class="expectation-card">
-                    <div class="expectation-icon">✨</div>
-                    <h3>Unkompliziert</h3>
-                    <p>Keine Beschwerden, keine Konflikte, kein Stress. Wir pflegen ausgezeichnete Beziehungen zu allen Vermietern.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA -->
     <section class="cta-section">
         <div class="container">
@@ -764,5 +662,6 @@
 
 </body>
 </html>
+
 
 
