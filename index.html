@@ -63,7 +63,7 @@
         }
         
         h1 {
-            font-size: 3.00rem;
+            font-size: 3rem;
             line-height: 0.95;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -108,7 +108,7 @@
             padding: 0 var(--space-32);
         }
         
-        /* NAVIGATION - IMPROVED BRAND NAME */
+        /* NAVIGATION */
         .navbar {
             background: var(--bg-primary);
             border-bottom: 1px solid var(--border);
@@ -185,7 +185,7 @@
             display: none;
         }
         
-        /* HERO SECTION - MORE BOTTOM PADDING */
+        /* HERO SECTION */
         .hero {
             min-height: auto;
             display: flex;
@@ -206,11 +206,11 @@
         }
         
         .hero-intro {
-            font-size: 1.0625rem;  /* Slightly smaller */
+            font-size: 1.0625rem;
             line-height: 1.65;
             color: var(--text-muted);
             margin-bottom: var(--space-32);
-            max-width: 48ch;  /* Wider for longer text */
+            max-width: 48ch;
         }
         
         .hero-cta {
@@ -273,7 +273,7 @@
             box-shadow: var(--shadow-soft);
         }
         
-        /* HIGHLIGHTS BAR - COMPACT */
+        /* HIGHLIGHTS BAR */
         .highlights {
             background: var(--accent-taupe);
             padding: var(--space-48) 0;
@@ -281,7 +281,7 @@
         
         .highlights-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: var(--space-48);
         }
         
@@ -306,15 +306,15 @@
             line-height: 1.4;
         }
         
-        /* WHY US SECTION */
-        .why-us {
+        /* DETAILS SECTION */
+        .details {
             padding: var(--space-80) 0;
             background: var(--bg-secondary);
         }
         
         .section-header {
             text-align: center;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto var(--space-64);
         }
         
@@ -322,58 +322,12 @@
             font-size: 1.125rem;
             line-height: 1.7;
             margin: 0;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-32);
-        }
-        
-        .feature-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: var(--space-48);
-            border-radius: var(--radius);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--bg-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            margin-bottom: var(--space-24);
-        }
-        
-        .feature-card h3 {
-            margin-bottom: var(--space-16);
-        }
-        
-        .feature-card p {
-            margin: 0;
-            font-size: 0.9375rem;
-            line-height: 1.7;
-        }
-        
-        /* DETAILS SECTION */
-        .details {
-            padding: var(--space-80) 0;
-            background: var(--bg-primary);
+            color: var(--text-muted);
         }
         
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-32);
         }
         
@@ -382,46 +336,41 @@
             border: 1px solid var(--border);
             padding: var(--space-48);
             border-radius: var(--radius);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--accent-taupe);
+        }
+        
+        .detail-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-24);
+            line-height: 1;
         }
         
         .detail-card h3 {
             font-size: 1.25rem;
-            margin-bottom: var(--space-32);
+            margin-bottom: var(--space-16);
+            color: var(--accent-taupe);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: var(--accent-taupe);
         }
         
-        .detail-list {
-            list-style: none;
-        }
-        
-        .detail-list li {
-            padding: var(--space-16) 0;
-            border-bottom: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: var(--space-24);
+        .detail-card p {
+            margin: 0;
             font-size: 0.9375rem;
-        }
-        
-        .detail-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .label {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .value {
+            line-height: 1.7;
             color: var(--text-muted);
         }
         
         /* CTA SECTION */
         .cta {
             padding: var(--space-80) 0;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             text-align: center;
         }
         
@@ -437,7 +386,7 @@
         
         /* FOOTER */
         footer {
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
@@ -514,111 +463,18 @@
             }
             
             .highlights-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 gap: var(--space-32);
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .details-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
             
             h2 {
                 font-size: 2rem;
             }
         }
-
-        .search-box {
-            background: var(--bg-secondary);
-            padding: var(--space-64) 0;
-        }
-
-        .search-content {
-            text-align: center;
-        }
-
-        .search-content h3 {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            margin-bottom: var(--space-48);
-            color: var(--text-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .search-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: var(--space-24);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .search-card {
-            background: white;
-            padding: var(--space-32) var(--space-24);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .search-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-soft);
-            border-color: var(--accent-taupe);
-        }
-
-        .search-card-icon {
-            font-size: 2rem;
-            margin-bottom: var(--space-16);
-        }
-
-        .search-card-label {
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--accent-taupe);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-12);
-        }
-
-        .search-card-value {
-            font-size: 0.9375rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            line-height: 1.4;
-        }
-
-@media (max-width: 1024px) {
-    .search-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .search-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .search-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-        @media (max-width: 768px) {
-            .search-details {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
         
         @media (max-width: 768px) {
             .nav-container {
@@ -658,17 +514,6 @@
             .hero {
                 padding: var(--space-32) 0 var(--space-32) 0;
             }
-
-            .hero-subtitle {
-                font-family: var(--font-heading);
-                font-size: 1.5rem;
-                font-weight: 600;
-                color: var(--accent-taupe);
-                letter-spacing: 0.03em;
-                margin-bottom: var(--space-24);
-                margin-top: calc(var(--space-24) * -1);
-            }
-
             
             .hero-cta {
                 flex-direction: column;
@@ -682,7 +527,7 @@
             }
             
             .highlights-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: var(--space-24);
             }
             
@@ -690,13 +535,12 @@
                 font-size: 2.5rem;
             }
             
-            .footer-grid {
+            .details-grid {
                 grid-template-columns: 1fr;
             }
             
-            .detail-list li {
+            .footer-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-12);
             }
         }
         
@@ -724,6 +568,10 @@
             
             .highlight-label {
                 font-size: 0.8125rem;
+            }
+            
+            .highlights-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -762,15 +610,14 @@
                 <div class="hero-content">
                     <p class="eyebrow">Auf Der Suche Nach Unserem Neuen Zuhause</p>
                     <h1>Vertrauens-würdig.<br>Zuver-lässig.<br>Lang-fristig.</h1>
-                    <p class="hero-subtitle">Michaela & Daniel Ferencz</p>
-                    <p class="hero-intro">Wir sind ein berufstätiges Ehepaar Ende 50 mit ausgezeichnetem Einkommen, stabilen Arbeitsverhältnissen und einwandfreier Bonität sowie perfekter Mietgeschichte. Um näher bei unseren Kindern und deren Familie zu sein, möchten wir unseren Lebensmittelpunkt nach Hamburg verlegen. Für diesen neuen Lebensabschnitt suchen wir ein langfristiges Zuhause in einer der schönen und lebenswerten Hamburger Wohnlagen, idealerweise in der Nähe von Schnelsen.</p>
+                    <p class="hero-intro">Wir sind ein berufstätiges Ehepaar mit ausgezeichnetem Einkommen, stabilen Arbeitsverhältnissen und einwandfreier Bonität sowie perfekter Mietgeschichte. Um näher bei unseren Kindern und deren Familie zu sein, möchten wir unseren Lebensmittelpunkt nach Hamburg verlegen. Für diesen neuen Lebensabschnitt suchen wir ein langfristiges Zuhause in einer der schönen und lebenswerten Hamburger Wohnlagen, idealerweise in der Nähe von Schnelsen.</p>
                     <div class="hero-cta">
                         <a href="about.html" class="btn-primary">Mehr Erfahren</a>
                         <a href="contact.html" class="btn-secondary">Kontakt Aufnehmen</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/240706.jpg" alt="Michaela & Daniel Ferencz">
+                    <img src="images/240706—NL-096.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop'">
                 </div>
             </div>
         </div>
@@ -789,8 +636,12 @@
                     <div class="highlight-label">Pünktliche Mietzahlung</div>
                 </div>
                 <div class="highlight-item">
-                    <div class="highlight-number">✓</div>
+                    <div class="highlight-number">⭐</div>
                     <div class="highlight-label">Exzellente SCHUFA</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">0</div>
+                    <div class="highlight-label">Beschwerden</div>
                 </div>
                 <div class="highlight-item">
                     <div class="highlight-number">∞</div>
@@ -800,82 +651,56 @@
         </div>
     </section>
 
-    <!-- SEARCH CRITERIA BOX -->
-    <section class="search-box">
-        <div class="container">
-            <div class="search-content">
-                <h3>Was Wir Suchen</h3>
-                <div class="search-details">
-                    <div class="search-item">
-                        <span class="search-icon">📐</span>
-                        <span class="search-text">60–80 m²</span>
-                    </div>
-                    <div class="search-item">
-                        <span class="search-icon">🛏️</span>
-                        <span class="search-text">2–3 Zimmer</span>
-                    </div>
-                    <div class="search-item">
-                        <span class="search-icon">💰</span>
-                        <span class="search-text">Bis €1.800 Warmmiete</span>
-                    </div>
-                    <div class="search-item">
-                        <span class="search-icon">📍</span>
-                        <span class="search-text">Schnelsen, Eimsbüttel, Altona</span>
-                    </div>
-                    <div class="search-item">
-                        <span class="search-icon">📅</span>
-                        <span class="search-text">Ab Mai 2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- WHY US -->
-    <section class="why-us">
+    <!-- WICHTIGE DETAILS -->
+    <section class="details">
         <div class="container">
             <div class="section-header">
-                <p class="eyebrow">Warum Wir</p>
-                <h2>Die Perfekte Wahl</h2>
-                <p class="section-intro">Wir bringen alles mit, was Sie sich von idealen Mietern wünschen: finanzielle Stabilität, einwandfreie Mieterhistorie und einen respektvollen, ruhigen Lebensstil.</p>
+                <p class="eyebrow">Auf Einen Blick</p>
+                <h2>Wichtige Details</h2>
+                <p class="section-intro">Alles, was Sie über uns als Ihre zukünftigen Mieter wissen müssen – klar und professionell dargestellt.</p>
             </div>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Starke Finanzen</h3>
-                    <p>€6.000+ Netto-Monatseinkommen. Ausgezeichnete SCHUFA ohne negative Einträge. </p>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">💼</div>
+                    <h3>Beruf</h3>
+                    <p>Unbefristete Arbeitsverträge bei stabilen Unternehmen.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">💼</div>
-                    <h3>Sichere Beschäftigung</h3>
-                    <p>Beide in Vollzeit beschäftigt mit unbefristeten Verträgen.</p>
+                <div class="detail-card">
+                    <div class="detail-icon">💰</div>
+                    <h3>Einkommen</h3>
+                    <p>€6.000+ netto monatlich. Einkommens-zu-Miete-Verhältnis von 3,5× – über dem deutschen Standard.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">🏠</div>
-                    <h3>Perfekte Mieterhistorie</h3>
-                    <p>Nie eine Mietzahlung versäumt.</p>
+                <div class="detail-card">
+                    <div class="detail-icon">📅</div>
+                    <h3>Einzug</h3>
+                    <p>Ab Mai 2026 oder später. Flexible Termine, um uns nach Ihrem Zeitplan zu richten.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Ruhiger Lebensstil</h3>
-                    <p>Nichtraucher, keine Haustiere. Respektvoll, ordentlich und null Beschwerden von Nachbarn.</p>
+                <div class="detail-card">
+                    <div class="detail-icon">📍</div>
+                    <h3>Lage</h3>
+                    <p>Schnelsen und umliegende Stadtteile. Bevorzugt ruhige, attraktive Wohnlagen in Hamburg.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">⏰</div>
-                    <h3>Langfristig Orientiert</h3>
-                    <p>Wir suchen ein Zuhause für die Zukunft, nicht nur eine Mietwohnung. Langfristige Stabilität für Sie als Vermieter.</p>
+                <div class="detail-card">
+                    <div class="detail-icon">📐</div>
+                    <h3>Größe</h3>
+                    <p>70–100 m², 3 Zimmer. Gepflegte Wohnung in gutem Zustand.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Problemlos</h3>
-                    <p>Klare Kommunikation, sofortige Problemberichterstattung und respektvolle Einhaltung aller Hausordnungen.</p>
+                <div class="detail-card">
+                    <div class="detail-icon">⏰</div>
+                    <h3>Dauer</h3>
+                    <p>Langfristige Vermietung. Mindestens 5 Jahre – wir suchen ein Zuhause, keine Übergangslösung.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">💶</div>
+                    <h3>Budget</h3>
+                    <p>Bis €1.800 Warmmiete. Finanzielle Flexibilität für die richtige Wohnung.</p>
                 </div>
             </div>
         </div>
@@ -915,9 +740,9 @@
                 </div>
                 <div class="footer-section">
                     <h4>Wir Suchen</h4>
-                    <p>60–80 m², 3-3.5 Zimmer</p>
-                    <p>Eimsbüttel, Altona, Winterhude</p>
-                    <p>Einzug: Mai 2026+</p>
+                    <p>70–100 m², 3 Zimmer</p>
+                    <p>Schnelsen und Umgebung</p>
+                    <p>Einzug: Ab Mai 2026</p>
                 </div>
             </div>
             
