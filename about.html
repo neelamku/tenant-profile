@@ -189,7 +189,7 @@
             display: none;
         }
         
-        /* HERO SECTION - OVERLAPPING STYLE */
+        /* HERO SECTION - OVERLAPPING STYLE WITH DISSOLVING EFFECT */
         .hero {
             padding: var(--space-80) 0;
             background: var(--bg-primary);
@@ -207,15 +207,17 @@
             width: 100%;
             max-width: 680px;
             height: 550px;
-            border-radius: var(--radius);
+            position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-elegant);
         }
         
         .hero-image-large img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            /* Dissolving effect - gradient mask */
+            mask-image: radial-gradient(ellipse 90% 85% at 45% 50%, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 90% 85% at 45% 50%, black 40%, transparent 100%);
         }
         
         .hero-content-box {
@@ -565,6 +567,11 @@
                 height: 400px;
             }
             
+            .hero-image-large img {
+                mask-image: radial-gradient(ellipse 95% 90% at 50% 50%, black 50%, transparent 100%);
+                -webkit-mask-image: radial-gradient(ellipse 95% 90% at 50% 50%, black 50%, transparent 100%);
+            }
+            
             .hero-content-box {
                 padding: var(--space-48);
                 margin: -40px auto 0;
@@ -657,7 +664,7 @@
         </div>
     </nav>
 
-    <!-- HERO - OVERLAPPING STYLE -->
+    <!-- HERO - OVERLAPPING STYLE WITH DISSOLVING PHOTO -->
     <section class="hero">
         <div class="hero-overlap-container">
             <div class="hero-image-large">
@@ -795,7 +802,6 @@
 
 </body>
 </html>
-
 
 
 
