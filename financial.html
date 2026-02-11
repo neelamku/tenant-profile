@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Information — Tenant Profile Hamburg</title>
+    <title>Finanzielle Informationen — Michaela & Daniel Ferencz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ==============================================
-           BOUTIQUE INTERIOR STUDIO THEME - COMPACT
-           ============================================== */
-        
         :root {
-            --bg-primary: #F8F6F4;
-            --bg-secondary: #E8E6E4;
+            --bg-primary: #F5EDE8;
+            --bg-secondary: #EFE5DD;
             --accent-taupe: #B6A396;
             --text-primary: #232323;
             --text-muted: #6F6A66;
@@ -96,12 +92,13 @@
         
         .eyebrow {
             font-family: var(--font-body);
-            font-size: 0.8125rem;
+            font-size: 0.75rem;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--accent-taupe);
-            margin-bottom: var(--space-12);
+            letter-spacing: 0.3em;
+            color: #9B8A7D;
+            margin-bottom: var(--space-24);
+            opacity: 0.85;
         }
         
         .container {
@@ -132,11 +129,12 @@
         
         .nav-brand {
             font-family: var(--font-heading);
-            font-size: 1.25rem;  /* Slightly smaller for longer name */
+            font-size: 1.125rem;
             font-weight: 600;
             color: var(--text-primary);
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
             text-decoration: none;
+            line-height: 1.2;
         }
         
         .nav-menu {
@@ -235,7 +233,7 @@
         /* FINANCIAL DETAILS */
         .financial-section {
             padding: var(--space-72) 0;
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
         }
         
         .financial-grid {
@@ -245,7 +243,7 @@
         }
         
         .financial-card {
-            background: var(--white);
+            background: var(--bg-secondary);
             border: 1px solid var(--border);
             padding: var(--space-32);
             border-radius: var(--radius);
@@ -292,18 +290,18 @@
         /* DOCUMENTS SECTION */
         .documents-section {
             padding: var(--space-72) 0;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
         }
         
         .documents-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: var(--space-24);
             margin-top: var(--space-48);
         }
         
         .document-card {
-            background: var(--white);
+            background: var(--bg-primary);
             border: 1px solid var(--border);
             padding: var(--space-32);
             border-radius: var(--radius);
@@ -330,7 +328,7 @@
         /* CTA SECTION */
         .cta-section {
             padding: var(--space-72) 0;
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             text-align: center;
         }
         
@@ -355,7 +353,7 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            border: 1px solid var(--accent-taupe);
+            border: 2px solid var(--accent-taupe);
         }
         
         .btn-primary:hover {
@@ -366,7 +364,7 @@
         
         /* FOOTER */
         footer {
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             padding: var(--space-72) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
@@ -380,7 +378,7 @@
         
         .footer-section h4 {
             font-family: var(--font-heading);
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: var(--space-24);
             letter-spacing: 0.02em;
@@ -417,7 +415,7 @@
         }
         
         .footer-bottom p {
-            font-size: 0.8125rem;
+            font-size: 0.875rem;
             color: var(--text-muted);
             margin: 0;
         }
@@ -426,10 +424,6 @@
         @media (max-width: 1024px) {
             .financial-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .documents-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
             
             .highlight-grid {
@@ -451,7 +445,16 @@
                 grid-template-columns: 1fr auto;
             }
             
+            .nav-brand {
+                font-size: 0.9375rem;
+                letter-spacing: 0.03em;
+            }
+            
             .nav-menu {
+                display: none;
+            }
+            
+            .nav-cta {
                 display: none;
             }
             
@@ -505,15 +508,15 @@
             <a href="index.html" class="nav-brand">Michaela & Daniel Ferencz</a>
             
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="financial.html" class="active">Financial Info</a></li>
-                <li><a href="rental-history.html">Rental History</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="about.html">Über Uns</a></li>
+                <li><a href="financial.html" class="active">Finanzen</a></li>
+                <li><a href="rental-history.html">Mieterhistorie</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
             </ul>
             
             <div class="nav-cta">
-                <a href="contact.html" class="btn-nav">Inquire</a>
+                <a href="contact.html#message" class="btn-nav">Nachricht Senden</a>
             </div>
             
             <div class="hamburger">
@@ -527,9 +530,9 @@
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
-            <p class="eyebrow">Financial Credentials</p>
-            <h1>Financial Info</h1>
-            <p class="page-subtitle">Excellent credit, stable employment, and strong income-to-rent ratio. All documentation ready for review.</p>
+            <p class="eyebrow">Finanzielle Sicherheit</p>
+            <h1>Finanzen</h1>
+            <p class="page-subtitle">Ausgezeichnete Bonität, sichere Arbeitsplätze und optimales Verhältnis von Einkommen zu Miete. Alle Unterlagen sind verfügbar.</p>
         </div>
     </section>
 
@@ -538,16 +541,16 @@
         <div class="container">
             <div class="highlight-grid">
                 <div class="highlight-item">
-                    <div class="highlight-number">€6,000+</div>
-                    <div class="highlight-label">Net Monthly Income</div>
+                    <div class="highlight-number">€6.000+</div>
+                    <div class="highlight-label">Netto-Monatseinkommen</div>
                 </div>
                 <div class="highlight-item">
-                    <div class="highlight-number">3.5×</div>
-                    <div class="highlight-label">Income-to-Rent Ratio</div>
+                    <div class="highlight-number">3,5×</div>
+                    <div class="highlight-label">Einkommen-Miete-Verhältnis</div>
                 </div>
                 <div class="highlight-item">
                     <div class="highlight-number">100%</div>
-                    <div class="highlight-label">Perfect SCHUFA Score</div>
+                    <div class="highlight-label">Einwandfreie SCHUFA</div>
                 </div>
             </div>
         </div>
@@ -557,111 +560,111 @@
     <section class="financial-section">
         <div class="container">
             <div style="text-align: center; margin-bottom: var(--space-48);">
-                <p class="eyebrow">Overview</p>
-                <h2>Financial Details</h2>
+                <p class="eyebrow">Übersicht</p>
+                <h2>Finanzielle Details</h2>
             </div>
             
             <div class="financial-grid">
                 <div class="financial-card">
-                    <h3>Income & Employment</h3>
+                    <h3>Einkommen & Beschäftigung</h3>
                     <ul class="financial-list">
                         <li>
-                            <span class="label">Combined Net Income</span>
-                            <span class="value highlight">€6,000+ / month</span>
+                            <span class="label">Gemeinsames Nettoeinkommen</span>
+                            <span class="value highlight">€6.000+ / Monat</span>
                         </li>
                         <li>
-                            <span class="label">Person 1 Employment</span>
-                            <span class="value">Permanent contract (Unbefristet)</span>
+                            <span class="label">Beschäftigungsverhältnis Person 1</span>
+                            <span class="value">Unbefristet</span>
                         </li>
                         <li>
-                            <span class="label">Person 2 Employment</span>
-                            <span class="value">Permanent contract (Unbefristet)</span>
+                            <span class="label">Beschäftigungsverhältnis Person 2</span>
+                            <span class="value">Unbefristet</span>
                         </li>
                         <li>
-                            <span class="label">Job Stability</span>
-                            <span class="value">Long-term positions, Hamburg-based</span>
+                            <span class="label">Einkommensnachweis</span>
+                            <span class="value">Letzte 3 Gehaltsnachweise</span>
                         </li>
                         <li>
-                            <span class="label">Income Verification</span>
-                            <span class="value">Last 3 months pay slips available</span>
+                            <span class="label">Berufliche Stabilität</span>
+                            <span class="value">Langjährige Positionen</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="financial-card">
-                    <h3>Credit & Financial Health</h3>
+                    <h3>Bonität & Finanzlage</h3>
                     <ul class="financial-list">
                         <li>
-                            <span class="label">SCHUFA Score</span>
-                            <span class="value highlight">Excellent (no negative entries)</span>
+                            <span class="label">SCHUFA-Auskunft</span>
+                            <span class="value highlight">Ausgezeichnet (keine Negativeinträge)</span>
                         </li>
                         <li>
-                            <span class="label">Credit History</span>
-                            <span class="value">Perfect payment record</span>
+                            <span class="label">Zahlungshistorie</span>
+                            <span class="value">Perfekt, immer pünktlich</span>
                         </li>
                         <li>
-                            <span class="label">Existing Debts</span>
-                            <span class="value">None / Minimal</span>
+                            <span class="label">Bestehende Schulden</span>
+                            <span class="value">Keine</span>
                         </li>
                         <li>
-                            <span class="label">Savings</span>
-                            <span class="value">3+ months rent in reserve</span>
+                            <span class="label">Rücklagen</span>
+                            <span class="value">3+ Monatsmieten vorhanden</span>
                         </li>
                         <li>
-                            <span class="label">Bank Account</span>
-                            <span class="value">German bank account established</span>
+                            <span class="label">Bankkonto</span>
+                            <span class="value">Deutsche Bank etabliert</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="financial-card">
-                    <h3>Rental Affordability</h3>
+                    <h3>Mietfähigkeit</h3>
                     <ul class="financial-list">
                         <li>
-                            <span class="label">Target Rent Range</span>
-                            <span class="value">€1,400–€1,700 / month</span>
+                            <span class="label">Gesuchte Mietpreisklasse</span>
+                            <span class="value">€1.400–€1.800 / Monat</span>
                         </li>
                         <li>
-                            <span class="label">Income-to-Rent Ratio</span>
-                            <span class="value highlight">3.5× (exceeds standard)</span>
+                            <span class="label">Einkommen-zu-Miete-Verhältnis</span>
+                            <span class="value highlight">3,5× (übertrifft Standard)</span>
                         </li>
                         <li>
-                            <span class="label">Deposit Availability</span>
-                            <span class="value">3 months rent immediately available</span>
+                            <span class="label">Kaution</span>
+                            <span class="value">3 Monatsmieten sofort verfügbar</span>
                         </li>
                         <li>
-                            <span class="label">First Month Rent</span>
-                            <span class="value">Ready for immediate payment</span>
+                            <span class="label">Erste Mietzahlung</span>
+                            <span class="value">Sofort zahlbereit</span>
                         </li>
                         <li>
-                            <span class="label">Financial Buffer</span>
-                            <span class="value">Strong emergency fund maintained</span>
+                            <span class="label">Finanzieller Puffer</span>
+                            <span class="value">Starker Notfallfonds</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="financial-card">
-                    <h3>Additional Assurances</h3>
+                    <h3>Zusätzliche Sicherheiten</h3>
                     <ul class="financial-list">
                         <li>
-                            <span class="label">Payment Method</span>
-                            <span class="value">SEPA direct debit preferred</span>
+                            <span class="label">Zahlungsmethode</span>
+                            <span class="value">SEPA-Lastschrift bevorzugt</span>
                         </li>
                         <li>
-                            <span class="label">Payment History</span>
-                            <span class="value">Never missed a payment</span>
+                            <span class="label">Privathaftpflicht</span>
+                            <span class="value">Aktiv und gültig</span>
                         </li>
                         <li>
-                            <span class="label">Liability Insurance</span>
-                            <span class="value">Private Haftpflicht active</span>
+                            <span class="label">Mietbürgschaft</span>
+                            <span class="value">Falls gewünscht verfügbar</span>
                         </li>
                         <li>
-                            <span class="label">References</span>
-                            <span class="value">Previous landlords available</span>
+                            <span class="label">Referenzen</span>
+                            <span class="value">Vorherige Vermieter verfügbar</span>
                         </li>
                         <li>
-                            <span class="label">Long-term Stability</span>
-                            <span class="value">Committed to 5+ years in Hamburg</span>
+                            <span class="label">Langfristige Stabilität</span>
+                            <span class="value">5+ Jahre in Hamburg geplant</span>
                         </li>
                     </ul>
                 </div>
@@ -673,40 +676,30 @@
     <section class="documents-section">
         <div class="container">
             <div style="text-align: center; margin-bottom: var(--space-48);">
-                <p class="eyebrow">Ready to Share</p>
-                <h2>Available Documents</h2>
+                <p class="eyebrow">Sofort Verfügbar</p>
+                <h2>Verfügbare Dokumente</h2>
             </div>
             
             <div class="documents-grid">
                 <div class="document-card">
                     <div class="doc-icon">📄</div>
-                    <h3>SCHUFA Report</h3>
-                    <p>Current credit report with excellent score</p>
+                    <h3>SCHUFA-Auskunft</h3>
+                    <p>Aktuelle Bonitätsauskunft mit ausgezeichnetem Score</p>
                 </div>
                 <div class="document-card">
                     <div class="doc-icon">💼</div>
-                    <h3>Employment Contracts</h3>
-                    <p>Permanent contracts from both employers</p>
+                    <h3>Arbeitsverträge</h3>
+                    <p>Unbefristete Verträge beider Arbeitgeber</p>
                 </div>
                 <div class="document-card">
                     <div class="doc-icon">💶</div>
-                    <h3>Salary Statements</h3>
-                    <p>Last 3 months pay slips for verification</p>
-                </div>
-                <div class="document-card">
-                    <div class="doc-icon">🏠</div>
-                    <h3>Landlord Reference</h3>
-                    <p>Mietschuldenfreiheitsbescheinigung</p>
-                </div>
-                <div class="document-card">
-                    <div class="doc-icon">🛡️</div>
-                    <h3>Insurance Proof</h3>
-                    <p>Private liability insurance certificate</p>
+                    <h3>Gehaltsnachweise</h3>
+                    <p>Letzte 3 Monate zur Verifizierung</p>
                 </div>
                 <div class="document-card">
                     <div class="doc-icon">🪪</div>
-                    <h3>ID Documents</h3>
-                    <p>Valid identification for both tenants</p>
+                    <h3>Ausweisdokumente</h3>
+                    <p>Gültige Ausweise beider Mieter</p>
                 </div>
             </div>
         </div>
@@ -715,9 +708,9 @@
     <!-- CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>Request Documents</h2>
-            <p>All documentation is current, verified, and ready to share within 24–48 hours of your request.</p>
-            <a href="contact.html" class="btn-primary">Contact Us</a>
+            <h2>Dokumente Anfordern</h2>
+            <p>Alle Unterlagen sind aktuell, verifiziert und können innerhalb von 24–48 Stunden nach Ihrer Anfrage bereitgestellt werden.</p>
+            <a href="contact.html" class="btn-primary">Kontakt Aufnehmen</a>
         </div>
     </section>
 
@@ -726,31 +719,31 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Schnelllinks</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="financial.html">Financial Info</a></li>
-                        <li><a href="rental-history.html">Rental History</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="about.html">Über Uns</a></li>
+                        <li><a href="financial.html">Finanzen</a></li>
+                        <li><a href="rental-history.html">Mieterhistorie</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: your.email@example.com</p>
-                    <p>Phone: +49 XXX XXXXXXX</p>
+                    <h4>Kontakt</h4>
+                    <p>E-Mail: your.email@example.com</p>
+                    <p>Telefon: +49 XXX XXXXXXX</p>
                     <p>WhatsApp: +49 XXX XXXXXXX</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Searching For</h4>
-                    <p>60–80 m², 2–3 rooms</p>
-                    <p>Eimsbüttel, Altona, Winterhude</p>
-                    <p>Move-in: March 2026+</p>
+                    <h4>Wir Suchen</h4>
+                    <p>60–100 m², 3-3.5 Zimmer</p>
+                    <p>Schnelsen und Umgebung</p>
+                    <p>Einzug: Ab Mai 2026</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2026 Tenant Profile Hamburg · All data handling complies with GDPR regulations</p>
+                <p>© 2026 Michaela & Daniel Ferencz · Alle Datenverarbeitungen entsprechen der DSGVO</p>
             </div>
         </div>
     </footer>
@@ -768,5 +761,6 @@
 
 </body>
 </html>
+
 
 
