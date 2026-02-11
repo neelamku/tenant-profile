@@ -11,11 +11,9 @@
     
     <style>
         :root {
-            --bg-primary: #F8F6F4;
-            --bg-secondary: #E8E6E4;
+            --bg-primary: #F5EDE8;
+            --bg-secondary: #EFE5DD;
             --accent-taupe: #B6A396;
-            --accent-light: #F5EDE8;
-            --accent-warm: #EFE5DD;
             --text-primary: #232323;
             --text-muted: #6F6A66;
             --border: rgba(35, 35, 35, 0.12);
@@ -247,7 +245,7 @@
         }
         
         .story-paragraph {
-            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-warm) 100%);
+            background: var(--white);
             padding: var(--space-48);
             border-radius: var(--radius);
             border-left: 4px solid var(--accent-taupe);
@@ -257,8 +255,7 @@
         
         .story-paragraph:hover {
             transform: translateX(8px);
-            box-shadow: 0 8px 24px rgba(182, 163, 150, 0.2);
-            border-left-width: 6px;
+            box-shadow: 0 8px 24px rgba(35, 35, 35, 0.1);
         }
         
         .story-paragraph p {
