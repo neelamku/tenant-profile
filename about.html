@@ -27,12 +27,10 @@
             --space-48: 48px;
             --space-64: 64px;
             --space-80: 80px;
-            --space-100: 100px;
             --radius: 14px;
             --radius-sm: 8px;
             --max-width: 1120px;
             --shadow-soft: 0 4px 16px rgba(35, 35, 35, 0.06);
-            --shadow-elegant: 0 8px 32px rgba(35, 35, 35, 0.08);
         }
         
         * {
@@ -66,30 +64,32 @@
         
         h1 {
             font-size: 4rem;
-            line-height: 1;
+            line-height: 0.95;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             margin-bottom: var(--space-32);
+            font-weight: 700;
+            color: #1A1715;
         }
         
         h2 {
-            font-size: 2.25rem;
-            line-height: 1.15;
-            letter-spacing: 0.06em;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
             margin-bottom: var(--space-24);
         }
         
         h3 {
-            font-size: 1.375rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.02em;
             margin-bottom: var(--space-16);
         }
         
         p {
             font-size: 1rem;
-            line-height: 1.8;
+            line-height: 1.7;
             color: var(--text-muted);
             margin-bottom: var(--space-16);
         }
@@ -97,22 +97,28 @@
         .eyebrow {
             font-family: var(--font-body);
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.3em;
-            color: var(--accent-taupe);
+            color: #9B8A7D;
             margin-bottom: var(--space-24);
+            opacity: 0.85;
         }
         
-        /* NAVIGATION */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-32);
+        }
+        
+        /* NAVIGATION - Matches Homepage */
         .navbar {
-            background: rgba(248, 246, 244, 0.95);
+            background: var(--bg-primary);
             border-bottom: 1px solid var(--border);
             padding: var(--space-24) 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
         
         .nav-container {
@@ -182,207 +188,146 @@
             display: none;
         }
         
-        /* HERO SECTION - FULL HEIGHT SPLIT */
+        /* HERO SECTION - Consistent with Homepage */
         .hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            padding: var(--space-64) 0 var(--space-48) 0;
             background: var(--bg-primary);
         }
         
-        /* Left Side - Full Height Image */
-        .hero-image-side {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-image-side img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-        
-        .hero-image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: var(--space-48);
-            background: linear-gradient(180deg, transparent 0%, rgba(35, 35, 35, 0.7) 100%);
-        }
-        
-        .image-caption {
-            color: white;
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            opacity: 0.9;
-        }
-        
-        /* Right Side - Content */
-        .hero-content-side {
-            display: flex;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: var(--space-64);
             align-items: center;
-            padding: var(--space-80) var(--space-64);
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-        }
-        
-        .hero-content {
-            max-width: 550px;
         }
         
         .hero-content h1 {
-            line-height: 0.95;
             margin-bottom: var(--space-32);
         }
         
         .hero-intro {
-            font-size: 1.125rem;
-            line-height: 1.9;
+            font-size: 1.0625rem;
+            line-height: 1.65;
             color: var(--text-muted);
-            margin-bottom: 0;
+            margin-bottom: var(--space-32);
+            max-width: 48ch;
         }
         
-        /* PHOTO SECTION - REMOVED */
+        .hero-image {
+            position: relative;
+        }
         
-        /* CARDS SECTION */
-        .cards-section {
-            padding: var(--space-100) 0;
+        .hero-image img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        /* DETAILS SECTION - Consistent with Homepage Style */
+        .details {
+            padding: var(--space-80) 0;
             background: var(--bg-secondary);
-        }
-        
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--space-32);
         }
         
         .section-header {
             text-align: center;
             max-width: 750px;
-            margin: 0 auto var(--space-80);
+            margin: 0 auto var(--space-64);
         }
         
         .section-intro {
             font-size: 1.125rem;
-            line-height: 1.8;
+            line-height: 1.7;
             margin: 0;
             color: var(--text-muted);
         }
         
-        .cards-grid {
+        .details-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-48);
+            gap: var(--space-32);
         }
         
-        .info-card {
+        .detail-card {
             background: var(--white);
             border: 1px solid var(--border);
-            padding: var(--space-64);
+            padding: var(--space-48);
             border-radius: var(--radius);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-4px);
             box-shadow: var(--shadow-soft);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            border-color: var(--accent-taupe);
         }
         
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: var(--accent-taupe);
-            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .info-card:hover::before {
-            height: 100%;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-elegant);
-            border-color: rgba(182, 163, 150, 0.3);
-        }
-        
-        .card-icon {
-            font-size: 3.5rem;
-            margin-bottom: var(--space-32);
+        .detail-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-24);
             line-height: 1;
-            opacity: 0.9;
         }
         
-        .info-card h3 {
+        .detail-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-16);
             color: var(--accent-taupe);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: var(--space-32);
-            font-size: 1.25rem;
+            letter-spacing: 0.05em;
         }
         
-        .info-card p {
-            font-size: 1.0625rem;
-            line-height: 1.9;
-            color: var(--text-primary);
-            margin-bottom: var(--space-20);
+        .detail-card p {
+            margin: 0 0 var(--space-16) 0;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            text-align: left;
         }
         
-        .info-card p:last-child {
+        .detail-card p:last-child {
             margin-bottom: 0;
         }
         
-        .info-card strong {
-            color: var(--accent-taupe);
+        .detail-card strong {
+            color: var(--text-primary);
             font-weight: 600;
         }
         
-        /* CTA SECTION */
+        /* CTA SECTION - Matches Homepage */
         .cta {
-            padding: var(--space-100) 0;
-            background: linear-gradient(135deg, var(--accent-taupe) 0%, #9F8D81 100%);
+            padding: var(--space-80) 0;
+            background: var(--bg-primary);
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            pointer-events: none;
         }
         
         .cta h2 {
-            margin-bottom: var(--space-32);
-            color: white;
+            margin-bottom: var(--space-24);
         }
         
         .cta p {
             font-size: 1.25rem;
             max-width: 60ch;
             margin: 0 auto var(--space-48);
-            color: rgba(255, 255, 255, 0.95);
         }
         
-        .cta-buttons {
+        .hero-cta {
             display: flex;
             gap: var(--space-24);
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
         
         .btn-primary {
-            background: white;
-            color: var(--text-primary);
-            padding: 1rem 2.5rem;
+            background: var(--accent-taupe);
+            color: white;
+            padding: 0.875rem 1.75rem;
             border-radius: var(--radius);
             font-weight: 600;
             font-size: 0.9375rem;
@@ -390,20 +335,20 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            border: 2px solid white;
+            border: 2px solid var(--accent-taupe);
         }
         
         .btn-primary:hover {
-            background: transparent;
-            color: white;
+            background: #9F8D81;
+            border-color: #9F8D81;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 24px rgba(182, 163, 150, 0.3);
         }
         
         .btn-secondary {
             background: transparent;
-            color: white;
-            padding: 1rem 2.5rem;
+            color: var(--text-primary);
+            padding: 0.875rem 1.75rem;
             border-radius: var(--radius);
             font-weight: 600;
             font-size: 0.9375rem;
@@ -411,18 +356,17 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--border);
         }
         
         .btn-secondary:hover {
-            border-color: white;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
+            border-color: var(--accent-taupe);
+            color: var(--accent-taupe);
         }
         
-        /* FOOTER */
+        /* FOOTER - Matches Homepage */
         footer {
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
@@ -480,29 +424,29 @@
         
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero {
+            .hero-grid {
                 grid-template-columns: 1fr;
-                min-height: auto;
+                gap: var(--space-48);
             }
             
-            .hero-image-side img {
-                height: 60vh;
-                min-height: 500px;
+            .hero-image {
+                max-width: 450px;
+                margin: 0 auto;
             }
             
-            .hero-content-side {
-                padding: var(--space-64) var(--space-48);
+            .hero-image img {
+                height: 400px;
             }
             
             h1 {
-                font-size: 3rem;
+                font-size: 3.25rem;
             }
             
             h2 {
                 font-size: 2rem;
             }
             
-            .cards-grid {
+            .details-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -540,36 +484,25 @@
             
             h1 {
                 font-size: 2.5rem;
+                letter-spacing: 0.1em;
             }
             
-            .hero-image-side img {
-                height: 50vh;
-                min-height: 400px;
+            .hero {
+                padding: var(--space-48) 0 var(--space-32) 0;
             }
             
-            .hero-content-side {
-                padding: var(--space-48) var(--space-32);
-            }
-            
-            .cards-section,
-            .cta {
-                padding: var(--space-64) 0;
-            }
-            
-            .info-card {
-                padding: var(--space-48);
-            }
-            
-            .cta-buttons {
+            .hero-cta {
                 flex-direction: column;
-                width: 100%;
+                align-items: stretch;
             }
             
             .btn-primary,
             .btn-secondary {
-                width: 100%;
-                max-width: 350px;
                 text-align: center;
+            }
+            
+            .detail-card {
+                padding: var(--space-32);
             }
             
             .footer-grid {
@@ -585,23 +518,19 @@
             
             h1 {
                 font-size: 2rem;
+                letter-spacing: 0.08em;
             }
             
             h2 {
-                font-size: 1.625rem;
+                font-size: 1.75rem;
             }
             
-            .hero-image-side img {
-                height: 40vh;
-                min-height: 350px;
+            .hero-intro {
+                font-size: 1rem;
             }
             
-            .info-card {
-                padding: var(--space-32);
-            }
-            
-            .card-icon {
-                font-size: 2.75rem;
+            .detail-icon {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -633,40 +562,36 @@
         </div>
     </nav>
 
-    <!-- HERO - FULL HEIGHT SPLIT -->
+    <!-- HERO - Consistent with Homepage Layout -->
     <section class="hero">
-        <!-- Left Side - Full Height Image -->
-        <div class="hero-image-side">
-            <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=1200&h=1600&fit=crop'">
-            <div class="hero-image-overlay">
-                <p class="image-caption">Michaela & Daniel Ferencz</p>
-            </div>
-        </div>
-        
-        <!-- Right Side - Content -->
-        <div class="hero-content-side">
-            <div class="hero-content">
-                <p class="eyebrow">UNSERE GESCHICHTE</p>
-                <h1>Über<br>Uns</h1>
-                <p class="hero-intro">Wir sind Michaela und Daniel Ferencz – ein Ehepaar, das einen neuen Lebensabschnitt beginnt. Nach über 30 Jahren in Mülheim an der Ruhr ziehen wir nach Hamburg, um näher bei unserer Familie zu sein. Erfahren Sie mehr über uns, unsere Werte und warum wir die idealen Mieter für Ihre Immobilie sind.</p>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow">Unsere Geschichte</p>
+                    <h1>Über Uns</h1>
+                    <p class="hero-intro">Wir sind Michaela und Daniel Ferencz – ein Ehepaar, das einen neuen Lebensabschnitt beginnt. Nach über 30 Jahren in Mülheim an der Ruhr ziehen wir nach Hamburg, um näher bei unserer Familie zu sein. Erfahren Sie mehr über uns, unsere Werte und warum wir die idealen Mieter für Ihre Immobilie sind.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/IMG.jpg" alt="Michaela & Daniel Ferencz" onerror="this.src='https://images.unsplash.com/photo-1606103836293-0a063aa4ebfb?w=800&h=600&fit=crop'">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- INFO CARDS -->
-    <section class="cards-section">
+    <!-- DETAILS - Consistent Grid Style -->
+    <section class="details">
         <div class="container">
             <div class="section-header">
-                <p class="eyebrow">WER WIR SIND</p>
+                <p class="eyebrow">Wer Wir Sind</p>
                 <h2>Unsere Geschichte</h2>
                 <p class="section-intro">Alles, was Sie über uns wissen sollten – authentisch und persönlich.</p>
             </div>
             
-            <div class="cards-grid">
+            <div class="details-grid">
                 
                 <!-- FAMILIE CARD -->
-                <div class="info-card">
-                    <div class="card-icon">👨‍👩‍👧‍👦</div>
+                <div class="detail-card">
+                    <div class="detail-icon">👨‍👩‍👧‍👦</div>
                     <h3>Familie</h3>
                     <p>Wir sind ein berufstätiges Ehepaar, <strong>55 und 57 Jahre alt</strong>, das nach Hamburg zieht, um näher bei unseren Kindern und Enkelkindern zu sein.</p>
                     <p>Familie und Zusammenhalt sind uns sehr wichtig. Dieser Umzug ermöglicht es uns, regelmäßig Zeit mit unseren Kindern und Enkelkindern zu verbringen und sie im Alltag zu unterstützen.</p>
@@ -674,8 +599,8 @@
                 </div>
                 
                 <!-- LEBENSSTIL CARD -->
-                <div class="info-card">
-                    <div class="card-icon">🏡</div>
+                <div class="detail-card">
+                    <div class="detail-icon">🏡</div>
                     <h3>Lebensstil</h3>
                     <p>Wir führen einen <strong>ruhigen und respektvollen Lebensstil</strong>. Beide sind wir Nichtraucher und haben keine Haustiere.</p>
                     <p>Pünktliche Mietzahlungen und sorgsamer Umgang mit unserem Zuhause sind für uns selbstverständlich. Wir legen großen Wert darauf, vorbildliche Mieter zu sein.</p>
@@ -683,8 +608,8 @@
                 </div>
                 
                 <!-- BERUF CARD -->
-                <div class="info-card">
-                    <div class="card-icon">💼</div>
+                <div class="detail-card">
+                    <div class="detail-icon">💼</div>
                     <h3>Beruf</h3>
                     <p>Beruflich sind wir beide fest etabliert mit <strong>unbefristeten Arbeitsverträgen</strong> in stabilen Unternehmen.</p>
                     <p>Wir leben seit <strong>über 30 Jahren in Mülheim an der Ruhr</strong>, wo wir beruflich fest verwurzelt sind. Der Umzug nach Hamburg bedeutet einen Wechsel unseres Arbeitsortes nach Hamburg.</p>
@@ -692,8 +617,8 @@
                 </div>
                 
                 <!-- ZUHAUSE CARD -->
-                <div class="info-card">
-                    <div class="card-icon">🔑</div>
+                <div class="detail-card">
+                    <div class="detail-icon">🔑</div>
                     <h3>Unser Zuhause</h3>
                     <p>Wir suchen eine <strong>gepflegte Wohnung mit 70–100 m² und 3 Zimmern</strong> in ruhiger Lage, idealerweise in der Nähe von Schnelsen.</p>
                     <p>Unser Budget liegt bei <strong>bis zu €1.800 Warmmiete</strong>. Der frühestmögliche Einzug wäre <strong>ab Mai 2026</strong>, aber wir sind zeitlich flexibel.</p>
@@ -709,7 +634,7 @@
         <div class="container">
             <h2>Möchten Sie Mehr Erfahren?</h2>
             <p>Wir würden uns freuen, von Ihnen zu hören und weitere Details über Ihre Immobilie zu besprechen.</p>
-            <div class="cta-buttons">
+            <div class="hero-cta">
                 <a href="financial.html" class="btn-primary">Finanzielle Details</a>
                 <a href="contact.html" class="btn-secondary">Kontakt Aufnehmen</a>
             </div>
