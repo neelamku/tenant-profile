@@ -24,7 +24,9 @@
             --space-24: 24px;
             --space-32: 32px;
             --space-48: 48px;
+            --space-64: 64px;
             --space-72: 72px;
+            --space-80: 80px;
             --radius: 14px;
             --radius-sm: 8px;
             --max-width: 1120px;
@@ -186,7 +188,7 @@
         
         /* PAGE HEADER */
         .page-header {
-            padding: var(--space-72) 0 var(--space-48);
+            padding: var(--space-80) 0 var(--space-64);
             text-align: center;
             background: var(--bg-primary);
         }
@@ -226,13 +228,13 @@
         .highlight-label {
             font-size: 0.875rem;
             opacity: 0.9;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
         }
         
         /* FINANCIAL DETAILS */
         .financial-section {
-            padding: var(--space-72) 0;
+            padding: var(--space-80) 0;
             background: var(--bg-secondary);
         }
         
@@ -245,13 +247,22 @@
         .financial-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
-            padding: var(--space-32);
+            padding: var(--space-48);
             border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .financial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--accent-taupe);
         }
         
         .financial-card h3 {
             margin-bottom: var(--space-24);
-            color: var(--text-primary);
+            color: var(--accent-taupe);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         .financial-list {
@@ -289,34 +300,42 @@
         
         /* DOCUMENTS SECTION */
         .documents-section {
-            padding: var(--space-72) 0;
+            padding: var(--space-80) 0;
             background: var(--bg-primary);
         }
         
         .documents-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-24);
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-32);
             margin-top: var(--space-48);
         }
         
         .document-card {
             background: var(--bg-primary);
             border: 1px solid var(--border);
-            padding: var(--space-32);
+            padding: var(--space-48);
             border-radius: var(--radius);
             text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .document-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--accent-taupe);
         }
         
         .doc-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-16);
-            opacity: 0.85;
+            font-size: 3rem;
+            margin-bottom: var(--space-24);
+            line-height: 1;
         }
         
         .document-card h3 {
             font-size: 1.125rem;
             margin-bottom: var(--space-12);
+            color: var(--accent-taupe);
         }
         
         .document-card p {
@@ -327,7 +346,7 @@
         
         /* CTA SECTION */
         .cta-section {
-            padding: var(--space-72) 0;
+            padding: var(--space-80) 0;
             background: var(--bg-secondary);
             text-align: center;
         }
@@ -339,7 +358,7 @@
         .cta-section p {
             font-size: 1.125rem;
             max-width: 60ch;
-            margin: 0 auto var(--space-32);
+            margin: 0 auto var(--space-48);
         }
         
         .btn-primary {
@@ -365,15 +384,15 @@
         /* FOOTER */
         footer {
             background: var(--bg-primary);
-            padding: var(--space-72) 0 var(--space-32);
+            padding: var(--space-80) 0 var(--space-32);
             border-top: 1px solid var(--border);
         }
         
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-48);
-            margin-bottom: var(--space-48);
+            gap: var(--space-64);
+            margin-bottom: var(--space-64);
         }
         
         .footer-section h4 {
@@ -410,7 +429,7 @@
         
         .footer-bottom {
             text-align: center;
-            padding-top: var(--space-32);
+            padding-top: var(--space-48);
             border-top: 1px solid var(--border);
         }
         
@@ -424,6 +443,10 @@
         @media (max-width: 1024px) {
             .financial-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .documents-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .highlight-grid {
@@ -532,7 +555,7 @@
         <div class="container">
             <p class="eyebrow">Finanzielle Sicherheit</p>
             <h1>Finanzen</h1>
-            <p class="page-subtitle">Ausgezeichnete Bonität, sichere Arbeitsplätze und optimales Verhältnis von Einkommen zu Miete. Alle Unterlagen sind verfügbar.</p>
+            <p class="page-subtitle">Stabile Einkommen aus unbefristeten Arbeitsverhältnissen, einwandfreie SCHUFA-Auskunft und sofort verfügbare Kaution.</p>
         </div>
     </section>
 
@@ -541,16 +564,16 @@
         <div class="container">
             <div class="highlight-grid">
                 <div class="highlight-item">
-                    <div class="highlight-number">€6.000+</div>
+                    <div class="highlight-number">€4.700</div>
                     <div class="highlight-label">Netto-Monatseinkommen</div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-number">3,5×</div>
-                    <div class="highlight-label">Einkommen-Miete-Verhältnis</div>
                 </div>
                 <div class="highlight-item">
                     <div class="highlight-number">100%</div>
                     <div class="highlight-label">Einwandfreie SCHUFA</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">Sofort</div>
+                    <div class="highlight-label">Kaution Verfügbar</div>
                 </div>
             </div>
         </div>
@@ -559,112 +582,112 @@
     <!-- FINANCIAL DETAILS -->
     <section class="financial-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: var(--space-48);">
+            <div style="text-align: center; margin-bottom: var(--space-64);">
                 <p class="eyebrow">Übersicht</p>
                 <h2>Finanzielle Details</h2>
             </div>
             
             <div class="financial-grid">
                 <div class="financial-card">
-                    <h3>Einkommen & Beschäftigung</h3>
+                    <h3>Haushalt & Einkommen</h3>
                     <ul class="financial-list">
                         <li>
+                            <span class="label">Haushaltstyp</span>
+                            <span class="value">Ehepaar (2 Mieter)</span>
+                        </li>
+                        <li>
                             <span class="label">Gemeinsames Nettoeinkommen</span>
-                            <span class="value highlight">€6.000+ / Monat</span>
+                            <span class="value highlight">€4.700 / Monat</span>
                         </li>
                         <li>
-                            <span class="label">Beschäftigungsverhältnis Person 1</span>
-                            <span class="value">Unbefristet</span>
+                            <span class="label">Michaela — Beruf</span>
+                            <span class="value">Kindheits- und Familienpädagogin</span>
                         </li>
                         <li>
-                            <span class="label">Beschäftigungsverhältnis Person 2</span>
-                            <span class="value">Unbefristet</span>
+                            <span class="label">Daniel — Beruf</span>
+                            <span class="value">Bauleiter</span>
                         </li>
                         <li>
-                            <span class="label">Einkommensnachweis</span>
-                            <span class="value">Letzte 3 Gehaltsnachweise</span>
-                        </li>
-                        <li>
-                            <span class="label">Berufliche Stabilität</span>
-                            <span class="value">Langjährige Positionen</span>
+                            <span class="label">Arbeitsverhältnisse</span>
+                            <span class="value highlight">Beide unbefristet</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="financial-card">
-                    <h3>Bonität & Finanzlage</h3>
+                    <h3>Mietbudget</h3>
+                    <ul class="financial-list">
+                        <li>
+                            <span class="label">Gesuchte Wohnung</span>
+                            <span class="value">3-4 Zimmer in Hamburg</span>
+                        </li>
+                        <li>
+                            <span class="label">Wohnungsgröße</span>
+                            <span class="value">70–100 m²</span>
+                        </li>
+                        <li>
+                            <span class="label">Kaltmiete</span>
+                            <span class="value">Bis €1.300</span>
+                        </li>
+                        <li>
+                            <span class="label">Warmmiete</span>
+                            <span class="value highlight">Bis €1.800</span>
+                        </li>
+                        <li>
+                            <span class="label">Einkommen-zu-Miete-Verhältnis</span>
+                            <span class="value">2,6× (solide)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="financial-card">
+                    <h3>Bonität</h3>
                     <ul class="financial-list">
                         <li>
                             <span class="label">SCHUFA-Auskunft</span>
-                            <span class="value highlight">Ausgezeichnet (keine Negativeinträge)</span>
+                            <span class="value highlight">Verfügbar</span>
+                        </li>
+                        <li>
+                            <span class="label">Negativeinträge</span>
+                            <span class="value highlight">Keine</span>
                         </li>
                         <li>
                             <span class="label">Zahlungshistorie</span>
-                            <span class="value">Perfekt, immer pünktlich</span>
+                            <span class="value">Immer pünktlich</span>
                         </li>
                         <li>
                             <span class="label">Bestehende Schulden</span>
                             <span class="value">Keine</span>
                         </li>
                         <li>
-                            <span class="label">Rücklagen</span>
-                            <span class="value">3+ Monatsmieten vorhanden</span>
-                        </li>
-                        <li>
-                            <span class="label">Bankkonto</span>
-                            <span class="value">Deutsche Bank etabliert</span>
+                            <span class="label">Kreditwürdigkeit</span>
+                            <span class="value">Ausgezeichnet</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="financial-card">
-                    <h3>Mietfähigkeit</h3>
+                    <h3>Kaution & Sicherheiten</h3>
                     <ul class="financial-list">
                         <li>
-                            <span class="label">Gesuchte Mietpreisklasse</span>
-                            <span class="value">€1.400–€1.800 / Monat</span>
-                        </li>
-                        <li>
-                            <span class="label">Einkommen-zu-Miete-Verhältnis</span>
-                            <span class="value highlight">3,5× (übertrifft Standard)</span>
-                        </li>
-                        <li>
                             <span class="label">Kaution</span>
-                            <span class="value">3 Monatsmieten sofort verfügbar</span>
+                            <span class="value highlight">Sofort verfügbar</span>
+                        </li>
+                        <li>
+                            <span class="label">Kautionshöhe</span>
+                            <span class="value">3 Monatsmieten</span>
                         </li>
                         <li>
                             <span class="label">Erste Mietzahlung</span>
                             <span class="value">Sofort zahlbereit</span>
                         </li>
                         <li>
-                            <span class="label">Finanzieller Puffer</span>
-                            <span class="value">Starker Notfallfonds</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="financial-card">
-                    <h3>Zusätzliche Sicherheiten</h3>
-                    <ul class="financial-list">
-                        <li>
                             <span class="label">Zahlungsmethode</span>
                             <span class="value">SEPA-Lastschrift bevorzugt</span>
                         </li>
                         <li>
                             <span class="label">Privathaftpflicht</span>
-                            <span class="value">Aktiv und gültig</span>
-                        </li>
-                        <li>
-                            <span class="label">Mietbürgschaft</span>
-                            <span class="value">Falls gewünscht verfügbar</span>
-                        </li>
-                        <li>
-                            <span class="label">Referenzen</span>
-                            <span class="value">Vorherige Vermieter verfügbar</span>
-                        </li>
-                        <li>
-                            <span class="label">Langfristige Stabilität</span>
-                            <span class="value">5+ Jahre in Hamburg geplant</span>
+                            <span class="value">Vorhanden</span>
                         </li>
                     </ul>
                 </div>
@@ -676,7 +699,7 @@
     <section class="documents-section">
         <div class="container">
             <div style="text-align: center; margin-bottom: var(--space-48);">
-                <p class="eyebrow">Sofort Verfügbar</p>
+                <p class="eyebrow">Auf Anfrage</p>
                 <h2>Verfügbare Dokumente</h2>
             </div>
             
@@ -684,22 +707,17 @@
                 <div class="document-card">
                     <div class="doc-icon">📄</div>
                     <h3>SCHUFA-Auskunft</h3>
-                    <p>Aktuelle Bonitätsauskunft mit ausgezeichnetem Score</p>
-                </div>
-                <div class="document-card">
-                    <div class="doc-icon">💼</div>
-                    <h3>Arbeitsverträge</h3>
-                    <p>Unbefristete Verträge beider Arbeitgeber</p>
+                    <p>Aktuelle Bonitätsauskunft ohne Negativeinträge</p>
                 </div>
                 <div class="document-card">
                     <div class="doc-icon">💶</div>
                     <h3>Gehaltsnachweise</h3>
-                    <p>Letzte 3 Monate zur Verifizierung</p>
+                    <p>Letzte 3 Monate beider Mieter</p>
                 </div>
                 <div class="document-card">
-                    <div class="doc-icon">🪪</div>
-                    <h3>Ausweisdokumente</h3>
-                    <p>Gültige Ausweise beider Mieter</p>
+                    <div class="doc-icon">💼</div>
+                    <h3>Arbeitgeberbescheinigungen</h3>
+                    <p>Bestätigung unbefristeter Verträge</p>
                 </div>
             </div>
         </div>
@@ -709,7 +727,7 @@
     <section class="cta-section">
         <div class="container">
             <h2>Dokumente Anfordern</h2>
-            <p>Alle Unterlagen sind aktuell, verifiziert und können innerhalb von 24–48 Stunden nach Ihrer Anfrage bereitgestellt werden.</p>
+            <p>Alle Unterlagen sind aktuell und können kurzfristig bereitgestellt werden.</p>
             <a href="contact.html" class="btn-primary">Kontakt Aufnehmen</a>
         </div>
     </section>
@@ -736,7 +754,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Wir Suchen</h4>
-                    <p>60–100 m², 3-3.5 Zimmer</p>
+                    <p>70–100 m², 3-4 Zimmer</p>
                     <p>Schnelsen und Umgebung</p>
                     <p>Einzug: Ab Mai 2026</p>
                 </div>
@@ -761,6 +779,7 @@
 
 </body>
 </html>
+
 
 
 
